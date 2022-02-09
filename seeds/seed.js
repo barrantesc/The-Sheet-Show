@@ -1,7 +1,12 @@
-//------------------------------------------------------------------------------
-//-- IMPORTS
+/*
+  Run this with the bash command `npm run seed` 
 
+  This purges the database and then creates clean data based on models, and the
+  seed data in root
+    seed_Hero.json
+    Seed_User.json
 
+*/
 
 //------------------------------------------------------------------------------
 //-- Building seed database with mysql2 
@@ -38,11 +43,11 @@ async function seedTables() {
   const sequelize = require('./connection_sequelize');
 
   //-- Grab database Table models
-  const { User, Toon } = require('../models');
+  const { User, Hero } = require('../models');
 
   //-- Grab seed data to build a seed database
   const seed_Users = require('./seed_User.json');
-  const seed_Toon = require('./seed_Toon.json');
+  const seed_Hero = require('./seed_Hero.json');
 
 
   await sequelize.sync({ force: true });
@@ -52,16 +57,11 @@ async function seedTables() {
     individualHooks: true,
     returning: true,
   });
-  // for (const user of seed_Users) {
-  //   const newUser = await User.create({
-  //   ...user,
-  //   });
-  // }
-
+  
   //-- grab all roles and build Table based on Model
-  for (const toon of seed_Toon) {
-    const newToon = await Toon.create({
-    ...toon,
+  for (const hero of seed_Hero) {
+    const newHero = await Hero.create({
+    ...hero,
     });
   }
 

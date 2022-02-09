@@ -1,22 +1,22 @@
 //------------------------------------------------------------------------------
-//-- IMPORTS
+//-- Modules for Sequelize ORM
 
 const User = require('./User');
-const Toon = require('./Toon');
+const Hero = require('./Hero');
 
 //------------------------------------------------------------------------------
-//-- Sequelize Table Management
+//-- Associations between tables
 
 //-- Create associations between User and Post column values user_id
-User.hasMany(Toon, {
+User.hasMany(Hero, {
     foreignKey: 'user_id'
   });
 
-Toon.belongsTo(User, {
+  Hero.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
 //-----------------------------------------------------------------------------
-
 //-- EXPORTS
-module.exports = { User, Toon };
+
+module.exports = { User, Hero };

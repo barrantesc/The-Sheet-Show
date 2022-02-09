@@ -1,8 +1,16 @@
 //-- SQL Database ORM templates, essentially
 const { Model, DataTypes } = require('sequelize');
+
 //SQL Database ORM
+/* 
+  Pointing to seeds/connection_sequlzie because it's used by seeds to build
+*/
 const sequelize = require('../seeds/connection_sequelize');
+
 //-- Password encryption
+/* 
+  When user created, password is hashed
+*/
 const bcrypt = require('bcrypt');
 
 //------------------------------------------------------------
@@ -64,5 +72,7 @@ User.init(
   }
 );
   
+//-----------------------------------------------------------------------------
+//-- EXPORTS
 
 module.exports = User;
