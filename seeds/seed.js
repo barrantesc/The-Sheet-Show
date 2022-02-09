@@ -16,6 +16,7 @@ async function seedDatabase () {
       db.query('DROP DATABASE IF EXISTS sheet_show'),
       db.query('select sleep(2)'),
       db.query('CREATE DATABASE sheet_show'),
+      // db.query('use sheet_show'),
     ]);
     
     await db.end(); //-- Close connection
@@ -37,34 +38,33 @@ async function seedTables() {
   const sequelize = require('./connection_sequelize');
 
   //-- Grab database Table models
-  const { Department, Role, Employee } = require('../models');
+  const { User, Toon } = require('../models');
 
   //-- Grab seed data to build a seed database
-  const seed_Departments = require('./seed_User.json');
-  const seed_Roles = require('./seed_Character.json');
+  const seed_Users = require('./seed_User.json');
+  const seed_Toon = require('./seed_Toon.json');
 
 
   await sequelize.sync({ force: true });
 
-  //-- Grab all departments and build Table based on Model
-  const departments = await Department.bulkCreate(seed_Departments, {
+  // -- Grab all users and build Table based on Model
+  const users = await User.bulkCreate(seed_Users, {
     individualHooks: true,
     returning: true,
   });
+  // for (const user of seed_Users) {
+  //   const newUser = await User.create({
+  //   ...user,
+  //   });
+  // }
 
   //-- grab all roles and build Table based on Model
-  for (const role of seed_Roles) {
-    const newRole = await Role.create({
-    ...role,
+  for (const toon of seed_Toon) {
+    const newToon = await Toon.create({
+    ...toon,
     });
   }
 
-  //-- grab all employees and build Table based on Model
-  for (const employee of seed_Employees) {
-    const newEmployee = await Employee.create({
-    ...employee,
-    });
-  }
 
   //-- exit once done building seed database data
   // process.exit(0);

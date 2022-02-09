@@ -1,27 +1,22 @@
 //------------------------------------------------------------------------------
 //-- IMPORTS
+
 const User = require('./User');
-const Character = require('./Character');
+const Toon = require('./Toon');
 
 //------------------------------------------------------------------------------
+//-- Sequelize Table Management
 
 //-- Create associations between User and Post column values user_id
-User.hasMany(Character, {
+User.hasMany(Toon, {
     foreignKey: 'user_id'
   });
 
-Character.belongsTo(User, {
+Toon.belongsTo(User, {
     foreignKey: 'user_id',
-});
-
-//------------------------------------------------------------------------------
-
-// turn on connection to database and server
-sequelize.sync({ force: true }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
 });
 
 //-----------------------------------------------------------------------------
 
 //-- EXPORTS
-module.exports = { User, Character };
+module.exports = { User, Toon };
