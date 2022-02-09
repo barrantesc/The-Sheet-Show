@@ -1,9 +1,7 @@
 //-- SQL Database ORM templates, essentially
 const { Model, DataTypes } = require('sequelize');
-
 //SQL Database ORM
 const sequelize = require('../config/connection');
-
 //-- Password encryption
 const bcrypt = require('bcrypt');
 
