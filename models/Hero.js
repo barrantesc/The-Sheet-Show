@@ -1,19 +1,22 @@
 //-- SQL Database ORM templates, essentially
 const { Model, DataTypes } = require('sequelize');
-//SQL Database ORM
-const sequelize = require('../config/connection');
+
+//SQL Database ORM 
+/* 
+  Pointing to seeds/connection_sequlzie because it's used by seeds to build
+*/
+const sequelize = require('../seeds/connection_sequelize');
 
 //------------------------------------------------------------
 //-- Class
 
 // create our Character model
-class Character extends Model {
-}
+class Hero extends Model {}
 
 //------------------------------------------------------------
 
 // define table columns and configuration
-Character.init(
+Hero.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -50,8 +53,9 @@ Character.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Character'
+    modelName: 'hero'
   }
 );
 
-module.exports = Character;
+//-- exporting to index.js
+module.exports = Hero;

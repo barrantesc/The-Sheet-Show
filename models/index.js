@@ -1,27 +1,22 @@
 //------------------------------------------------------------------------------
-//-- IMPORTS
+//-- Modules for Sequelize ORM
+
 const User = require('./User');
-const Character = require('./Character');
+const Hero = require('./Hero');
 
 //------------------------------------------------------------------------------
+//-- Associations between tables
 
 //-- Create associations between User and Post column values user_id
-User.hasMany(Character, {
+User.hasMany(Hero, {
     foreignKey: 'user_id'
   });
 
-Character.belongsTo(User, {
+  Hero.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
-//------------------------------------------------------------------------------
-
-// turn on connection to database and server
-sequelize.sync({ force: true }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
-});
-
 //-----------------------------------------------------------------------------
-
 //-- EXPORTS
-module.exports = { User, Character };
+
+module.exports = { User, Hero };

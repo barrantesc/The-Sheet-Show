@@ -1,16 +1,10 @@
+//-- Import Express and create router to share existing express instance
 const router = require('express').Router();
-//const apiRoutes = require('./api');
-// -- Adding handlebars routing
-// const homeRoutes = require('./home-routes.js');
+//-- Importing other routes to ensure existing express has access 
+const apiRoutes = require('./api');
 
-// router.use('/api', apiRoutes);
+//-- Giving access to api routes
+router.use('/api', apiRoutes);
 
-// // -- Giving handlebar routing params to Router
-// router.use('/', homeRoutes);
-
-//-- if gets here when rounting, throw 404
-router.use((req, res) => {
-  res.status(404).end();
-});
-
+//-- Returning route info to server.js in root.
 module.exports = router;
