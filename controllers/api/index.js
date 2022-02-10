@@ -1,17 +1,10 @@
 const router = require('express').Router();
-// const apiRoutes = require('./api');
-// // -- Adding handlebars routing
-// const homeRoutes = require('./home-routes.js');
+// connect to User and Hero routes
+const userRoutes = require('../api/user-routes');
+const heroRoutes = require('../api/hero-routes');
 
-// router.use('/api', apiRoutes);
-
-// // -- Giving handlebar routing params to Router
-// router.use('/', homeRoutes);
-
-//-- if gets here when rounting, throw 404
-router.use((req, res) => {
-  res.status(404).end();
-});
-
+// use user and hero routes
+router.use('/users', userRoutes);
+router.use('/heros', heroRoutes);
 
 module.exports = router;
