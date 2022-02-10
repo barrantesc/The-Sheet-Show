@@ -48,7 +48,7 @@ User.init(
     }
   },
   {
-    // events called by Sequalize based on hook chosen.
+    // events called by Sequalize based on hook chosen. HASHES PW TO BE SAVED INSTEAD OF OG
     hooks: {
       // set up beforeCreate lifecycle "hook" functionality
       async beforeCreate(newUserData) {
