@@ -6,7 +6,9 @@ const heroRoutes = require('./hero-routes');
 
 // use user and hero routes
 router.use('/users', userRoutes);
-router.use('/heros', heroRoutes);
+router.use('/heroes', heroRoutes);
+
+
 
 
 //-- if gets here when rounting, throw 404

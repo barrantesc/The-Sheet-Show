@@ -6,6 +6,7 @@ router.use('/api', apiRoutes);
 
 // // routes from homepage
 const homeRoutes = require('./home-routes');
+
 router.use('/', homeRoutes);
 
 // // access to homepage routes
