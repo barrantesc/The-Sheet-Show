@@ -1,3 +1,4 @@
+//WHAT OUR CHARACTERS ARE CALLED
 //-- SQL Database ORM templates, essentially
 const { Model, DataTypes } = require('sequelize');
 
