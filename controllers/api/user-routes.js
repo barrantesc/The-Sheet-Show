@@ -20,21 +20,19 @@ router.get('/', (req, res) => {
 // find a single user 
 router.get('/:id', (req, res) => {
     User.findOne({
-        attributes: { exclude: ['password'] },
         where: {
             id: req.params.id
         },
+        attributes: { exclude: 'password' },
         include: [
             {
                 model: Hero,
-                attributes: [
-                    'id', 'user_id', 'name', 'race', 'class', 'gender'
-                ]
+                attributes: ['name']
             }
         ]
     })
         .then(userData => {
-            if (!userData) {
+            if (!heroData) {
                 res.status(404).json({
                     message: 'User not found!'
                 });

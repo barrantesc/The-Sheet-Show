@@ -9,9 +9,7 @@ router.use('/users', userRoutes);
 router.use('/heroes', heroRoutes);
 
 
-
-
-//-- if gets here when rounting, throw 404
+//-- if gets here when routing, throw 404
 router.use((req, res) => {
     // console.log(`//-- Calling a ${req.method} in controllers/api/index.js`);
     res.status(404).json({
