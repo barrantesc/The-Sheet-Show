@@ -12,7 +12,6 @@ router.use('/api', apiRoutes);
 // -- Giving handlebar routing params to Router
 router.use('/', homeRoutes);
 
-// // access to homepage routes
 
 //-- if gets here when rounting, throw 404
 router.use((req, res) => {

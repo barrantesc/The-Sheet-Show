@@ -8,7 +8,7 @@
       "start": "node server.js",
       "watch": "nodemon server.js",
       "seed": "node seeds/seed.js"
-    },
+    },    
     "repository": {
       "type": "git",
       "url": "git@github.com:barrantesc/The-Sheet-Show.git"
@@ -35,4 +35,7 @@
       "nodemon": "^2.0.3"
     }
   }
+
+
+
   
