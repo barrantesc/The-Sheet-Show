@@ -4,20 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Just Tech News</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>The Sheet Show</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
   <div class="wrapper">
     <header>
       <h1>
-        <a href="/">Just Tech News</a>
+        <a href="/">The Sheet Show</a>
       </h1>
       <nav>
         {{!-- Since logout won’t be an actual page that users can visit, it should be a button, but we can still style it to look like a link. --}}
         {{#if loggedIn}}
-          <button id="logout" class="btn-no-style">logout</button>
+         {{!-- <a href="/dashboard">dashboard</a> --}}
+        <button id="logout" class="btn-no-style">logout</button>
         {{else}}
           <a href="/login">login</a>
         {{/if}}
@@ -33,6 +34,7 @@
   </div>
   {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
+    <script src="/javascript/character.js"></script>
   {{/if}}
 </body>
 

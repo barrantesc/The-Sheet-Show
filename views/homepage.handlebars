@@ -6,10 +6,13 @@
   {{/each}}
 </ol> --}}
 
-<ol class="post-list">
-  {{#each posts as |post|}}
+
+{{!-- What will be in the homepage? Will it show character info, previous characters selected?  --}}
+  
+<ol class="character-list">
+  {{#each character as |character|}}
     <li>
-      {{> post-info post }}
+      {{> character-info character }}
     </li>
   {{/each}}
 </ol>
