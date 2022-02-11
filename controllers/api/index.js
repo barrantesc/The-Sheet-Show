@@ -6,7 +6,7 @@ const heroRoutes = require('./hero-routes');
 
 // use user and hero routes
 router.use('/users', userRoutes);
-router.use('/heros', heroRoutes);
+router.use('/heroes', heroRoutes);
 
 
 

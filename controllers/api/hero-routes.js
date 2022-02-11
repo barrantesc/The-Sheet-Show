@@ -9,32 +9,32 @@ router.get('/', (req, res) => {
         attributes: [
             'id', 'name', 'race', 'class', 'gender'
         ],
-        // include: [
-        //     {
-        //         module: User,
-        //         attributes: ['username']
-        //     },
-        // ]
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
     })
-    .then(heroData => res.json(heroData))
-    .catch(err => {
-        console.log(err);
-        res
-            .status(500)
-            .json({
-                request: {
-                    method: req.method,
-                    params: req.params,
-                    body: req.body,
-                    path: "./heros",
-                },
-                response: {
-                    status: 500,
-                    message: "Rquest failure. Catch Failure.",
-                    error: err
-            
-                }
-            })
+        .then(heroData => res.json(heroData))
+        .catch(err => {
+            console.log(err);
+            res
+                .status(500)
+                .json({
+                    request: {
+                        method: req.method,
+                        params: req.params,
+                        body: req.body,
+                        path: "./heros",
+                    },
+                    response: {
+                        status: 500,
+                        message: "Rquest failure. Catch Failure.",
+                        error: err
+
+                    }
+                })
         });
 });
 
@@ -47,12 +47,12 @@ router.get('/:id', (req, res) => {
         attributes: [
             'id', 'name', 'race', 'class', 'gender'
         ],
-        // include: [
-        //     {
-        //         module: User,
-        //         attributes: ['username']
-        //     }
-        // ]
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
     })
         .then(heroData => {
             if (!heroData) {
@@ -81,20 +81,7 @@ router.post('/', withAuth, (req, res) => {
         .then(heroData => res.json(heroData))
         .catch(err => {
             console.log(err);
-            res.status(500)
-                .json({
-                    request: {
-                        method: req.method,
-                        params: req.params,
-                        body: req.body,
-                        path: "./",
-                    },
-                    response: {
-                        status: 404,
-                        message: "Rquest failure. Page not found.",
-                        error: err
-                    }
-                })
+            res.status(500).json(err)
         });
 });
 
