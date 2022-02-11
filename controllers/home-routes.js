@@ -4,24 +4,39 @@ const { User, Hero } = require('../models');
 
 
 //GET request to show all characters and include their usernames
-router.get('/', (req,res) => {
+router.get('/', async (req,res) => {
     console.log('------------------------------')
-    Hero.findAll({
-        attributes: [
-            'id',
-            'user_id',
-            'name',
-            'race',
-            'class',
-            'gender'
-        ],
-        include : [
-            {
-                model: User,
-                attributes: ['id', 'username'],
-            }
-        ]
-    })
+    try{
+        const heroData = await Hero.findAll({
+            attributes: [
+                'id',
+                'user_id',
+                'name',
+                'race',
+                'class',
+                'gender'
+            ],
+            include : [
+                {
+                    model: User,
+                    attributes: ['id', 'username'],
+                }
+            ]
+        });
+
+        const heros = heroData.map((hero) =>
+            hero.get({ plain: true })
+        );
+
+        res.render('homepage', {
+            heros,
+            loggedIn: req.session.loggedIn,
+        });
+  }
+   catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 })
 
 //GET REQUEST FOR SINGLE CHARACTER
