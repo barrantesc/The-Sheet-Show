@@ -115,6 +115,7 @@ router.delete('/:id', withAuth, (req, res) => {
 
 // login 
 router.post('/login', (req, res) => {
+    
     User.findOne({
         where: {
             email: req.body.email
@@ -141,7 +142,13 @@ router.post('/login', (req, res) => {
                 req.session.username = userData.username;
                 req.session.loggedIn = true;
             });
+        })
+        
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
         });
+
 });
 
 // logout
