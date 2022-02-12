@@ -91,8 +91,8 @@ router.get('/', async (req, res) => {
 });
 
 // Direct to Charcter creator page
-router.get('/character', (req, res) => {
-  res.render('character')
+router.get('/character-creator', (req, res) => {
+  res.render('character-creator')
 
 })
 
