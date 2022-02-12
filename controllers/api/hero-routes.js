@@ -4,8 +4,9 @@ const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
 // get all heroes - to be updated when we know all hero properties
-router.get('/', (req, res) => {
-    Hero.findAll({
+router.get('/', async (req, res) => {
+    
+    const heros = await Hero.findAll({
         attributes: [
             'id', 'name', 'race', 'class', 'gender'
         ],
@@ -16,26 +17,26 @@ router.get('/', (req, res) => {
             }
         ]
     })
-        .then(heroData => res.json(heroData))
-        .catch(err => {
-            console.log(err);
-            res
-                .status(500)
-                .json({
-                    request: {
-                        method: req.method,
-                        params: req.params,
-                        body: req.body,
-                        path: "./heros",
-                    },
-                    response: {
-                        status: 500,
-                        message: "Rquest failure. Catch Failure.",
-                        error: err
+    .then(heroData => res.json(heroData))
+    .catch(err => {
+        console.log(err);
+        res
+            .status(500)
+            .json({
+                request: {
+                    method: req.method,
+                    params: req.params,
+                    body: req.body,
+                    path: "./heros",
+                },
+                response: {
+                    status: 500,
+                    message: "Rquest failure. Catch Failure.",
+                    error: err
 
-                    }
-                })
-        });
+                }
+            })
+    });
 });
 
 // get single hero - to be updated when we know all hero properties
