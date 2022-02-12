@@ -90,6 +90,12 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Direct to Charcter creator page
+router.get('/character-creator', (req, res) => {
+  res.render('character-creator')
+
+})
+
 //-- if gets here when rounting, throw 404
 router.use((req, res) => {
     res
