@@ -12,7 +12,7 @@
      /* ROOT colors used */
     --color_Primary: black;
     --color_Secondary: #4ed1c4;
-    --color_Tertiary: white;
+    --color_Tertiary: #F9F9F9;
     
 
     /* Accents to ROOT colors */
@@ -47,7 +47,6 @@
     */
 
 
-
     /*
         PADDING
     */
@@ -62,7 +61,10 @@
     /*
         BUTTONS    
     */
-    --btn_txt_inactive: #F9F9F9;
+    --btn_bg_inactive: var(--color_Tertiary);
+    --btn_bg_active: var(--color_Primary);
+
+    --btn_txt_inactive: var(--color_Primary);
     --btn_txt_active: #6fffe9;
     
     /*
@@ -120,7 +122,8 @@ h3 {
 
 button {
     /* universal button configuration */
-    background-color:transparent;
+    /* background-color:(transparent); */
+    background-color: var(--btn_bg_inactive);
     color: var(--btn_txt_inactive);
     cursor: pointer;
     border: none;
@@ -135,6 +138,7 @@ button {
 
 button:hover {
     color: var(--btn_txt_active);
+    background-color: var(--btn_bg_active);
 }
 
 .text-left {
