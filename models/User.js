@@ -5,7 +5,7 @@ const { Model, DataTypes } = require('sequelize');
 /* 
   Pointing to seeds/connection_sequlzie because it's used by seeds to build
 */
-const sequelize = require('../seeds/connection_sequelize');
+const sequelize = require('../config/connection');
 
 //-- Password encryption
 /* 
