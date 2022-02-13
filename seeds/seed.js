@@ -14,7 +14,7 @@
 async function seedDatabase () {
   require('dotenv').config(); //-- for local variable caching
 
-  const db = require('./connection_mysql2')
+  const db = require('../config/connection_mysql2')
   // execute in parallel, next console.log in 3 seconds
   try {
     await Promise.all([
@@ -40,7 +40,8 @@ async function seedDatabase () {
 async function seedTables() {
 
   //-- Used to build SQL seed data, and erase anything that may exist
-  const sequelize = require('./connection_sequelize');
+  // const sequelize = require('./connection_sequelize');
+  const sequelize = require('../config/connection');
 
   //-- Grab database Table models
   const { User, Hero } = require('../models');
