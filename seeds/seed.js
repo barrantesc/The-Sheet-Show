@@ -40,7 +40,6 @@ async function seedDatabase () {
 async function seedTables() {
 
   //-- Used to build SQL seed data, and erase anything that may exist
-  // const sequelize = require('./connection_sequelize');
   const sequelize = require('../config/connection');
 
   //-- Grab database Table models

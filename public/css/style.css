@@ -1,0 +1,180 @@
+/* 
+    ROOT VALUES ----------------------------------------------------------------
+ */
+
+ :root {
+  
+    
+    /*
+        COLORS 
+     */
+    
+     /* ROOT colors used */
+    --color_Primary: black;
+    --color_Secondary: #4ed1c4;
+    --color_Tertiary: #F9F9F9;
+    
+
+    /* Accents to ROOT colors */
+    --accent_Primary: var(--color_Secondary);
+    --accent_Secondary: var(--color_Tertiary);
+    
+
+     
+    /*
+        NAVIGATION
+    */
+
+    --nav_Background: var(--color_Primary);
+    --nav_Font: var(--color_Tertiary);
+
+
+    /*
+        SHADOWS
+    */
+
+    --boxShadow: 0 -.5rem .5rem rgba(0,0,0,.25); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_Hover_top_black: 0 -1rem 1rem rgba(0,0,0,.5); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_bottom_accent_Primary: 0 .05rem .5rem var(--color_Primary); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_Hover_top_heavy_bottom_light: 0rem -.4rem 1rem rgba(0,0,0,.5); /* offset-x | offset-y | blur-radius | color */
+    
+    --shadow_025_black:  rgba(0,0,0,.25);
+    --shadow_1px_25a: 2px solid var(--shadow_025_black);
+
+    
+    /*
+        BORDERS
+    */
+
+
+    /*
+        PADDING
+    */
+
+
+    /*
+        BACKGROUNDS
+     */
+    --bg_Body: #F9F9F9; /* A very light shade of white gray */    
+    --bg_Section: #fefdff; /* A variation of white gray  */
+    
+    /*
+        BUTTONS    
+    */
+    --btn_bg_inactive: var(--color_Tertiary);
+    --btn_bg_active: var(--color_Primary);
+
+    --btn_txt_inactive: var(--color_Primary);
+    --btn_txt_active: #6fffe9;
+    
+    /*
+        HEADERS
+    */
+
+    
+    
+    
+ }
+
+/* 
+    BODY  and BASE CONTENT FORMATTING ------------------------------------------
+ */
+
+ html {
+    scroll-behavior: smooth;
+  }
+
+ body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg_Body);
+    font-family: Roboto, Arial, sans-serif;
+    
+    /* Prevents cursor from changing from arrow unless explicit */
+    cursor: default;
+ }
+
+ a {
+    color: var(--link);
+    text-decoration: none; /* no underline */
+ }
+
+
+h1,h2,h3,h4,h5 {
+    /* removing all default padding around headers */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 3rem;
+}
+h2 {
+    padding-top: 5rem;
+    font-weight: 450;
+    font-size: 2.5rem;
+}
+h3 {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+button {
+    /* universal button configuration */
+    /* background-color:(transparent); */
+    background-color: var(--btn_bg_inactive);
+    color: var(--btn_txt_inactive);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    min-height: 3rem;
+    height: 4rem;
+}
+
+button:hover {
+    color: var(--btn_txt_active);
+    background-color: var(--btn_bg_active);
+}
+
+.text-left {
+    /* Used to push elements around */
+    text-align: left;
+    float: left;
+} 
+.text-right {
+    /* Used to push elements around */
+    text-align: right;
+    float: right;
+}
+.icon {
+    /*used for fav icons*/
+    color: var(--accent_Primary);
+    border-bottom: var(--shadow_1px_25a);
+}
+
+/* 
+    HEADER / NAV ---------------------------------------------------------------
+ */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0 2rem;
+    background-color: var(--nav_Background);
+    color: var(--nav_Font);
+}
+
+header h1 {
+    float: left;
+    flex: 4;
+}
+
+nav {
+    font-size: 3rem;
+}
