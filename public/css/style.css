@@ -1,0 +1,102 @@
+/* 
+    ROOT VALUES ----------------------------------------------------------------
+ */
+
+ :root {
+  
+    
+    /*
+        COLORS 
+     */
+    --main-color: hotpink;
+    --secondary-color: hotpink;
+    
+    --accent_Primary: #4ed1c4;
+    --accent_Secondary: black;
+    
+    /*
+        SHADOWS
+    */
+
+    --boxShadow: 0 -.5rem .5rem rgba(0,0,0,.25); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_Hover_top_black: 0 -1rem 1rem rgba(0,0,0,.5); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_bottom_accent_Primary: 0 .05rem .5rem var(--color_Primary); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_Hover_top_heavy_bottom_light: 0rem -.4rem 1rem rgba(0,0,0,.5); /* offset-x | offset-y | blur-radius | color */
+    
+    --shadow_025_black:  rgba(0,0,0,.25);
+    --shadow_1px_25a: 2px solid var(--shadow_025_black);
+
+    
+    /*
+        BORDERS
+    */
+
+
+
+    /*
+        PADDING
+    */
+
+
+    /*
+        BACKGROUNDS
+     */
+    --bg_Body: #F9F9F9; /* A very light shade of white gray */    
+    --bg_Section: #fefdff; /* A variation of white gray  */
+    
+    /*
+        BUTTONS    
+    */
+    --btn_txt_inactive: #F9F9F9;
+    --btn_txt_active: #6fffe9;
+    
+    /*
+        HEADERS
+    */
+
+    
+    
+    
+ }
+
+/* 
+    BODY  and Base VAR ---------------------------------------------------------
+ */
+
+ body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg_Body);
+    font-family: Roboto, Arial, sans-serif;
+    
+    /* Prevents cursor from changing from arrow unless explicit */
+    cursor: default;
+ }
+
+
+ a {
+    color: var(--link);
+    text-decoration: none; /* no underline */
+  
+ }
+
+/* 
+    HEADER / NAV ---------------------------------------------------------------
+ */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0 2rem;
+    background-color: red;
+}
+
+header h1 {
+    float: left;
+    flex: 4;
+}
+
+nav {
+    font-size: 3rem;
+}
