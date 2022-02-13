@@ -37,12 +37,7 @@ router.get('/', async (req,res) => {
     console.log(err);
     res.status(500).json(err);
   }
-});
-
-router.get('/navtest', async (req,res) => {
-  res.render('navtest');
-
-});
+})
 
 //GET REQUEST FOR SINGLE CHARACTER
 router.get('/hero/:id', (req, res) => {
@@ -53,6 +48,47 @@ router.get('/hero/:id', (req, res) => {
     })
 })
 
+
+// //-- GET all KBAs for homepage
+// //TODO:: 02/10/2022 #EP | Build for KBAs
+router.get('/login', async (req, res) => {
+    try {
+      //TODO:: 02/10/2022 #EP | Build for KBAs
+      const userData = await User.findAll({ 
+        include: [
+          {
+            // model: KBA,
+            attributes: ['id', 'username'],
+          },
+        ],
+      });
+  
+      //TODO:: 02/10/2022 #EP | Build for KBAs
+      const kbas = kbaData.map((kba) =>
+        kba.get({ plain: true })
+      );
+  
+      res.render('homepage', {
+        kbas,
+        loggedIn: req.session.loggedIn,
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500)
+      .json({
+        request: {
+            method: req.method,
+            params: req.params,
+            body: req.body,
+            path: "./home-routes",
+        },
+        response: {
+            status: 404,
+            message: "Rquest failure. Page not found."
+           }
+        })
+    }
+});
 
 // Direct to Charcter creator page
 router.get('/character-creator', (req, res) => {
