@@ -4,14 +4,18 @@
 
   {{ character-alignment character }}
 
-  {{ character-raceDescription character}}
+  {{race}}
 
   {{ character-abilities character }}
 
-  {{ character-languages character}}
+  {{ character-languages character }}
 
 {{/if}}
-
+<h1>
+  {{name}}
+</h1>
+{{race}}
+{{class}}
 
 {{!-- JS for managing db com and event listeners --}}
 {{#if loggedIn}}

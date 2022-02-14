@@ -27,7 +27,7 @@ router.get('/', async (req,res) => {
         const heros = heroData.map((hero) =>
             hero.get({ plain: true })
         );
-
+        console.log(heros);
         res.render('homepage', {
             heros,
             loggedIn: req.session.loggedIn,
