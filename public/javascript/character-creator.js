@@ -71,9 +71,9 @@ const profBonusCalc = function (playerLevel) {
     return profBonus;
 };
 
-// retrieveRaceInfo(raceName);
-// retrieveClassInfo(className);
-// abilityScoresCalc();
-// modifierCalc(score);
+retrieveRaceInfo(raceName);
+retrieveClassInfo(className);
+abilityScoresCalc();
+modifierCalc(score);
 profBonusCalc(playerLevel);
 
