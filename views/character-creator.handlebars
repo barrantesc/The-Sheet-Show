@@ -1,0 +1,47 @@
+        <div class="character-creator">
+            <h1>Character Creator</h1>
+
+               <!-- Race -->
+            <label for="Race-list">Race:</label>
+            <select id="race-list" v-model="race">
+                <option value="Elf">Elf</option>
+                <option value="Dawrf">Dwarf</option>
+                <option value="Human">Human</option>
+                <option value="Orc">Orc</option>
+            </select>
+
+                <!-- gender -->
+            <label for="gender-list">Gender: </label>
+            <select id="gender-list" v-model="gender">
+                <option value="Male">Female</option>
+                <option value="Male">Male</option>
+            </select>
+
+                <!-- Class -->
+            <label for="classes-list">Classes: </label>
+            <select id="classes-list" v-model="classes">
+                <option value="Wizard">Wizard</option>
+                <option value="Rogue">Rogue</option>
+                <option value="Druid">Druid</option>
+                <option value="Fighter">Fighter</option>
+                <option value="Monk">Monk</option>
+            </select>
+
+                <!-- languages -->
+            <label for="professions-list">Languages: </label>
+            <select id="professions-list" v-model="profession">
+                <option value="Common">Common</option>
+                <option value="Dwarvish">Dwarvish</option>
+                <option value="Elvish">Elvish</option>
+                <option value="Orc">Orc</option>
+            </select>
+
+                <!-- Name -->
+            <label for="character-name">Character Name: </label>
+            <input type="text" id="character-name" v-model="name" placeholder="Enter a name" /> <br /><br />
+           
+            <p>{{name}}</p>
+            <p>{{character-info}}</p>
+        </div>
+
+        <script src="/javascript/character-creator.js"></script>

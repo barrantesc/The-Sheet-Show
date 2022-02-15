@@ -5,7 +5,7 @@ const { Model, DataTypes } = require('sequelize');
 /* 
   Pointing to seeds/connection_sequlzie because it's used by seeds to build
 */
-const sequelize = require('../seeds/connection_sequelize');
+const sequelize = require('../config/connection');
 
 //-- Password encryption
 /* 
@@ -58,11 +58,15 @@ User.init(
   {
     // events called by Sequalize based on hook chosen. HASHES PW TO BE SAVED INSTEAD OF OG
     hooks: {
-      // set up beforeCreate lifecycle "hook" functionality
+      // set up beforeCreate and before Update lifecycle "hook" functionality
       async beforeCreate(newUserData) {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
+      async beforeUpdate(updatedUserData) {
+        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        return updatedUserData;
+    }
     },
     sequelize,
     timestamps: false,
