@@ -1,0 +1,24 @@
+
+{{#if loggedIn}}
+  {{> character-info character }}
+
+  {{ character-alignment character }}
+
+  {{race}}
+
+  {{ character-abilities character }}
+
+  {{ character-languages character }}
+
+{{/if}}
+<h1>
+  {{name}}
+</h1>
+{{race}}
+{{class}}
+
+{{!-- JS for managing db com and event listeners --}}
+{{#if loggedIn}}
+  <script src="/javascript/comment.js"></script>
+  <script src="/javascript/upvote.js"></script>
+{{/if}}

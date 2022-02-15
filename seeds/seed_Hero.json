@@ -11,8 +11,8 @@
         "id": 2,
         "user_id": 2,
         "name" : "Connie",
-        "race": "Human",
-        "class": "Elf",
+        "race": "Elf",
+        "class": "Monk",
         "gender": "Female"
     },
     {
@@ -20,7 +20,7 @@
         "user_id": 3,
         "name" : "Erik",
         "race": "Drawrf",
-        "class": "Warrior",
+        "class": "Fighter",
         "gender": "Male"
     },
     {
@@ -28,7 +28,7 @@
         "user_id": 4,
         "name" : "Mary",
         "race": "Human",
-        "class": "Paladin",
+        "class": "Wizard",
         "gender": "Female"
     }
 ]
