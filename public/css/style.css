@@ -2,24 +2,20 @@
     ROOT VALUES ----------------------------------------------------------------
  */
 
- :root {
-  
-    
+:root {
     /*
         COLORS 
      */
-    
+     
      /* ROOT colors used */
     --color_Primary: black;
     --color_Secondary: #4ed1c4;
     --color_Tertiary: #F9F9F9;
     
-
     /* Accents to ROOT colors */
     --accent_Primary: var(--color_Secondary);
     --accent_Secondary: var(--color_Tertiary);
     
-
      
     /*
         NAVIGATION
@@ -74,7 +70,7 @@
     
     
     
- }
+}
 
 /* 
     BODY  and BASE CONTENT FORMATTING ------------------------------------------

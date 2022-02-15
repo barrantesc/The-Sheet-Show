@@ -1,6 +1,4 @@
 /* 
-    TODO: 02/13/2022 #EP || Modify per project needs.
-
     NOTE: Base from w3-School and made changes as needed for.
     SOURCE:    https://www.w3schools.com/howto/howto_js_fullscreen_overlay.asp
 */
@@ -51,7 +49,7 @@
     font-size: 60px;
   }
   
-  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  /* When height of screen is < 450 pixels, change font-size of links and position the close button again, so they don't overlap */
   @media screen and (max-height: 450px) {
     .overlay a {font-size: 20px}
     .overlay .closebtn {
