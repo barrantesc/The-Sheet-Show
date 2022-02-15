@@ -10,9 +10,9 @@
 {{!-- What will be in the homepage? Will it show character info, previous characters selected?  --}}
   
 <ol class="character-list">
-  {{#each character as |character|}}
+  {{#each heros as |hero|}}
     <li>
-      {{> character-info character }}
+      {{> character-details }}
     </li>
   {{/each}}
 </ol>
