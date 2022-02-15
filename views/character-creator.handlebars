@@ -5,7 +5,7 @@
         <!-- Race selection -->
         <div>
             <label for="race-selection">Race: </label>
-            <select id="race-selection" name="race-selection">
+            <select id="race-selection" name="race-selection" required>
                 <option hidden></option>
                 <option value="dragonborn">Dragonborn</option>
                 <option value="dawrf">Dwarf</option>
@@ -22,7 +22,7 @@
         <!-- Class selection -->
         <div>
             <label for="class-selection">Classes: </label>
-            <select id="class-selection" name="class-selection">
+            <select id="class-selection" name="class-selection" required>
                 <option hidden></option>
                 <option value="barbarian">Barbarian</option>
                 <option value="bard">Bard</option>
@@ -42,13 +42,14 @@
         <!-- Name input-->
         <div>
             <label for="char-name">Character Name: </label>
-            <input type="text" id="char-name" name="char-name">
+            <input type="text" id="char-name" name="char-name" required>
         </div>
 
         <!-- Gender selection -->
         <div>
             <label for="char-gender">Gender: </label>
-            <select id="char-gender" name="char-gender">
+            <select id="char-gender" name="char-gender" required>
+                <option hidden></option>
                 <option value="female">Female</option>
                 <option value="male">Male</option>
                 <option value="other">Other</option>
@@ -58,13 +59,13 @@
         <!-- Age selection -->
         <div>
             <label for="char-age">Age: </label>
-            <input type="number" name="char-age">
+            <input type="number" name="char-age" required>
         </div>
 
         <!-- Character level -->
         <div>
             <label for="char-level">Character level: </label>
-            <input type="number" name="char-level" min="1" max="20">
+            <input type="number" name="char-level" min="1" max="20" required>
 
         </div>
 
