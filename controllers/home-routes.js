@@ -69,6 +69,13 @@ router.get('/hero-images', (req, res) => {
 
 });
 
+
+//-- Character Sheet
+router.get('/character-sheet-concept', (req, res) => {
+  res.render('character-sheet-concept')
+
+});
+
 // Testing to display hero images
 router.get('/profile', withAuth, async (req, res) => {
 
