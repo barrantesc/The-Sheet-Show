@@ -60,11 +60,21 @@ router.get('/character-creator', (req, res) => {
 
 });
 
-// Direct to login-screen
+// Testing to display hero images
 router.get('/hero-images', (req, res) => {
-    res.render('hero-images')
-    
+    res.render('hero-images',{
+        loggedIn: req.session.loggedIn,
     })
+
+});
+
+// Testing to display hero images
+router.get('/profile', (req, res) => {
+    res.render('profile',{
+        loggedIn: req.session.loggedIn,
+    })
+
+});
 
 //-- if gets here when rounting, throw 404
 router.use((req, res) => {
