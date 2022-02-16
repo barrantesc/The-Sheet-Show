@@ -72,9 +72,17 @@ router.get('/hero-images', (req, res) => {
 // Testing to display hero images
 router.get('/profile', withAuth, async (req, res) => {
 
+    // if (!req.session.loggedIn) {
+    //     res.redirect('/');
+    //     return;
+    // }
+
     try {
         console.log(req.session.User)
         const heroData = await Hero.findAll({
+            where: {
+                id: req.session.user_id,
+            },
             attributes: [
                 'id',
                 'user_id',
@@ -90,9 +98,15 @@ router.get('/profile', withAuth, async (req, res) => {
                 }
             ]
         });
+
+        const heros = heroData.map((hero) =>
+            hero.get({ plain: true })
+        );
+
         res.render('profile',{
-            
+            heros,
             loggedIn: req.session.loggedIn,
+            user_id: req.session.user_id,
         })
     }
     catch (err) {

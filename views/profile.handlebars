@@ -1,7 +1,14 @@
-<div>
-    <ul id="images">
+{{#if loggedIn}}
+    <div class="heros">
+        <h1>Heros</h1>
+        {{#each heros as |hero|}}
+            {{> profile-details}}
+        {{/each}}
+    </div>
 
+    {{user_id}}
+    
+    {{!-- <ul id="images"></ul>
+    <script type="text/javascript" src="./javascript/hero-images.js"></script> --}}
+{{/if}}
 
-    </ul>
-</div>
-{{!-- <script type="text/javascript" src="./javascript/hero-images.js"></script> --}}
