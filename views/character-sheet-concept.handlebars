@@ -5,27 +5,33 @@
   <header>
     <section class="charname">
       <label for="charname">Character Name</label>
-      <input name="charname" placeholder="Jane Doe"/>
+      <input type='text' value="{{char-name}}" name="charname" placeholder="Jane Doe"/>
     </section>
     <section class="misc">
       <ul>
         <li>
-          <label for="classlevel">Class Level</label><input name="classlevel" placeholder="1" />
+          <label for="classlevel">Class Level</label>
+          <input type='text' value="{{char-level}}" name="classlevel" placeholder="1" />
         </li>
         <li>
-          <label for="background">Background</label><input name="background" placeholder="Char background" />
+          <label for="background">Background</label>
+          <input type='text' value="{{char-background}}" name="background" placeholder="Char background" />
         </li>
         <li>
-          <label for="playername">Player Name</label><input name="playername" placeholder="Your Name Here">
+          <label for="playername">Player Name</label>
+          <input type='text' value="{{username}}" name="playername" placeholder="Your Name Here">
         </li>
         <li>
-          <label for="race">Race</label><input name="race" placeholder="Human" />
+          <label for="race">Race</label>
+          <input type='text' value="{{char-race}}" name="race" placeholder="Human" />
         </li>
         <li>
-          <label for="alignment">Alignment</label><input name="alignment" placeholder="Lawful Good" />
+          <label for="alignment">Alignment</label>
+          <input type='text' value="{{char-alignment}}" name="alignment" placeholder="Lawful Good" />
         </li>
         <li>
-          <label for="experiencepoints">Experience Points</label><input name="experiencepoints" placeholder="0" />
+          <label for="experiencepoints">Experience Points</label>
+          <input type='text' value="{{char-exp}}" name="experiencepoints" placeholder="0" />
         </li>
       </ul>
     </section>
