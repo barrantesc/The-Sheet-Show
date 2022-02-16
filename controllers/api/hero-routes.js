@@ -1,12 +1,10 @@
 const router = require('express').Router();
-const { User, Hero } = require('../../models');
-const sequelize = require('../../config/connection');
+const { User, Hero, Ability } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// get all heroes - to be updated when we know all hero properties
-router.get('/', async (req, res) => {
-
-    const heros = await Hero.findAll({
+// get all heroes
+router.get('/', (req, res) => {
+    Hero.findAll({
         attributes: [
             'user_id',
             'name',
@@ -24,32 +22,21 @@ router.get('/', async (req, res) => {
             {
                 model: User,
                 attributes: ['username']
+            },
+            {
+                model: Ability,
+                attributes: [ 'name', 'score', 'modifier']
             }
         ]
     })
         .then(heroData => res.json(heroData))
         .catch(err => {
             console.log(err);
-            res
-                .status(500)
-                .json({
-                    request: {
-                        method: req.method,
-                        params: req.params,
-                        body: req.body,
-                        path: "./heros",
-                    },
-                    response: {
-                        status: 500,
-                        message: "Rquest failure. Catch Failure.",
-                        error: err
-
-                    }
-                })
+            res.status(500).json(err);
         });
 });
 
-// get single hero - to be updated when we know all hero properties
+// get single hero
 router.get('/:id', (req, res) => {
     Hero.findOne({
         where: {
@@ -72,6 +59,10 @@ router.get('/:id', (req, res) => {
             {
                 model: User,
                 attributes: ['username']
+            },
+            {
+                model: Ability,
+                attributes: [ 'name', 'score', 'modifier']
             }
         ]
     })
@@ -90,7 +81,7 @@ router.get('/:id', (req, res) => {
         });
 });
 
-// create hero  - to be updated when we know all hero properties
+// create hero
 router.post('/', withAuth, (req, res) => {
     Hero.create({
         user_id: req.body.user_id,
@@ -113,7 +104,7 @@ router.post('/', withAuth, (req, res) => {
         });
 });
 
-// updated existing hero - to be updated when we know all hero properties
+//updated existing hero
 router.put('/:id', withAuth, (req, res) => {
     Hero.update({
         name: req.body.name,
