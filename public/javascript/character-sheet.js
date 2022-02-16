@@ -11,11 +11,11 @@ let request = {
         type: "character",
         id: "${234nk32lo}", //will be randomly generated/come from hero model
         attributes: {
-            name: "", //this information will pull from the hero model
-            gender: "",
-            race: "",
-            class: "",
-            age: ""
+            name: "MaryMarg", //this information will pull from the hero model
+            gender: "female",
+            race: "Ork",
+            class: "Alchemist",
+            age: "40"
         }
     }
 };
