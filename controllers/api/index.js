@@ -3,13 +3,12 @@ const router = require('express').Router();
 // connect to User and Hero routes
 const userRoutes = require('./user-routes');
 const heroRoutes = require('./hero-routes');
+const abilityRoutes = require('./ability-routes');
 
 // use user and hero routes
 router.use('/users', userRoutes);
 router.use('/heroes', heroRoutes);
-
-
-
+router.use('/abilities', abilityRoutes);
 
 //-- if gets here when rounting, throw 404
 router.use((req, res) => {
@@ -23,13 +22,11 @@ router.use((req, res) => {
       },
       response: {
         status: 404,
-        message: "API rquest failure. Page not found."
+        message: "API request failure. Page not found."
   
       }
     }).end();
     
   });
-
-
 
 module.exports = router;
