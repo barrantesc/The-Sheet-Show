@@ -81,7 +81,7 @@ router.get('/profile', withAuth, async (req, res) => {
         console.log(req.session.User)
         const heroData = await Hero.findAll({
             where: {
-                id: req.session.user_id,
+                user_id: req.session.user_id,
             },
             attributes: [
                 'id',
@@ -91,12 +91,6 @@ router.get('/profile', withAuth, async (req, res) => {
                 'class',
                 'gender'
             ],
-            include : [
-                {
-                    model: User,
-                    attributes: ['id', 'username'],
-                }
-            ]
         });
 
         const heros = heroData.map((hero) =>
@@ -106,7 +100,7 @@ router.get('/profile', withAuth, async (req, res) => {
         res.render('profile',{
             heros,
             loggedIn: req.session.loggedIn,
-            user_id: req.session.user_id,
+            username: req.session.username,
         })
     }
     catch (err) {
