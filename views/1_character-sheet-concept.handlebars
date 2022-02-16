@@ -37,11 +37,9 @@
     </section>
   </header>
 
-
   <main>
     <section>
-      <section class="attributes"> 
-        {{!-- cHARACTER sCORES --}}
+      <section class="attributes">
         <div class="scores">
           <ul>
             <li>
@@ -91,17 +89,16 @@
             </li>
           </ul>
         </div>
-
         
         <div class="attr-applications">
-           <div class="inspiration box">
+          <div class="inspiration box">
             <div class="label-container">
               <label for="inspiration">Inspiration</label>
             </div>
-            <input type='checkbox' value="{{char-insp}}" name="inspiration" />
+            <input type='text' value="{{char-insp}}" name="inspiration" type="checkbox" />
           </div>
+
           
-          {{!-- PROF BONUSES --}}
           <div class="proficiencybonus box">
             <div class="label-container">
               <label for="proficiencybonus">Proficiency Bonus</label>
@@ -119,7 +116,7 @@
               </li>
               <li>
                 <label for="Dexterity-save">Dexterity</label>
-                <input type="text" value="{{char-dex-save}}"" name="Dexterity-save" placeholder="+0" " />
+                <input type="text" value="{{char-dex-save}} name="Dexterity-save" placeholder="+0" " />
                 <input type='checkbox' value="{{char-dex-save-prof}}" name="Dexterity-save-prof" />
               </li>
               <li>
