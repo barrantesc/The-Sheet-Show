@@ -1,33 +1,53 @@
-<form class="login-form">
-  <div>
-    <label for="email-login">email:</label>
-    <input type="text" id="email-login" />
-  </div>
-  <div>
-    <label for="password-login">password:</label>
-    <input type="password" id="password-login" />
-  </div>
-  <div>
-    <button type="submit">login</button>
-  </div>
-</form>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-<form class="signup-form">
-  <div>
-    <label for="username-signup">username:</label>
-    <input type="text" id="username-signup" />
-  </div>
-  <div>
-    <label for="email-signup">email:</label>
-    <input type="text" id="email-signup" />
-  </div>
-  <div>
-    <label for="password-signup">password:</label>
-    <input type="password" id="password-signup" />
-  </div>
-  <div>
-    <button type="submit">signup</button>
-  </div>
-</form>
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="sidenav">
+         <div class="login-main-text">
+            {{!-- <h2>Application<br> Login Page</h2> --}}
+            <h2>Login or register to access.</h2>
+         </div>
+      </div>
+      <div class="main">
+         <div class="col-md-6 col-sm-12">
+            <div >
+               <form class="login-form">
+                  <div class="form-group">
+                     <label>Email</label>
+                     <input type="text" class="form-control" placeholder="User Name" id="email-login">
+                  </div>
+                  <div class="form-group">
+                     <label>Password</label>
+                     <input type="password" class="form-control" placeholder="Password" id="password-login">
+                  </div>
+                  <button type="submit" class="btn btn-black">Login</button>
+                
+               </form>
+
+               <form class="signup-form">
+                 <div class="form-group">
+                     <label>Username</label>
+                     <input type="text" class="form-control" placeholder="Username" id="username-signup">
+                  </div>
+                  <div class="form-group">
+                     <label>Email</label>
+                     <input type="text" class="form-control" placeholder="Email" id="email-signup">
+                  </div>
+                  <div class="form-group">
+                     <label>Password</label>
+                     <input type="password" class="form-control" placeholder="Password" id="password-signup">
+                  </div>
+                  
+                  <button type="submit" class="btn btn-secondary">SignUp</button>
+               </form>
+            </div>
+         </div>
+      </div>
+      
+
+  
 
 <script src="/javascript/login.js"></script>
