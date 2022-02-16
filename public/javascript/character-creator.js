@@ -76,4 +76,3 @@ const profBonusCalc = function (playerLevel) {
 // abilityScoresCalc();
 // modifierCalc(score);
 profBonusCalc(playerLevel);
-
