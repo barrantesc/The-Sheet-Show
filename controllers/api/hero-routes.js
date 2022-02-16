@@ -5,10 +5,20 @@ const withAuth = require('../../utils/auth');
 
 // get all heroes - to be updated when we know all hero properties
 router.get('/', async (req, res) => {
-    
+
     const heros = await Hero.findAll({
         attributes: [
-            'id', 'name', 'race', 'class', 'gender'
+            'user_id',
+            'name',
+            'race',
+            'class',
+            'gender',
+            'age',
+            'proficiency_bonus',
+            'alignment',
+            'languages',
+            'proficiencies',
+            'image_link'
         ],
         include: [
             {
@@ -17,26 +27,26 @@ router.get('/', async (req, res) => {
             }
         ]
     })
-    .then(heroData => res.json(heroData))
-    .catch(err => {
-        console.log(err);
-        res
-            .status(500)
-            .json({
-                request: {
-                    method: req.method,
-                    params: req.params,
-                    body: req.body,
-                    path: "./heros",
-                },
-                response: {
-                    status: 500,
-                    message: "Rquest failure. Catch Failure.",
-                    error: err
+        .then(heroData => res.json(heroData))
+        .catch(err => {
+            console.log(err);
+            res
+                .status(500)
+                .json({
+                    request: {
+                        method: req.method,
+                        params: req.params,
+                        body: req.body,
+                        path: "./heros",
+                    },
+                    response: {
+                        status: 500,
+                        message: "Rquest failure. Catch Failure.",
+                        error: err
 
-                }
-            })
-    });
+                    }
+                })
+        });
 });
 
 // get single hero - to be updated when we know all hero properties
@@ -46,7 +56,17 @@ router.get('/:id', (req, res) => {
             id: req.params.id
         },
         attributes: [
-            'id', 'name', 'race', 'class', 'gender'
+            'user_id',
+            'name',
+            'race',
+            'class',
+            'gender',
+            'age',
+            'proficiency_bonus',
+            'alignment',
+            'languages',
+            'proficiencies',
+            'image_link'
         ],
         include: [
             {
@@ -77,7 +97,14 @@ router.post('/', withAuth, (req, res) => {
         name: req.body.name,
         race: req.body.race,
         class: req.body.class,
-        gender: req.body.gender
+        gender: req.body.gender,
+        age: req.body.age,
+        player_level: req.body.player_level,
+        proficiency_bonus: req.body.proficiency_bonus,
+        alignment: req.body.alignment,
+        languages: req.body.languages,
+        proficiencies: req.body.proficiencies,
+        image_link: req.body.image_link
     })
         .then(heroData => res.json(heroData))
         .catch(err => {
@@ -90,9 +117,9 @@ router.post('/', withAuth, (req, res) => {
 router.put('/:id', withAuth, (req, res) => {
     Hero.update({
         name: req.body.name,
-        race: req.body.race,
-        class: req.body.class,
-        gender: req.body.gender
+        gender: req.body.gender,
+        age: req.body.age,
+        player_level: req.body.player_level
     },
         {
             where: {

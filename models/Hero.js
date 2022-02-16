@@ -47,6 +47,29 @@ Hero.init(
     gender: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    age: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    player_level: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    proficiency_bonus: {
+      type: DataTypes.INTEGER
+    },
+    alignment: {
+      type: DataTypes.STRING(300),
+    },
+    languages: {
+      type: DataTypes.STRING(100),
+    },
+    proficiencies: {
+      type: DataTypes.STRING(100),
+    },
+    image_link: {
+      type: DataTypes.STRING
     }
   },
   {
