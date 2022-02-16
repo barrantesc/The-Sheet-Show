@@ -115,6 +115,7 @@ router.delete('/:id', withAuth, (req, res) => {
 
 // login 
 router.post('/login', (req, res) => {
+    
     try{
         User.findOne({
             where: {
@@ -141,6 +142,7 @@ router.post('/login', (req, res) => {
                     req.session.user_id = userData.id;
                     req.session.username = userData.username;
                     req.session.loggedIn = true;
+                    
                     res.json(userData);
                 });
             })
