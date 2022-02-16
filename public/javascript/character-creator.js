@@ -77,8 +77,6 @@
     abilityScoresCalc();
     modifierCalc(score);
     profBonusCalc(playerLevel);
-=======
-};
 
 // Retrieve selected class info
 
