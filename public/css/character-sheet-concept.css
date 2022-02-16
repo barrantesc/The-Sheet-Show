@@ -82,7 +82,7 @@ form.charsheet div.textblock label {
     }
     form.charsheet header {
     display: flex;
-    align-contents: stretch;
+    align-content: stretch;
     align-items: stretch;
     }
     form.charsheet header section.charname {
@@ -325,6 +325,7 @@ form.charsheet div.textblock label {
     form.charsheet main section.combat > div.armorclass > div label, form.charsheet main section.combat > div.initiative > div label, form.charsheet main section.combat > div.speed > div label {
     font-size: 8px;
     width: 50px;
+    color: #000;
     border: 1px solid black;
     border-top: 0;
     background-color: white;
