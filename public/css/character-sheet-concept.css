@@ -359,7 +359,7 @@ form.charsheet div.textblock label {
     form.charsheet main section.combat > div.hp > div.regular > div.max label {
     font-size: 10px;
     text-transform: none;
-    color: #bbb;
+    color: #000;
     }
     form.charsheet main section.combat > div.hp > div.regular > div.max input {
     width: 40%;
@@ -429,7 +429,7 @@ form.charsheet div.textblock label {
     }
     form.charsheet main section.combat > div.hitdice > div > div.total label {
     font-size: 10px;
-    color: #bbb;
+    color: #000;
     margin: 0.25em;
     text-transform: none;
     }
@@ -523,7 +523,7 @@ form.charsheet div.textblock label {
     }
     form.charsheet main section.attacksandspellcasting > div > table th {
     font-size: 10px;
-    color: #ddd;
+    color: #000;
     }
     form.charsheet main section.attacksandspellcasting > div > table input {
     width: calc(100% - 4px);
