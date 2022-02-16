@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Hero } = require('../models');
+const withAuth = require('../utils/auth');
 
 
 //GET request to show all characters and include their usernames
@@ -69,10 +70,35 @@ router.get('/hero-images', (req, res) => {
 });
 
 // Testing to display hero images
-router.get('/profile', (req, res) => {
-    res.render('profile',{
-        loggedIn: req.session.loggedIn,
-    })
+router.get('/profile', withAuth, async (req, res) => {
+
+    try {
+        console.log(req.session.User)
+        const heroData = await Hero.findAll({
+            attributes: [
+                'id',
+                'user_id',
+                'name',
+                'race',
+                'class',
+                'gender'
+            ],
+            include : [
+                {
+                    model: User,
+                    attributes: ['id', 'username'],
+                }
+            ]
+        });
+        res.render('profile',{
+            
+            loggedIn: req.session.loggedIn,
+        })
+    }
+    catch (err) {
+        // console.log(err);
+        res.status(500).json(String(err));
+      }
 
 });
 
