@@ -89,38 +89,51 @@
             </li>
           </ul>
         </div>
+        {{!-- INSPIRATION BOX --}}
         <div class="attr-applications">
           <div class="inspiration box">
             <div class="label-container">
               <label for="inspiration">Inspiration</label>
             </div>
-            <input name="inspiration" type="checkbox" />
+            <input type='text' value="{{char-insp}}" name="inspiration" type="checkbox" />
           </div>
           <div class="proficiencybonus box">
             <div class="label-container">
               <label for="proficiencybonus">Proficiency Bonus</label>
             </div>
-            <input name="proficiencybonus" placeholder="+2" />
+            <input type='text' value="{{char-prof-bonus}}" name="proficiencybonus" placeholder="+2" />
           </div>
           <div class="saves list-section box">
             <ul>
               <li>
-                <label for="Strength-save">Strength</label><input name="Strength-save" placeholder="+0" type="text" /><input name="Strength-save-prof" type="checkbox" />
+                <label for="Strength-save">Strength</label>
+                <input type='text' value="{{char-str-save}}" name="Strength-save" placeholder="+0" />
+                <input type="checkbox" value="{{char-str-save-prof}} name="Strength-save-prof" "/>
               </li>
               <li>
-                <label for="Dexterity-save">Dexterity</label><input name="Dexterity-save" placeholder="+0" type="text" /><input name="Dexterity-save-prof" type="checkbox" />
+                <label for="Dexterity-save">Dexterity</label>
+                <input type="text" value="{{char-dex-save}} name="Dexterity-save" placeholder="+0" " />
+                <input type='checkbox' value="{{char-dex-save-prof}}" name="Dexterity-save-prof" />
               </li>
               <li>
-                <label for="Constitution-save">Constitution</label><input name="Constitution-save" placeholder="+0" type="text" /><input name="Constitution-save-prof" type="checkbox" />
+                <label for="Constitution-save">Constitution</label>
+                <input type='text' value="{{char-con-save}}" name="Constitution-save" placeholder="+0" />
+                <input type='checkbox' value="{{char-con-save-prof}}" name="Constitution-save-prof" />
               </li>
               <li>
-                <label for="Wisdom-save">Wisdom</label><input name="Wisdom-save" placeholder="+0" type="text" /><input name="Wisdom-save-prof" type="checkbox" />
+                <label for="Wisdom-save">Wisdom</label>
+                <input type='text' value="{{char-wis-save}}" name="Wisdom-save" placeholder="+0" />
+                <input type='checkbox' value="{{char-wis-save-prof}}"name="Wisdom-save-prof" />
               </li>
               <li>
-                <label for="Intelligence-save">Intelligence</label><input name="Intelligence-save" placeholder="+0" type="text" /><input name="Intelligence-save-prof" type="checkbox" />
+                <label for="Intelligence-save">Intelligence</label>
+                <input type='text' value="{{char-int-save}}" name="Intelligence-save" placeholder="+0" />
+                <input type='checkbox' value="{{char-int-save-prof}}" name="Intelligence-save-prof" />
               </li>
               <li>
-                <label for="Charisma-save">Charisma</label><input name="Charisma-save" placeholder="+0" type="text" /><input name="Charisma-save-prof" type="checkbox" />
+                <label for="Charisma-save">Charisma</label>
+                <input type='text' value="{{char-cha-save}}" name="Charisma-save" placeholder="+0" />
+                <input type='checkbox' value="{{char-con-save}}" name="Charisma-save-prof" />
               </li>
             </ul>
             <div class="label">
