@@ -6,6 +6,7 @@ const withAuth = require('../../utils/auth');
 router.get('/', (req, res) => {
     Hero.findAll({
         attributes: [
+            'id',
             'user_id',
             'name',
             'race',
@@ -43,6 +44,7 @@ router.get('/:id', (req, res) => {
             id: req.params.id
         },
         attributes: [
+            'id',
             'user_id',
             'name',
             'race',
