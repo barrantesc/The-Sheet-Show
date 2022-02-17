@@ -71,8 +71,8 @@ router.get('/hero-images', (req, res) => {
 
 
 //-- Character Sheet
-router.get('/character-sheet-concept', (req, res) => {
-  res.render('character-sheet-concept')
+router.get('/character-sheet-template', (req, res) => {
+  res.render('character-sheet-template')
 
 });
 

@@ -79,7 +79,7 @@
   }
   form.charsheet header {
     display: flex;
-    align-contents: stretch;
+    align-content: stretch;
     align-items: stretch;
   }
   form.charsheet header section.charname {
@@ -102,6 +102,7 @@
   }
   form.charsheet header section.charname label {
     padding-left: 1em;
+    color: black;
   }
   form.charsheet header section.misc {
     width: 70%;
