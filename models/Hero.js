@@ -60,7 +60,7 @@ Hero.init(
       type: DataTypes.INTEGER
     },
     alignment: {
-      type: DataTypes.STRING(300),
+      type: DataTypes.STRING(1000),
     },
     languages: {
       type: DataTypes.STRING(100),
