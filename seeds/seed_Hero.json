@@ -5,7 +5,14 @@
         "name" : "Christina",
         "race": "Human",
         "class": "Ranger",
-        "gender": "Female"
+        "gender": "Female",
+        "age" : 20,
+        "player_level" : 1,
+        "proficiency_bonus" : 1,
+        "alignment" : "Neutral Good",
+        "languages" : "Common",
+        "proficiencies" : "",
+        "image_link": ""
     },
     {
         "id": 2,
@@ -13,7 +20,14 @@
         "name" : "Connie",
         "race": "Elf",
         "class": "Monk",
-        "gender": "Female"
+        "gender": "Female",
+        "age" : 20,
+        "player_level" : 1,
+        "proficiency_bonus" : 1,
+        "alignment" : "Neutral Good",
+        "languages" : "Common",
+        "proficiencies" : "",
+        "image_link": ""
     },
     {
         "id": 3,
@@ -21,7 +35,14 @@
         "name" : "Erik",
         "race": "Drawrf",
         "class": "Fighter",
-        "gender": "Male"
+        "gender": "Male",
+        "age" : 20,
+        "player_level" : 1,
+        "proficiency_bonus" : 1,
+        "alignment" : "Neutral Good",
+        "languages" : "Common",
+        "proficiencies" : "",
+        "image_link": ""
     },
     {
         "id": 4,
@@ -29,6 +50,13 @@
         "name" : "Mary",
         "race": "Human",
         "class": "Wizard",
-        "gender": "Female"
+        "gender": "Female",
+        "age" : 20,
+        "player_level" : 1,
+        "proficiency_bonus" : 1,
+        "alignment" : "Neutral Good",
+        "languages" : "Common",
+        "proficiencies" : "",
+        "image_link": ""
     }
 ]

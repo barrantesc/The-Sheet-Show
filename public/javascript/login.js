@@ -12,7 +12,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      alert('Login Success.');
+      // alert('Login Success.');
       document.location.replace('/');
     } else {
       alert('Failed to log in.');
