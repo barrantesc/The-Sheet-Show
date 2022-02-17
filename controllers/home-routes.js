@@ -57,7 +57,9 @@ res.render('login')
 
 // Direct to Charcter creator page
 router.get('/character-creator', (req, res) => {
-  res.render('character-creator')
+  res.render('character-creator', {
+    loggedIn: req.session.loggedIn,
+  })
 
 });
 
