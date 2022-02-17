@@ -19,7 +19,7 @@ Our team (Erik Plachta, Connie Barrantes, Christiana Morales, Mary Margaret Lawt
  - JawsDB
 1. To start, we built out Handlebars, our models (Hero, User), and controllers. We also verified that everything was working as expected before moving forward.
 2. Next, we worked on bugs we encountered, finishing touches, and improving the overall functionality.
-3. Lastly, we worked on the style and images and closing out github issues we didn't need.
+3. Lastly, we worked on the style, images and closing out the remaining github issues.
 
 ## What challenges did we face?
 Our main challenge was working on the different files and connecting them to each other. Thankfully we used class time to get a pulse on where we stood and had steps to complete and move forward before the next class time. Everyone having different strengths and weaknesses was great because for the most part we got to work on things we wanted to, and learn with our group members on things we weren't as strong in.
