@@ -1,12 +1,30 @@
-{{#if loggedIn}}
-    <div class="heros">
-        <h1>{{username}}'s Heros</h1>
-        {{#each heros as |hero|}}
-            {{> profile-details}}
-        {{/each}}
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    {{#if loggedIn}}
+        <div class="heros">
+            <p>{{username}}'s Heroes</p>
+            {{#each heros as |hero|}}
+                {{> profile-details}}
+            {{/each}}
+        </div>
     
-    {{!-- <ul id="images"></ul>
-    <script type="text/javascript" src="./javascript/hero-images.js"></script> --}}
-{{/if}}
+    {{/if}}
 
+
+      <script src="/javascript/navigation.js"></script>
+  {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    <script src="/javascript/character.js"></script>
+  {{/if}}
+</body>
+</html>

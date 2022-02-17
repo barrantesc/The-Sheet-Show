@@ -84,7 +84,7 @@ router.get('/:id', (req, res) => {
 // create hero
 router.post('/', withAuth, (req, res) => {
     Hero.create({
-        user_id: req.body.user_id,
+        user_id: req.session.user_id,
         name: req.body.name,
         race: req.body.race,
         class: req.body.class,
