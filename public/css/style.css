@@ -196,6 +196,32 @@ p {
     background-color: white;
 }
 
+/*----------------------------------------------------------------------------*/
+
+/* SECTION on Homepage holding characters */
+.character-list{
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* The DIV that holds the character-details.handlebars content */
+.hero-card {
+    margin: 1rem;
+    padding: 0;
+    flex: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    border: black solid 4px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+
 .heros p {
     background-color: white;
     border: 3px solid black;
@@ -204,14 +230,17 @@ p {
     font-weight: bold;
 }
 
-
-/* CHARACTER FORM STYLING */
-
-.character-list{
-    width: 100%;
+/* SPAN within hero-card DIV */
+.hero {
+    
 }
 
-.hero, .character-creator {
+/* -- LINK around hero that goes to char sheet */
+.hero a{
+    /* NONE ATM */
+}
+
+.character-creator {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -222,20 +251,6 @@ p {
     border-radius: 5px;
     background-color: white;
 }
-.hero a{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:50%;
-    padding: 15px 20px;
-    margin: 50px auto;
-    /* border: black solid 4px; */
-    border-radius: 5px;
-    background-color: white;
-
-}
-
 
 .hero-img {
     width: 50%;
