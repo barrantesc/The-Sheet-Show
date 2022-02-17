@@ -268,39 +268,47 @@
       <section class="combat">
         <div class="armorclass">
           <div>
-            <label for="ac">Armor Class</label><input name="ac" placeholder="10" type="text" />
+            <label for="ac">Armor Class</label>
+            <input type="text" value="{{char-ac}}" name="ac" placeholder="10" />
           </div>
         </div>
         <div class="initiative">
           <div>
-            <label for="initiative">Initiative</label><input name="initiative" placeholder="+0" type="text" />
+            <label for="initiative">Initiative</label>
+            <input type="text" value="{{char-initiative}}" name="initiative" placeholder="+0" />
           </div>
         </div>
         <div class="speed">
           <div>
-            <label for="speed">Speed</label><input name="speed" placeholder="30" type="text" />
+            <label for="speed">Speed</label>
+            <input type="text" value="{{char-speed}}" name="speed" placeholder="30" />
           </div>
         </div>
         <div class="hp">
           <div class="regular">
             <div class="max">
-              <label for="maxhp">Hit Point Maximum</label><input name="maxhp" placeholder="10" type="text" />
+              <label for="maxhp">Hit Point Maximum</label>
+              <input type="text" value="{{char-maxhp}}" name="maxhp" placeholder="10" />
             </div>
             <div class="current">
-              <label for="currenthp">Current Hit Points</label><input name="currenthp" type="text" />
+              <label for="currenthp">Current Hit Points</label>
+              <input type="text" value="{{char-currenthp}}" name="currenthp" />
             </div>
           </div>
           <div class="temporary">
-            <label for="temphp">Temporary Hit Points</label><input name="temphp" type="text" />
+            <label for="temphp">Temporary Hit Points</label>
+            <input type="text" value="{{char-temphp}}" name="temphp" />
           </div>
         </div>
         <div class="hitdice">
           <div>
             <div class="total">
-              <label onclick="totalhd_clicked()" for="totalhd">Total</label><input name="totalhd" placeholder="2d10" type="text" />
+              <label onclick="totalhd_clicked()" for="totalhd">Total</label>
+              <input type="text" value="{{char-totalhd}}" name="totalhd" placeholder="2d10" />
             </div>
             <div class="remaining">
-              <label for="remaininghd">Hit Dice</label><input name="remaininghd" type="text" />
+              <label for="remaininghd">Hit Dice</label>
+              <input type="text" value="{{char-remaininghd}}" name="remaininghd" />
             </div>
           </div>
         </div>
@@ -313,9 +321,9 @@
               <div class="deathsuccesses">
                 <label>Successes</label>
                 <div class="bubbles">
-                  <input name="deathsuccess1" type="checkbox" />
-                  <input name="deathsuccess2" type="checkbox" />
-                  <input name="deathsuccess3" type="checkbox" />
+                  <input value="{{char-deathsuccess1}}" name="deathsuccess1" type="checkbox" />
+                  <input value="{{char-deathsuccess2}}" name="deathsuccess2" type="checkbox" />
+                  <input value="{{char-deathsuccess3}}" name="deathsuccess3" type="checkbox" />
                 </div>
               </div>
               <div class="deathfails">
