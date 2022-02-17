@@ -166,7 +166,7 @@ button:hover {
 header {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin: 0;
     padding: 0 2rem;
     background-color: var(--nav_Background);

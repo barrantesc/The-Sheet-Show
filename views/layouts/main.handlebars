@@ -42,6 +42,18 @@
         }
 
 
+        .nav-logo,
+        .nav-logo img {
+          height: 100%;
+          filter: brightness(120%); 
+          max-height: 70px;
+          float: left;
+           transition: 0.1s;
+        }
+
+
+
+        .nav-logo img:hover,
         nav .nav-hamburger:hover,
         nav .nav-hamburger:focus,
         .nav-overlay a:hover,
@@ -64,11 +76,11 @@
 <body>
   <div class="wrapper">
     <header>
-      <h1>
-        <a href="/">
-        <img src="/assets/logos/white_text/Long_horizontal_white.png" alt="The Sheet Show logo" height="70">
-        </a>
-      </h1>
+      
+      <a class='nav-logo' href="/">
+        <img src="/assets/logos/white_text/Long_horizontal_white.png" alt="The Sheet Show logo">
+      </a>
+      
       <nav>
         <span class="nav-hamburger" onclick="openNav()">☰</span>
 
