@@ -181,7 +181,20 @@ router.get('/profile', withAuth, async (req, res) => {
                 'name',
                 'race',
                 'class',
-                'gender'
+                'gender',
+                "id",
+                "user_id",
+                "name",
+                "race",
+                "class",
+                "gender",
+                "age",
+                "player_level",
+                "proficiency_bonus",
+                "alignment",
+                "languages",
+                "proficiencies",
+                "image_link",
             ],
         });
 
