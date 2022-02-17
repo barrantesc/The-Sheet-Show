@@ -203,3 +203,30 @@ p {
     margin: 0px;
     font-weight: bold;
 }
+
+
+/* CHARACTER FORM STYLING */
+
+.character-creator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    padding: 15px 20px;
+    margin: 50px auto;
+    border: black solid 4px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.character-creator select {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.character-creator input {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
