@@ -95,9 +95,6 @@ const randomFromArray = function (array, n) {
     return newArr.join(" ");
 }
 
-// abilityScoresCalc();
-// modifierCalc(score);
-
 // take user input from character creator form to turn into object to generate a character and save to database
 async function newCharFormHandler(event) {
     event.preventDefault();
@@ -110,35 +107,44 @@ async function newCharFormHandler(event) {
     const age = document.querySelector('#char-age').valueAsNumber;
     const player_level = document.querySelector('#char-level').valueAsNumber;
     const proficiency_bonus = profBonusCalc(document.querySelector('#char-level').valueAsNumber);
+    const image_link = `./assets/images/race_${race}.PNG`;
 
     // info retrieved from api/races based on user input
     const raceInfo = await retrieveRaceInfo(document.querySelector('#char-race').value);
     const alignment = raceInfo.alignment;
     const langString = stringFromArray(raceInfo.languages);
+        // need to also retrieve ability bonuses, add them to ability scores, and calculate modifiers and find a way to create 6 Ability objects to be stored in db that are linked to this Hero object through hero_id
 
     // info retrieved from api/classes based on user input
     const classInfo = await retrieveClassInfo(document.querySelector('#char-class').value);
     const profString = randomFromArray(classInfo.prof_array, classInfo.choice_number);
 
-    // const title = document.querySelector('input[name="post-title"]').value;
-    // const post_url = document.querySelector('input[name="post-url"]').value;
+    const response = await fetch('api/heroes', {
+        method: 'POST', 
+        body: JSON.stringify({
+            name,
+            race,
+            class: char_class,
+            gender,
+            age,
+            player_level,
+            proficiency_bonus,
+            alignment,
+            languages: langString,
+            proficiencies: profString,
+            image_link
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
 
-    // const response = await fetch('api/posts', {
-    //     method: 'POST', 
-    //     body: JSON.stringify({
-    //         title,
-    //         post_url
-    //     }),
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     }
-    // });
-
-    // if (response.ok) {
-    //     document.location.replace('/dashboard');
-    // } else {
-    //     alert(response.statusText);
-    // }
+    if (response.ok) {
+        console.log("it worked!")
+        // document.location.replace('/');
+    } else {
+        alert(response.statusText);
+    }
 };
 
 document.querySelector('#character-form').addEventListener('submit', newCharFormHandler);
