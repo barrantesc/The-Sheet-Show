@@ -3,9 +3,11 @@
     
     {{!-- top bar --}}
     <section class="hero-banner">
-      <div class="hero-name">
+      <div class="hero-name-sheet">
           <span class="name">{{name}}</span>
-          <span class="character-sheet"><img src="/assets/images/"></span>
+          <a href="/character-sheet/{{id}}">
+            <img class="sheet" src="/assets/images/logo_32x32.png" title="Open Character Sheet" />
+          </a>
       </div>
       <div class="hero-level-class">
         <span class="level">Level {{player_level}}</span>
@@ -14,7 +16,7 @@
     </section>
 
   
-  <a href="/character-sheet/{{id}}">
+  
     <img class="hero-img" src="{{image_link}}">
   </a>
   {{!-- Under image --}}
@@ -32,36 +34,17 @@
       <span class="spacer"></span>
       <span class="age">{{age}} years old</span>
     </section>
+
+    <section class="hero-banner">
+      <span class="alignment">{{alignment}}</span>
+      <span class="gender">{{gender}}</span>
+      <span class="spacer"></span>
+      <span class="age">{{age}} years old</span>
+    </section>
   
   
-  <div>
-      
-      
-      <span class="proficiency_bonus">proficiency_bonus: {{proficiency_bonus}}</span>
-      <span class="alignment">alignment: {{alignment}}</span>
-      <span class="languages">languages: {{languages}}</span>
-      <span class="proficiencies">proficiencies: {{proficiencies}}</span>
-    
-    </div>
+  
         {{!-- <div>
           Character ID: {{id}} - User ID: {{user_id}}
         </div> --}}
-  </a>        
-   <header>
-    
-    <section class="misc">
-      
-        <li>
-          <label for="alignment">Alignment</label>
-          <input type='text' value="{{alignment}}" name="alignment" placeholder="Lawful Good" />
-        </li>
-        <li>
-          <label for="experiencepoints">Experience Points</label>
-          <input type='text' value="{{exp}}" name="experiencepoints" placeholder="0" />
-        </li>
-      </ul>
-    </section>
-  </header>
-</span>
-
-
+  
