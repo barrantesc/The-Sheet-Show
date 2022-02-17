@@ -1,22 +1,23 @@
-<span id="{{id}}" class="hero">
-  <a href="/character-sheet/{{id}}">  
+<a href="/character-sheet/{{id}}">  
+  <span id="{{id}}" class="hero">
+  
     
     {{!-- top bar --}}
     <section class="hero-banner">
       <div class="hero-name-sheet">
           <span class="name">{{name}}</span>
-          <a href="/character-sheet/{{id}}">
+          {{!-- <a href="/character-sheet/{{id}}"> --}}
             <img class="sheet" src="/assets/logos/logo_32x32.png" title="Open Character Sheet" />
-          </a>
+          {{!-- </a> --}}
       </div>
       <div class="hero-level-class">
         <span class="level">Level {{player_level}}</span>
         <span class="class">{{class}}</span>
       </div>
     </section>
-  {{!-- IMAGE --}}
-    <img class="hero-img" src="{{image_link}}">
-  {{!-- UNDER IMAGE --}}
+    {{!-- IMAGE --}}
+      <img class="hero-img" src="{{image_link}}">
+    {{!-- UNDER IMAGE --}}
     <section class="hero-stats">
       <span class="race">{{race}}</span>
       <span class="spacer"></span>
@@ -35,12 +36,5 @@
     <section class="hero-proficiencies">
       <span class="proficiencies">{{proficiencies}}</span>
     </section>
-  </a>
-</span>
-  
-  
-  
-        {{!-- <div>
-          Character ID: {{id}} - User ID: {{user_id}}
-        </div> --}}
-  
+  </span>
+</a>
