@@ -224,6 +224,9 @@ p {
     border-radius: 5px;
     background-color: white;
 }
+.hero-card a {
+    width: 100%;
+}
 
 .hero-banner {
     display: flex;
