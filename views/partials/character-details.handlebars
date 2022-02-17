@@ -1,32 +1,36 @@
 
 
 
-  <div id="{{id}}" class="hero">
-    
-    <h3>
-      {{name}}
-    </h3>
-      {{#if img_link}}
-        <img src="{{image_link}}">
-      {{/if}}
-      
-      <ul>
-        <li class="gender">gender: {{gender}}</li>
-        <li class="race">race: {{race}}</li>
-        <li class="class">class: {{class}}</li>
-        <li class="race">race: {{race}}</li>
-        <li class="age">age: {{age}}</li>
-        <li class="player_level">player_level: {{player_level}}</li>
-        <li class="proficiency_bonus">proficiency_bonus: {{proficiency_bonus}}</li>
-        <li class="alignment">alignment: {{alignment}}</li>
-        <li class="languages">languages: {{languages}}</li>
-        <li class="proficiencies">proficiencies: {{proficiencies}}</li>
-      </ul>
-    <div>
-      Character ID: {{id}} - User ID: {{user_id}}
-    </div>
-    
-  </div>
+  
 
+<a href="/character-sheet/{{id}}">
 
+  <span id="{{id}}" class="hero">
+        
+        <h3>
+          {{name}}
+        </h3>
+          {{!-- {{#if img_link}} --}}
+            <img src="{{image_link}}">
+          {{!-- {{/if}} --}}
+          
+          <ul>
+            <li class="gender">gender: {{gender}}</li>
+            <li class="race">race: {{race}}</li>
+            <li class="class">class: {{class}}</li>
+            <li class="race">race: {{race}}</li>
+            <li class="age">age: {{age}}</li>
+            <li class="player_level">player_level: {{player_level}}</li>
+            <li class="proficiency_bonus">proficiency_bonus: {{proficiency_bonus}}</li>
+            <li class="alignment">alignment: {{alignment}}</li>
+            <li class="languages">languages: {{languages}}</li>
+            <li class="proficiencies">proficiencies: {{proficiencies}}</li>
+          </ul>
+        <div>
+          Character ID: {{id}} - User ID: {{user_id}}
+        </div>
+        
+  </span>
+
+</a>
 

@@ -207,7 +207,11 @@ p {
 
 /* CHARACTER FORM STYLING */
 
-.character-creator {
+.character-list{
+    width: 100%;
+}
+
+.hero, .character-creator {
     display: flex;
     justify-content: center;
     align-items: center;
