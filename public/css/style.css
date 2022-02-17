@@ -222,6 +222,25 @@ p {
     border-radius: 5px;
     background-color: white;
 }
+.hero a{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    padding: 15px 20px;
+    margin: 50px auto;
+    /* border: black solid 4px; */
+    border-radius: 5px;
+    background-color: white;
+
+}
+
+
+.hero-img {
+    width: 50%;
+    flex: 10%;
+}
 
 .character-creator select {
     width: 100%;
