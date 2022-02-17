@@ -1,0 +1,11 @@
+
+{{#if loggedIn}}
+
+    <div class="character-sheet">
+        <h1>{{username}}'s Heros</h1>
+        {{#each heros as |hero|}}
+            {{> character-sheet-template }}
+        {{/each}}
+    </div>
+{{/if}}
+
