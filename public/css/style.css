@@ -158,7 +158,7 @@ button:hover {
 }
 
 /* 
-    HEADER / NAV ---------------------------------------------------------------
+    HEADER / NAV / BODY  ---------------------------------------------------------------
  */
 header {
     display: flex;
@@ -177,4 +177,17 @@ header h1 {
 
 nav {
     font-size: 3rem;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color_Primary);
+    margin: 300px 0;
+    padding: 20px;
+    font-size: 20px;
+    border: 4px solid black;
+    border-radius: 5px;
+    text-align: center;
 }
