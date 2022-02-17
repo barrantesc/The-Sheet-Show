@@ -1,6 +1,10 @@
 
-<ol class="character-list">
+<section class="character-list">
   {{#each heros as |hero|}}
-      {{> character-details }}
+      
+      <div class="hero-card">
+        {{> character-details }}
+      </div>
   {{/each}}
-</ol>
+</section>
+

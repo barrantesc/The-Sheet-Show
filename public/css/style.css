@@ -196,22 +196,106 @@ p {
     background-color: white;
 }
 
-.heros p {
-    background-color: white;
-    border: 3px solid black;
-    border-radius: 4px;
-    margin: 0px;
-    font-weight: bold;
+/*----------------------------------------------------------------------------*/
+/* CHARACTER DETAILS - HOMEPAGE & PROFILE */
+
+/* SECTION on Homepage holding characters */
+.character-list{
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: row;
+    justify-content: center;
 }
 
+/* The DIV that holds the character-details.handlebars content */
+.hero-card {
+    margin: 1rem;
+    padding: 0;
+    flex: 25%;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    border: black solid 4px;
+    border-radius: 5px;
+    background-color: white;
+}
 
-/* CHARACTER FORM STYLING */
-
-.character-list{
+.hero-banner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* padding: 1rem; */
     width: 100%;
 }
 
-.hero, .character-creator {
+.hero-name-sheet {
+    
+    font-weight: 400;
+    font-size: 1.5rem;
+    background-color: black;
+    color: white;
+    flex: 100%;
+    padding: .25rem 2rem;
+}
+.hero-name-sheet .name {
+    float: center;
+    
+}
+.hero-name-sheet .sheet {
+    float: right;    
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.hero-name-sheet .sheet:hover {
+    /* filter: brightness(120%); */
+    filter: brightness(120%) saturate(120%);
+    transform: scale(1.1);
+}
+
+.hero-level-class{
+    flex: 100%;
+    justify-content: space-between;
+    padding: .5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.hero-stats{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: transparent;
+    font-weight: 400;
+    font-size: 1.25rem;
+    padding: 1rem;
+}
+
+.hero-stats span.spacer:before{
+
+        content:"\00a0 ";
+    
+
+}
+
+/* SPAN within hero-card DIV */
+.hero {
+    
+}
+
+/* -- LINK around hero that goes to char sheet */
+.hero a{
+    /* NONE ATM */
+}
+
+.character-creator {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -222,25 +306,26 @@ p {
     border-radius: 5px;
     background-color: white;
 }
-.hero a{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:50%;
-    padding: 15px 20px;
-    margin: 50px auto;
-    /* border: black solid 4px; */
-    border-radius: 5px;
-    background-color: white;
-
-}
-
 
 .hero-img {
-    width: 50%;
-    flex: 10%;
+    width: 100%;
+    /* height: 50%; */
+    max-height: 394.077px;
+    max-width: 232.756px;
+    
 }
+
+/* Used for header */
+.profile-banner-username p {
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 4px;
+    margin: 0px;
+    font-weight: bold;
+}
+
+/*----------------------------------------------------------------------------*/
+/* CHARACTER CREATOR  */
 
 .character-creator select {
     width: 100%;
@@ -253,3 +338,9 @@ p {
     margin-bottom: 15px;
     border-radius: 5px;
 }
+
+
+/*----------------------------------------------------------------------------*/
+/* MEDIA TYPES  */
+
+/* TODO:: 02/17/2022 #EP || Add Media Types! */

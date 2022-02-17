@@ -1,39 +1,44 @@
-
-
-
-  
-
 <span id="{{id}}" class="hero">
-  <a href="/character-sheet/{{id}}">
-        {{!-- <span> --}}
-          <h3>
-            {{name}}
-          </h3>
-        {{!-- </span> --}}
-          {{!-- {{#if img_link}} --}}
-            
-          {{!-- {{/if}} --}}
-        
-            <img class="hero-img" src="{{image_link}}">
-          <span>
-          
-            <ul>
-              <li class="gender">gender: {{gender}}</li>
-              <li class="race">race: {{race}}</li>
-              <li class="class">class: {{class}}</li>
-              <li class="race">race: {{race}}</li>
-              <li class="age">age: {{age}}</li>
-              <li class="player_level">player_level: {{player_level}}</li>
-              <li class="proficiency_bonus">proficiency_bonus: {{proficiency_bonus}}</li>
-              <li class="alignment">alignment: {{alignment}}</li>
-              <li class="languages">languages: {{languages}}</li>
-              <li class="proficiencies">proficiencies: {{proficiencies}}</li>
-            </ul>
-            </span>
+  {{!-- <a href="/character-sheet/{{id}}">   --}}
+    
+    {{!-- top bar --}}
+    <section class="hero-banner">
+      <div class="hero-name-sheet">
+          <span class="name">{{name}}</span>
+          <a href="/character-sheet/{{id}}">
+            <img class="sheet" src="/assets/logos/logo_32x32.png" title="Open Character Sheet" />
+          </a>
+      </div>
+      <div class="hero-level-class">
+        <span class="level">Level {{player_level}}</span>
+        <span class="class">{{class}}</span>
+      </div>
+    </section>
+  {{!-- IMAGE --}}
+    <img class="hero-img" src="{{image_link}}">
+  {{!-- UNDER IMAGE --}}
+    <section class="hero-stats">
+      <span class="race">{{race}}</span>
+      <span class="spacer"></span>
+      <span class="gender">{{gender}}</span>
+      <span class="spacer"></span>
+      <span class="age">{{age}} years old.</span>
+      <span class="spacer"></span>
+    </section>
+    <section class="hero-flavor">
+      <span class="alignment">{{name}}'s alignment is {{alignment}}.</span>
+    </section>
+
+
+    {{!-- Background --}}
+
+    <section class="hero-proficiencies">
+      <span class="proficiencies">{{proficiencies}}</span>
+    </section>
+  
+  
+  
         {{!-- <div>
           Character ID: {{id}} - User ID: {{user_id}}
         </div> --}}
-  </a>        
-</span>
-
-
+  
