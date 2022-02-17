@@ -1,0 +1,459 @@
+
+<link rel="stylesheet" href="./css/character-sheet-template.css">
+<form class="charsheet">
+  {{!-- Sheet Header --}}
+  <header>
+    <section class="charname">
+      <label for="charname">Character Name</label>
+      <input type='text' value="{{char-name}}" name="charname" placeholder="Jane Doe"/>
+    </section>
+    <section class="misc">
+      <ul>
+        <li>
+          <label for="classlevel">Class Level</label>
+          <input type='text' value="{{char-level}}" name="classlevel" placeholder="1" />
+        </li>
+        <li>
+          <label for="background">Background</label>
+          <input type='text' value="{{char-background}}" name="background" placeholder="Char background" />
+        </li>
+        <li>
+          <label for="playername">Player Name</label>
+          <input type='text' value="{{username}}" name="playername" placeholder="Your Name Here" />
+        </li>
+        <li>
+          <label for="race">Race</label>
+          <input type='text' value="{{char-race}}" name="race" placeholder="Human" />
+        </li>
+        <li>
+          <label for="alignment">Alignment</label>
+          <input type='text' value="{{char-alignment}}" name="alignment" placeholder="Lawful Good" />
+        </li>
+        <li>
+          <label for="experiencepoints">Experience Points</label>
+          <input type='text' value="{{char-exp}}" name="experiencepoints" placeholder="0" />
+        </li>
+      </ul>
+    </section>
+  </header>
+
+
+  <main>
+    <section>
+      <section class="attributes"> 
+        {{!-- cHARACTER sCORES --}}
+        <div class="scores">
+          <ul>
+            <li>
+              <div class="score">
+                <label for="Strengthscore">STR</label>
+                <input type='text' value="{{char-str}}"name="Strengthscore" placeholder="10" class="stat"/>
+              </div>
+              <div class="modifier">
+                <input type='text' value="{{char-str-mod}}" name="Strengthmod" placeholder="+0" class="statmod"/>
+              </div>
+            </li>
+            <li>
+              <div class="score">
+                <label for="Dexterityscore">DEX</label>
+                <input type='text' value="{{char-dex}}" name="Dexterityscore" placeholder="10" class="stat"/>
+              </div>
+              <div class="modifier">
+                <input type='text' value="{{char-dex-mod}}" name="Dexteritymod" placeholder="+0" class="statmod"/>
+              </div>
+            </li>
+            <li>
+              <div class="score">
+                <label for="Constitutionscore">CON</label>
+                <input type='text' value="{{char-con}}" name="Constitutionscore" placeholder="10" class="stat"/>
+              </div>
+              <div class="modifier">
+                <input type='text' value="{{char-con-mod}}" name="Constitutionmod" placeholder="+0" class="statmod"/>
+              </div>
+            </li>
+            <li>
+              <div class="score">
+                <label for="Intelligencescore">INT</styl>
+                <input type='text' value="{{char-int}}" name="Intelligencescore" placeholder="10" class="stat"/>
+              </div>
+              <div class="modifier">
+                <input type='text' value="{{char-int-mod}}" name="Intelligencemod" placeholder="+0" class="statmod"/>
+              </div>
+            </li>
+            <li>
+              <div class="score">
+                <label for="Charismascore">CHA</label>
+                <input type='text' value="{{char-cha}}" name="Charismascore" placeholder="10" class="stat"/>
+              </div>
+              <div class="modifier">
+                <input type='text' value="{{char-cha-mod}} "name="Charismamod" placeholder="+0" class="statmod"/>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        
+        <div class="attr-applications">
+           <div class="inspiration box">
+            <div class="label-container">
+              <label for="inspiration">Inspiration</label>
+            </div>
+            <input type='checkbox' value="{{char-insp}}" name="inspiration" placeholder="+2"/>
+          </div>
+          
+          {{!-- PROF BONUSES --}}
+          <div class="proficiencybonus box">
+            <div class="label-container">
+              <label for="proficiencybonus">Proficiency Bonus</label>
+            </div>
+            <input type='text' value="{{char-prof-bonus}}" name="proficiencybonus" placeholder="+2" />
+          </div>
+
+          
+          <div class="saves list-section box">
+            <ul>
+              <li>
+                <label for="Strength-save">Strength</label>
+                <input type='text' value="{{char-str-save}}" name="Strength-save" placeholder="+0" />
+                <input type="checkbox" value="{{char-str-save-prof}} name="Strength-save-prof" "/>
+              </li>
+              <li>
+                <label for="Dexterity-save">Dexterity</label>
+                <input type="text" value="{{char-dex-save}}"" name="Dexterity-save" placeholder="+0" " />
+                <input type='checkbox' value="{{char-dex-save-prof}}" name="Dexterity-save-prof" />
+              </li>
+              <li>
+                <label for="Constitution-save">Constitution</label>
+                <input type='text' value="{{char-con-save}}" name="Constitution-save" placeholder="+0" />
+                <input type='checkbox' value="{{char-con-save-prof}}" name="Constitution-save-prof" />
+              </li>
+              <li>
+                <label for="Wisdom-save">Wisdom</label>
+                <input type='text' value="{{char-wis-save}}" name="Wisdom-save" placeholder="+0" />
+                <input type='checkbox' value="{{char-wis-save-prof}}"name="Wisdom-save-prof" />
+              </li>
+              <li>
+                <label for="Intelligence-save">Intelligence</label>
+                <input type='text' value="{{char-int-save}}" name="Intelligence-save" placeholder="+0" />
+                <input type='checkbox' value="{{char-int-save-prof}}" name="Intelligence-save-prof" />
+              </li>
+              <li>
+                <label for="Charisma-save">Charisma</label>
+                <input type='text' value="{{char-cha-save}}" name="Charisma-save" placeholder="+0" />
+                <input type='checkbox' value="{{char-con-save}}" name="Charisma-save-prof" />
+              </li>
+            </ul>
+            <div class="label">
+              Saving Throws
+            </div>
+          </div>
+
+          
+          <div class="skills list-section box">
+            <ul>
+              <li>
+                <label for="Acrobatics">Acrobatics <span class="skill">(Dex)</span></label>
+                <input type='text' value="{{char-acrobatics}}" name="Acrobatics" placeholder="+0" />
+                <input type='checkbox' value="{{char-acrobatics-prof}}" name="Acrobatics-prof" />
+              </li>
+              <li>
+                <label for="Animal Handling">Animal Handling <span class="skill">(Wis)</span></label>
+                <input type='text' value="{{char-animal-handling}}" name="Animal Handling" placeholder="+0" />
+                <input type='checkbox' value="{{char-animal-handling-porf}}" name="Animal Handling-prof" />
+              </li>
+              <li>
+                <label for="Arcana">Arcana <span class="skill">(Int)</span></label>
+                <input type='text' value="{{char-arcana}}" name="Arcana" placeholder="+0" />
+                <input type='checkbox' value="{{char-arcana-prof}}"  name="Arcana-prof" />
+              </li>
+              <li>
+                {{!-- TODO:: 02/16/2022 #EP || LEFT OFF HERE --}}
+                <label for="Athletics">Athletics <span class="skill">(Str)</span></label>
+                <input type='text' value="{{char-athletics}}" name="Athletics" placeholder="+0" />
+                <input type="checkbox" value="{{char-athletics-prof}}" name="Athletics-prof" />
+              </li>
+              <li>
+                <label for="Deception">Deception <span class="skill">(Cha)</span></label>
+                <input type='text' value="{{char-deception}}" name="Deception" placeholder="+0" />
+                <input type="checkbox"  value="{{char-deception-prof}}" name="Deception-prof" />
+              </li>
+              <li>
+                <label for="History">History <span class="skill">(Int)</span></label>
+                <input type='text' value="{{char-history}}" name="History" placeholder="+0" />
+                <input type="checkbox" value="{{char-history-prof}}" name="History-prof" />
+              </li>
+              <li>
+                <label for="Insight">Insight <span class="skill">(Wis)</span></label>
+                <input type='text' value="{{char-insight}}"  name="Insight" placeholder="+0" />
+                <input type="checkbox" value="{{char-insight-prof}}" name="Insight-prof"  />
+              </li>
+              <li>
+                <label for="Intimidation">Intimidation <span class="skill">(Cha)</span></label>
+                <input type='text' value="{{char-insight}}" name="Intimidation" placeholder="+0" />
+                <input type='checkbox' value="{{char-insight}}" name="Intimidation-prof" />
+              </li>
+              <li>
+                <label for="Investigation">Investigation <span class="skill">(Int)</span></label>
+                <input type='text' value="{{char-investigation}}" name="Investigation" placeholder="+0" />
+                <input type="checkbox"  value="{{char-investigation-prof}}" name="Investigation-prof"/>
+              </li>
+              <li>
+                <label for="Medicine">Medicine <span class="skill">(Wis)</span></label>
+                <input  type="text" value="{{char-medicine}}" name="Medicine" placeholder="+0" />
+                <input  type="checkbox" value="{{char-medicine-prof}}" name="Medicine-prof" />
+              </li>
+              <li>
+                <label for="Nature">Nature <span class="skill">(Int)</span></label>
+                <input type='text' value="{{char-nature}}" name="Nature" placeholder="+0" />
+                <input  type="checkbox" value="{{char-nature-prof}}" name="Nature-prof" />
+              </li>
+              <li>
+                <label for="Perception">Perception <span class="skill">(Wis)</span></label>
+                <input type='text' value="{{char-perception}}" name="Perception" placeholder="+0" />
+                <input type="checkbox" value="{{char-perception-prof}}"  name="Perception-prof" />
+              </li>
+              <li>
+                <label for="Performance">Performance <span class="skill">(Cha)</span></label>
+                <input type="text" value="{{char-performance}}" name="Performance" placeholder="+0"/>
+                <input type="checkbox" value="{{char-performance-prof}}" name="Performance-prof" />
+              </li>
+              <li>
+                <label for="Persuasion">Persuasion <span class="skill">(Cha)</span></label>
+                 <input type="text" value="{{char-persuasion}}" name="Persuasion" placeholder="+0" />
+                <input type="checkbox" value="{{char-persuasion-prof}}" name="Persuasion-prof" />
+              </li>
+              <li>
+                <label for="Religion">Religion <span class="skill">(Int)</span></label>
+                <input type="text" value="{{char-religion}}" name="Religion" placeholder="+0" />
+                <input type="checkbox" value="{{char-religion-prof}}" name="Religion-prof" />
+              </li>
+              <li>
+                <label for="Sleight of Hand">Sleight of Hand <span class="skill">(Dex)</span></label>
+                <input type="text" value="{{char-sleightofhand}}" name="Sleight of Hand" placeholder="+0" />
+                <input type="checkbox" value="{{char-sleightofhand-prof}}" name="Sleight of Hand-prof" />
+              </li>
+              <li>
+                <label for="Stealth">Stealth <span class="skill">(Dex)</span></label>
+                <input type="text" value="{{char-stealth}}" name="Stealth" placeholder="+0"/>
+                <input type="checkbox" value="{{char-stealth-prof}}" name="Stealth-prof" />
+              </li>
+              <li>
+                <label for="Survival">Survival <span class="skill">(Wis)</span></label>
+                <input type="text" value="{{char-survival}}" name="Survival" placeholder="+0" />
+                <input type="checkbox" value="{{char-survival-prof}}" name="Survival-prof" />
+              </li>
+            </ul>
+            <div class="label">
+              Skills
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="passive-perception box">
+        <div class="label-container">
+          <label for="passiveperception">Passive Wisdom (Perception)</label>
+        </div>
+        <input type="text" value="{{char-passiveperception}}" name="passiveperception" placeholder="10" />
+      </div>
+      <div class="otherprofs box textblock">
+        <label for="otherprofs">Other Proficiencies and Languages</label>
+        <textarea name="otherprofs">{{char-otherprofs}}</textarea>
+      </div>
+    </section>
+    {{!-- COLUMN 1 --> END --}}
+
+    {{!-- COLUMN 2 --> START --}}
+    <section>
+      <section class="combat">
+        <div class="armorclass">
+          <div>
+            <label for="ac">Armor Class</label>
+            <input type="text" value="{{char-ac}}" name="ac" placeholder="10" />
+          </div>
+        </div>
+        <div class="initiative">
+          <div>
+            <label for="initiative">Initiative</label>
+            <input type="text" value="{{char-initiative}}" name="initiative" placeholder="+0" />
+          </div>
+        </div>
+        <div class="speed">
+          <div>
+            <label for="speed">Speed</label>
+            <input type="text" value="{{char-speed}}" name="speed" placeholder="30" />
+          </div>
+        </div>
+        <div class="hp">
+          <div class="regular">
+            <div class="max">
+              <label for="maxhp">Hit Point Maximum</label>
+              <input type="text" value="{{char-maxhp}}" name="maxhp" placeholder="10" />
+            </div>
+            <div class="current">
+              <label for="currenthp">Current Hit Points</label>
+              <input type="text" value="{{char-currenthp}}" name="currenthp" />
+            </div>
+          </div>
+          <div class="temporary">
+            <label for="temphp">Temporary Hit Points</label>
+            <input type="text" value="{{char-temphp}}" name="temphp" />
+          </div>
+        </div>
+        <div class="hitdice">
+          <div>
+            <div class="total">
+              <label onclick="totalhd_clicked()" for="totalhd">Total</label>
+              <input type="text" value="{{char-totalhd}}" name="totalhd" placeholder="2d10" />
+            </div>
+            <div class="remaining">
+              <label for="remaininghd">Hit Dice</label>
+              <input type="text" value="{{char-remaininghd}}" name="remaininghd" />
+            </div>
+          </div>
+        </div>
+        <div class="deathsaves">
+          <div>
+            <div class="label">
+              <label>Death Saves</label>
+            </div>
+            <div class="marks">
+              <div class="deathsuccesses">
+                <label>Successes</label>
+                <div class="bubbles">
+                  <input value="{{char-deathsuccess1}}" name="deathsuccess1" type="checkbox" />
+                  <input value="{{char-deathsuccess2}}" name="deathsuccess2" type="checkbox" />
+                  <input value="{{char-deathsuccess3}}" name="deathsuccess3" type="checkbox" />
+                </div>
+              </div>
+              <div class="deathfails">
+                <label>Failures</label>
+                <div class="bubbles">
+                  <input value="{{char-deathfail1}}" name="deathfail1" type="checkbox" />
+                  <input value="{{char-deathfail2}}" name="deathfail2" type="checkbox" />
+                  <input value="{{char-deathfail3}}" name="deathfail3" type="checkbox" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="attacksandspellcasting">
+        <div>
+          <label>Attacks & Spellcasting</label>
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Name
+                </th>
+                <th>
+                  Atk Bonus
+                </th>
+                <th>
+                  Damage/Type
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <input value="{{char-atkname1}}" name="atkname1" type="text" />
+                </td>
+                <td>
+                  <input value="{{char-atkbonus1}}" name="atkbonus1" type="text" />
+                </td>
+                <td>
+                  <input value="{{char-atkdamage1}}" name="atkdamage1" type="text" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input value="{{char-atkname2}}" name="atkname2" type="text" />
+                </td>
+                <td>
+                  <input value="{{char-atkbonus2}}" name="atkbonus2" type="text" />
+                </td>
+                <td>
+                  <input value="{{char-atkdamage2}}" name="atkdamage2" type="text" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input value="{{char-atkname3}}" name="atkname3" type="text" />
+                </td>
+                <td>
+                  <input value="{{char-atkbonus3}}" name="atkbonus3" type="text" />
+                </td>
+                <td>
+                  <input value="{{char-atkdamage3}}" name="atkdamage3" type="text" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <textarea></textarea>
+        </div>
+      </section>
+      <section class="equipment">
+        <div>
+          <label>Equipment</label>
+          <div class="money">
+            <ul>
+              <li>
+                <label for="cp">cp</label>
+                <input value="{{char-cp}}" name="cp" />
+              </li>
+              <li>
+                <label for="sp">sp</label>
+                <input value="{{char-sp}}" name="sp" />
+              </li>
+              <li>
+                <label for="ep">ep</label>
+                <input value="{{char-ep}}" name="ep" />
+              </li>
+              <li>
+                <label for="gp">gp</label>
+                <input value="{{char-gp}}" name="gp" />
+              </li>
+              <li>
+                <label for="pp">pp</label>
+                <input value="{{char-pp}}" name="pp" />
+              </li>
+            </ul>
+          </div>
+          <textarea placeholder="Equipment list here">{{char-equipmentlist}}</textarea>
+        </div>
+      </section>
+    </section>
+    {{!-- COLUMN 3 --}}
+    <section>
+      <section class="flavor">
+        <div class="personality">
+          <label for="personality">Personality</label>
+          <textarea name="personality">{{char-personality}}</textarea>
+        </div>
+        <div class="ideals">
+          <label for="ideals">Ideals</label>
+          <textarea name="ideals">{{char-ideals}}</textarea>
+        </div>
+        <div class="bonds">
+          <label for="bonds">Bonds</label>
+          <textarea name="bonds">{{char-bonds}}</textarea>
+        </div>
+        <div class="flaws">
+          <label for="flaws">Flaws</label>
+          <textarea name="flaws">{{char-flaws}}</textarea>
+        </div>
+      </section>
+      <section class="features">
+        <div>
+          <label for="features">Features & Traits</label>
+          <textarea name="features">{{char-features}}</textarea>
+        </div>
+      </section>
+    </section>
+  </main>
+</form>
+
+{{!-- Ability to edit char sheet manually --}}
+<script src="./js/character-sheet-template.js"></script>
