@@ -1,0 +1,12 @@
+{{#if loggedIn}}
+    <div class="heros">
+        <h1>{{username}}'s Heros</h1>
+        {{#each heros as |hero|}}
+            {{> profile-details}}
+        {{/each}}
+    </div>
+    
+    {{!-- <ul id="images"></ul>
+    <script type="text/javascript" src="./javascript/hero-images.js"></script> --}}
+{{/if}}
+

@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Hero } = require('../models');
+const withAuth = require('../utils/auth');
 
 
 //GET request to show all characters and include their usernames
@@ -60,11 +61,54 @@ router.get('/character-creator', (req, res) => {
 
 });
 
-// Direct to login-screen
+// Testing to display hero images
 router.get('/hero-images', (req, res) => {
-    res.render('hero-images')
-    
+    res.render('hero-images',{
+        loggedIn: req.session.loggedIn,
     })
+
+});
+
+// Testing to display hero images
+router.get('/profile', withAuth, async (req, res) => {
+
+    // if (!req.session.loggedIn) {
+    //     res.redirect('/');
+    //     return;
+    // }
+
+    try {
+        console.log(req.session.User)
+        const heroData = await Hero.findAll({
+            where: {
+                user_id: req.session.user_id,
+            },
+            attributes: [
+                'id',
+                'user_id',
+                'name',
+                'race',
+                'class',
+                'gender'
+            ],
+        });
+
+        const heros = heroData.map((hero) =>
+            hero.get({ plain: true })
+        );
+
+        res.render('profile',{
+            heros,
+            loggedIn: req.session.loggedIn,
+            username: req.session.username,
+        })
+    }
+    catch (err) {
+        // console.log(err);
+        res.status(500).json(String(err));
+      }
+
+});
 
 //-- if gets here when rounting, throw 404
 router.use((req, res) => {

@@ -86,12 +86,20 @@
 
           <!-- Overlay content when hit nav button -->
           <div class="overlay-content">
+             <a href="/">Home</a>
              {{#if loggedIn}}
-              {{!-- <a href="/dashboard">dashboard</a> --}}
-              <button id="logout" class="btn-no-style">logout</button>
+              
+              <a id="My Characters" href="/profile">My Characters</a>
+              <a id="My Characters" href="/character-creator">Create New Character</a>
+              <a id="logout" href="/">logout</a>  
+
             {{else}}
               <a href="/login">login</a>
             {{/if}}
+            <hr>
+            <a href="https://github.com/barrantesc/The-Sheet-Show" target="_blank">
+              About
+            </a>
           </div>
 
         </div>
@@ -104,7 +112,7 @@
       {{{ body }}}
     </main>
     <footer>
-      Thanks for visiting!
+      {{!-- Thanks for visiting! --}}
     </footer>
   </div>
   <script src="/javascript/navigation.js"></script>

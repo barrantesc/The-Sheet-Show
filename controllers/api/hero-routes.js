@@ -1,57 +1,68 @@
 const router = require('express').Router();
-const { User, Hero } = require('../../models');
-const sequelize = require('../../config/connection');
+const { User, Hero, Ability } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// get all heroes - to be updated when we know all hero properties
-router.get('/', async (req, res) => {
-    
-    const heros = await Hero.findAll({
+// get all heroes
+router.get('/', (req, res) => {
+    Hero.findAll({
         attributes: [
-            'id', 'name', 'race', 'class', 'gender'
+            'user_id',
+            'name',
+            'race',
+            'class',
+            'gender',
+            'age',
+            'proficiency_bonus',
+            'alignment',
+            'languages',
+            'proficiencies',
+            'image_link'
         ],
         include: [
             {
                 model: User,
                 attributes: ['username']
+            },
+            {
+                model: Ability,
+                attributes: [ 'name', 'score', 'modifier']
             }
         ]
     })
-    .then(heroData => res.json(heroData))
-    .catch(err => {
-        console.log(err);
-        res
-            .status(500)
-            .json({
-                request: {
-                    method: req.method,
-                    params: req.params,
-                    body: req.body,
-                    path: "./heros",
-                },
-                response: {
-                    status: 500,
-                    message: "Rquest failure. Catch Failure.",
-                    error: err
-
-                }
-            })
-    });
+        .then(heroData => res.json(heroData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
-// get single hero - to be updated when we know all hero properties
+// get single hero
 router.get('/:id', (req, res) => {
     Hero.findOne({
         where: {
             id: req.params.id
         },
         attributes: [
-            'id', 'name', 'race', 'class', 'gender'
+            'user_id',
+            'name',
+            'race',
+            'class',
+            'gender',
+            'age',
+            'proficiency_bonus',
+            'alignment',
+            'languages',
+            'proficiencies',
+            'image_link'
         ],
         include: [
             {
                 model: User,
                 attributes: ['username']
+            },
+            {
+                model: Ability,
+                attributes: [ 'name', 'score', 'modifier']
             }
         ]
     })
@@ -70,14 +81,21 @@ router.get('/:id', (req, res) => {
         });
 });
 
-// create hero  - to be updated when we know all hero properties
+// create hero
 router.post('/', withAuth, (req, res) => {
     Hero.create({
         user_id: req.body.user_id,
         name: req.body.name,
         race: req.body.race,
         class: req.body.class,
-        gender: req.body.gender
+        gender: req.body.gender,
+        age: req.body.age,
+        player_level: req.body.player_level,
+        proficiency_bonus: req.body.proficiency_bonus,
+        alignment: req.body.alignment,
+        languages: req.body.languages,
+        proficiencies: req.body.proficiencies,
+        image_link: req.body.image_link
     })
         .then(heroData => res.json(heroData))
         .catch(err => {
@@ -86,13 +104,13 @@ router.post('/', withAuth, (req, res) => {
         });
 });
 
-// updated existing hero - to be updated when we know all hero properties
+//updated existing hero
 router.put('/:id', withAuth, (req, res) => {
     Hero.update({
         name: req.body.name,
-        race: req.body.race,
-        class: req.body.class,
-        gender: req.body.gender
+        gender: req.body.gender,
+        age: req.body.age,
+        player_level: req.body.player_level
     },
         {
             where: {

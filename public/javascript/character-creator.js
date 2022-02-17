@@ -51,7 +51,7 @@ const abilityScoresCalc = function () {
     // takes ability score, subtracts 10, divides by 2, rounds up to nearest integer
 
     // temporary variable to test modifier calculator
-let score = 15;
+let score = 13;
 
 const modifierCalc = function (score) {
     const modifier = Math.ceil((score - 10) / 2);
