@@ -119,6 +119,61 @@ router.get('/profile', withAuth, async (req, res) => {
 
 });
 
+// Testing to display hero images
+router.get('/test-edit', withAuth, async (req, res) => {
+
+    // if (!req.session.loggedIn) {
+    //     res.redirect('/');
+    //     return;
+    // }
+
+    try {
+        console.log(req.session.User)
+        const heroData = await Hero.findAll({
+            where: {
+                user_id: req.session.user_id,
+            },
+            attributes: [
+                'id',
+                'user_id',
+                'name',
+                'race',
+                'class',
+                'gender',
+                "id",
+                "user_id",
+                "name",
+                "race",
+                "class",
+                "gender",
+                "age",
+                "player_level",
+                "proficiency_bonus",
+                "alignment",
+                "languages",
+                "proficiencies",
+                "image_link",
+            ],
+        });
+
+        const heros = heroData.map((hero) =>
+            hero.get({ plain: true })
+        );
+
+        res.render('TEST_edit-my-characters',{
+            heros,
+            loggedIn: req.session.loggedIn,
+            username: req.session.username,
+        })
+    }
+    catch (err) {
+        // console.log(err);
+        res.status(500).json(String(err));
+      }
+
+});
+
+
 //-- if gets here when rounting, throw 404
 router.use((req, res) => {
     res
