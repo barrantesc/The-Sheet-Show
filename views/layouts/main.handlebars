@@ -56,6 +56,9 @@
           -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
         }
 
+        .nav-logo img:hover {
+          transform: scale(1.01);
+        }
 
 
         .nav-logo img:hover,
@@ -66,6 +69,12 @@
           color: #f1f1f1;
           cursor: pointer;
           filter: brightness(120%) saturate(120%);
+        }
+
+        nav .nav-hamburger:hover,
+        nav .nav-hamburger:focus,
+        .nav-overlay a:hover,
+        .nav-overlay a:focus {
           transform: scale(1.1);
         }
 
