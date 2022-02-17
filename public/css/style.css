@@ -260,20 +260,20 @@ p {
     font-weight: 600;
 }
 
-.hero-race-gender-age{
+.hero-stats{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     background: transparent;
     font-weight: 400;
     font-size: 1.25rem;
     padding: 1rem;
 }
 
-.hero-banner span.spacer:before{
+.hero-stats span.spacer:before{
 
-        content:"• ";
+        content:"\00a0 ";
     
 
 }

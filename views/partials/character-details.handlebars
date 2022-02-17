@@ -14,32 +14,26 @@
         <span class="class">{{class}}</span>
       </div>
     </section>
-
-  
-  
+  {{!-- IMAGE --}}
     <img class="hero-img" src="{{image_link}}">
-  </a>
-  {{!-- Under image --}}
-    <section class="hero-race-gender-age">
+  {{!-- UNDER IMAGE --}}
+    <section class="hero-stats">
       <span class="race">{{race}}</span>
+      <span class="spacer"></span>
       <span class="gender">{{gender}}</span>
-      <span class="age">{{age}} years old</span>
+      <span class="spacer"></span>
+      <span class="age">{{age}} years old.</span>
+      <span class="spacer"></span>
+    </section>
+    <section class="hero-flavor">
+      <span class="alignment">Has a {{alignment}} alignment</span>
     </section>
 
 
     {{!-- Background --}}
-    <section class="hero-banner">
-      <span class="background">{{race}}</span>
-      <span class="gender">{{gender}}</span>
-      <span class="spacer"></span>
-      <span class="age">{{age}} years old</span>
-    </section>
 
-    <section class="hero-banner">
-      <span class="alignment">{{alignment}}</span>
-      <span class="gender">{{gender}}</span>
-      <span class="spacer"></span>
-      <span class="age">{{age}} years old</span>
+    <section class="hero-proficiencies">
+      <span class="proficiencies">{{proficiencies}}</span>
     </section>
   
   
