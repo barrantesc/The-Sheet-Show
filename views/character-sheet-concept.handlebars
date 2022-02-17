@@ -254,10 +254,11 @@
         <div class="label-container">
           <label for="passiveperception">Passive Wisdom (Perception)</label>
         </div>
-        <input name="passiveperception" placeholder="10" />
+        <input type="text" value="{{char-passiveperception}}" name="passiveperception" placeholder="10" />
       </div>
       <div class="otherprofs box textblock">
-        <label for="otherprofs">Other Proficiencies and Languages</label><textarea name="otherprofs"></textarea>
+        <label for="otherprofs">Other Proficiencies and Languages</label>
+        <textarea name="otherprofs">{{char-otherprofs}}</textarea>
       </div>
     </section>
     {{!-- COLUMN 1 --> END --}}
