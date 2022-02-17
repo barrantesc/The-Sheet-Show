@@ -41,8 +41,11 @@
           transition: 0.3s;
         }
 
-        .nav-overlay a:hover, .nav-overlay a:focus {
+        .nav-hamburger,
+        .nav-overlay a:hover,
+        .nav-overlay a:focus {
           color: #f1f1f1;
+          cursor: pointer;
         }
 
         .nav-overlay .closebtn {
@@ -63,7 +66,7 @@
         </a>
       </h1>
       <nav>
-        <span onclick="openNav()">☰</span>
+        <span class="nav-hamburger" onclick="openNav()">☰</span>
 
         {{!-- The Naviagational nav-overlay --}}
         <div id="myNav" class="nav-overlay">
