@@ -329,9 +329,9 @@
               <div class="deathfails">
                 <label>Failures</label>
                 <div class="bubbles">
-                  <input name="deathfail1" type="checkbox" />
-                  <input name="deathfail2" type="checkbox" />
-                  <input name="deathfail3" type="checkbox" />
+                  <input value="{{char-deathfail1}}" name="deathfail1" type="checkbox" />
+                  <input value="{{char-deathfail2}}" name="deathfail2" type="checkbox" />
+                  <input value="{{char-deathfail3}}" name="deathfail3" type="checkbox" />
                 </div>
               </div>
             </div>
@@ -358,35 +358,35 @@
             <tbody>
               <tr>
                 <td>
-                  <input name="atkname1" type="text" />
+                  <input value="{{char-atkname1}}" name="atkname1" type="text" />
                 </td>
                 <td>
-                  <input name="atkbonus1" type="text" />
+                  <input value="{{char-atkbonus1}}" name="atkbonus1" type="text" />
                 </td>
                 <td>
-                  <input name="atkdamage1" type="text" />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input name="atkname2" type="text" />
-                </td>
-                <td>
-                  <input name="atkbonus2" type="text" />
-                </td>
-                <td>
-                  <input name="atkdamage2" type="text" />
+                  <input value="{{char-atkdamage1}}" name="atkdamage1" type="text" />
                 </td>
               </tr>
               <tr>
                 <td>
-                  <input name="atkname3" type="text" />
+                  <input value="{{char-atkname2}}" name="atkname2" type="text" />
                 </td>
                 <td>
-                  <input name="atkbonus3" type="text" />
+                  <input value="{{char-atkbonus2}}" name="atkbonus2" type="text" />
                 </td>
                 <td>
-                  <input name="atkdamage3" type="text" />
+                  <input value="{{char-atkdamage2}}" name="atkdamage2" type="text" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input value="{{char-atkname3}}" name="atkname3" type="text" />
+                </td>
+                <td>
+                  <input value="{{char-atkbonus3}}" name="atkbonus3" type="text" />
+                </td>
+                <td>
+                  <input value="{{char-atkdamage3}}" name="atkdamage3" type="text" />
                 </td>
               </tr>
             </tbody>
@@ -400,26 +400,32 @@
           <div class="money">
             <ul>
               <li>
-                <label for="cp">cp</label><input name="cp" />
+                <label for="cp">cp</label>
+                <input value="{{char-cp}}" name="cp" />
               </li>
               <li>
-                <label for="sp">sp</label><input name="sp" />
+                <label for="sp">sp</label>
+                <input value="{{char-sp}}" name="sp" />
               </li>
               <li>
-                <label for="ep">ep</label><input name="ep" />
+                <label for="ep">ep</label>
+                <input value="{{char-ep}}" name="ep" />
               </li>
               <li>
-                <label for="gp">gp</label><input name="gp" />
+                <label for="gp">gp</label>
+                <input value="{{char-gp}}" name="gp" />
               </li>
               <li>
-                <label for="pp">pp</label><input name="pp" />
+                <label for="pp">pp</label>
+                <input value="{{char-pp}}" name="pp" />
               </li>
             </ul>
           </div>
-          <textarea placeholder="Equipment list here"></textarea>
+          <textarea placeholder="Equipment list here">{{char-equipmentlist}}</textarea>
         </div>
       </section>
     </section>
+    
     <section>
       <section class="flavor">
         <div class="personality">
