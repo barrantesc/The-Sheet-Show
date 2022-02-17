@@ -197,6 +197,7 @@ p {
 }
 
 /*----------------------------------------------------------------------------*/
+/* CHARACTER DETAILS - HOMEPAGE & PROFILE */
 
 /* SECTION on Homepage holding characters */
 .character-list{
@@ -213,6 +214,9 @@ p {
     padding: 0;
     flex: 25%;
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
     justify-content: center;
     align-items: center;
     width:50%;
@@ -253,9 +257,13 @@ p {
 }
 
 .hero-img {
-    width: 50%;
-    flex: 10%;
+    width: 100%;
+    /* height: 50%; */
+    
 }
+
+/*----------------------------------------------------------------------------*/
+/* CHARACTER CREATOR  */
 
 .character-creator select {
     width: 100%;
@@ -268,3 +276,9 @@ p {
     margin-bottom: 15px;
     border-radius: 5px;
 }
+
+
+/*----------------------------------------------------------------------------*/
+/* MEDIA TYPES  */
+
+/* TODO:: 02/17/2022 #EP || Add Media Types! */
