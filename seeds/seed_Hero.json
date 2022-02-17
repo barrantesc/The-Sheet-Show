@@ -2,7 +2,7 @@
     {
         "id": 1,
         "user_id": 1,
-        "name" : "Christina",
+        "name" : "Christiana",
         "race": "Human",
         "class": "Ranger",
         "gender": "Female",
@@ -12,7 +12,7 @@
         "alignment" : "Neutral Good",
         "languages" : "Common",
         "proficiencies" : "",
-        "image_link": ""
+        "image_link": "/assets/images/race_human.PNG"
     },
     {
         "id": 2,
@@ -27,7 +27,7 @@
         "alignment" : "Neutral Good",
         "languages" : "Common",
         "proficiencies" : "",
-        "image_link": ""
+        "image_link": "/assets/images/race_elf.PNG"
     },
     {
         "id": 3,
@@ -42,13 +42,13 @@
         "alignment" : "Neutral Good",
         "languages" : "Common",
         "proficiencies" : "",
-        "image_link": ""
+        "image_link": "/assets/images/race_dwarf.PNG"
     },
     {
         "id": 4,
         "user_id": 4,
         "name" : "Mary",
-        "race": "Human",
+        "race": "tiefling",
         "class": "Wizard",
         "gender": "Female",
         "age" : 20,
@@ -57,6 +57,6 @@
         "alignment" : "Neutral Good",
         "languages" : "Common",
         "proficiencies" : "",
-        "image_link": ""
+        "image_link": "/assets/images/race_tiefling.PNG"
     }
 ]
