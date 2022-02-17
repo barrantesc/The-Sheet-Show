@@ -16,9 +16,14 @@ body {
     padding-top: 20px;
 }
 
+.login-main-text {
+    text-align: center;
+}
+
 
 .main {
     padding: 0px 10px;
+    
 }
 
 @media screen and (max-height: 450px) {
