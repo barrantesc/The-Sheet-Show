@@ -25,7 +25,7 @@ Our team (Erik Plachta, Connie Barrantes, Christiana Morales, Mary Margaret Lawt
 Our main challenge was working on the different files and connecting them to each other. Thankfully we used class time to get a pulse on where we stood and had steps to complete and move forward before the next class time. Everyone having different strengths and weaknesses was great because for the most part we got to work on things we wanted to, and learn with our group members on things we weren't as strong in.
 
 ## Where can we use this app?
-You can view the app at the sites below.
+You can view the app at the sites below:
 - [Live URL](www.sheetshow.com) 
 - [Github repo](https://github.com/barrantesc/The-Sheet-Show)
 
