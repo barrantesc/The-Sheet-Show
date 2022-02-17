@@ -36,6 +36,7 @@
     margin-right: auto;
     margin-left: auto;
     margin-top: 10px;
+    background-color: white;
   }
   form.charsheet div.textblock {
     display: flex;

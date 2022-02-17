@@ -12,23 +12,31 @@
       <ul>
         <li>
           <label for="classlevel">Class Level</label>
-          <input type='text' value="{{player_level}}" name="classlevel" placeholder="1" />
+          <input type='text' value="{{class}} {{player_level}}" name="classlevel" placeholder="1" />
         </li>
-        <li>
+        {{!-- <li>
           <label for="background">Background</label>
           <input type='text' value="{{background}}" name="background" placeholder="Char background" />
-        </li>
-        <li>
-          <label for="playername">Player Name</label>
-          <input type='text' value="{{username}}" name="playername" placeholder="Your Name Here" />
-        </li>
+        </li> --}}
         <li>
           <label for="race">Race</label>
           <input type='text' value="{{race}}" name="race" placeholder="Human" />
         </li>
         <li>
+          <label for="playername">Player Name</label>
+          <input type='text' value="{{username}}" name="playername" placeholder="Your Name Here" />
+        </li>
+        {{!-- <li>
           <label for="alignment">Alignment</label>
           <input type='text' value="{{alignment}}" name="alignment" placeholder="Lawful Good" />
+        </li> --}}
+        <li>
+          <label for="gender">Gender</label>
+          <input type='text' value="{{gender}}" name="gender" placeholder="0" />
+        </li>
+        <li>
+          <label for="age">Age</label>
+          <input type='text' value="{{age}}" name="age" placeholder="0" />
         </li>
         <li>
           <label for="experiencepoints">Experience Points</label>
@@ -83,6 +91,15 @@
             </li>
             <li>
               <div class="score">
+                <label for="Wisdomscore">WIS</styl>
+                <input type='text' value="{{wis}}" name="Wisdomscore" placeholder="10" class="stat"/>
+              </div>
+              <div class="modifier">
+                <input type='text' value="{{wis-mod}}" name="Wisdommod" placeholder="+0" class="statmod"/>
+              </div>
+            </li>
+            <li>
+              <div class="score">
                 <label for="Charismascore">CHA</label>
                 <input type='text' value="{{cha}}" name="Charismascore" placeholder="10" class="stat"/>
               </div>
@@ -107,7 +124,7 @@
             <div class="label-container">
               <label for="proficiencybonus">Proficiency Bonus</label>
             </div>
-            <input type='text' value="{{prof-bonus}}" name="proficiencybonus" placeholder="+2" />
+            <input type='text' value="{{proficiency_bonus}}" name="proficiencybonus" />
           </div>
 
           
@@ -129,14 +146,14 @@
                 <input type='checkbox' value="{{con-save-prof}}" name="Constitution-save-prof" />
               </li>
               <li>
-                <label for="Wisdom-save">Wisdom</label>
-                <input type='text' value="{{wis-save}}" name="Wisdom-save" placeholder="+0" />
-                <input type='checkbox' value="{{wis-save-prof}}"name="Wisdom-save-prof" />
-              </li>
-              <li>
                 <label for="Intelligence-save">Intelligence</label>
                 <input type='text' value="{{int-save}}" name="Intelligence-save" placeholder="+0" />
                 <input type='checkbox' value="{{int-save-prof}}" name="Intelligence-save-prof" />
+              </li>
+              <li>
+                <label for="Wisdom-save">Wisdom</label>
+                <input type='text' value="{{wis-save}}" name="Wisdom-save" placeholder="+0" />
+                <input type='checkbox' value="{{wis-save-prof}}"name="Wisdom-save-prof" />
               </li>
               <li>
                 <label for="Charisma-save">Charisma</label>
@@ -251,15 +268,15 @@
         </div>
       </section>
 
-      <div class="passive-perception box">
+      {{!-- <div class="passive-perception box">
         <div class="label-container">
           <label for="passiveperception">Passive Wisdom (Perception)</label>
         </div>
         <input type="text" value="{{passiveperception}}" name="passiveperception" placeholder="10" />
-      </div>
+      </div> --}}
       <div class="otherprofs box textblock">
         <label for="otherprofs">Other Proficiencies and Languages</label>
-        <textarea name="otherprofs">{{otherprofs}}</textarea>
+        <textarea name="otherprofs">{{languages}} {{proficiencies}}</textarea>
       </div>
     </section>
     {{!-- COLUMN 1 --> END --}}
@@ -449,7 +466,7 @@
       <section class="features">
         <div>
           <label for="features">Features & Traits</label>
-          <textarea name="features">{{features}}</textarea>
+          <textarea name="features">{{alignment}}</textarea>
         </div>
       </section>
     </section>

@@ -140,8 +140,7 @@ async function newCharFormHandler(event) {
     });
 
     if (response.ok) {
-        console.log("it worked!")
-        // document.location.replace('/');
+        document.location.replace('/profile');
     } else {
         alert(response.statusText);
     }
