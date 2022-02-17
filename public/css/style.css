@@ -166,7 +166,7 @@ button:hover {
 header {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin: 0;
     padding: 0 2rem;
     background-color: var(--nav_Background);
@@ -224,6 +224,9 @@ p {
     border-radius: 5px;
     background-color: white;
 }
+.hero-card a {
+    width: 100%;
+}
 
 .hero-banner {
     display: flex;
@@ -251,12 +254,13 @@ p {
     float: right;    
     cursor: pointer;
     transition: all .2s ease-in-out;
+    filter: brightness(120%);
 }
 
-.hero-name-sheet .sheet:hover {
+.hero-card:hover {
     /* filter: brightness(120%); */
-    filter: brightness(120%) saturate(120%);
-    transform: scale(1.1);
+    filter: brightness(120%) saturate(105%);
+    transform: scale(1.02);
 }
 
 .hero-level-class{

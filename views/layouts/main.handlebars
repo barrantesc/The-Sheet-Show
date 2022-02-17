@@ -41,8 +41,41 @@
           transition: 0.3s;
         }
 
-        .nav-overlay a:hover, .nav-overlay a:focus {
+
+        .nav-logo,
+        .nav-logo img {
+          height: 100%;
+          filter: brightness(120%); 
+          max-height: 70px;
+          float: left;
+          transition: 0.1s;
+          image-rendering: -moz-crisp-edges;         /* Firefox */
+          image-rendering:   -o-crisp-edges;         /* Opera */
+          image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+          image-rendering: crisp-edges;
+          -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+        }
+
+        .nav-logo img:hover {
+          transform: scale(1.01);
+        }
+
+
+        .nav-logo img:hover,
+        nav .nav-hamburger:hover,
+        nav .nav-hamburger:focus,
+        .nav-overlay a:hover,
+        .nav-overlay a:focus {
           color: #f1f1f1;
+          cursor: pointer;
+          filter: brightness(120%) saturate(120%);
+        }
+
+        nav .nav-hamburger:hover,
+        nav .nav-hamburger:focus,
+        .nav-overlay a:hover,
+        .nav-overlay a:focus {
+          transform: scale(1.1);
         }
 
         .nav-overlay .closebtn {
@@ -57,13 +90,13 @@
 <body>
   <div class="wrapper">
     <header>
-      <h1>
-        <a href="/">
-        <img src="/assets/logos/white_text/Long_horizontal_white.png" alt="The Sheet Show logo" height="70">
-        </a>
-      </h1>
+      
+      <a class='nav-logo' href="/">
+        <img src="/assets/logos/white_text/Long_horizontal_white.png" alt="The Sheet Show logo">
+      </a>
+      
       <nav>
-        <span onclick="openNav()">☰</span>
+        <span class="nav-hamburger" onclick="openNav()">☰</span>
 
         {{!-- The Naviagational nav-overlay --}}
         <div id="myNav" class="nav-overlay">
@@ -78,10 +111,10 @@
               
               <a id="My Characters" href="/profile">My Characters</a>
               <a id="My Characters" href="/character-creator">Create New Character</a>
-              <a id="logout" href="/">logout</a>  
+              <a id="logout" href="/">Logout</a>  
 
             {{else}}
-              <a href="/login">login</a>
+              <a href="/login">Login</a>
             {{/if}}
             <hr>
             <a href="https://github.com/barrantesc/The-Sheet-Show" target="_blank">
