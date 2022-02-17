@@ -16,7 +16,20 @@ router.get('/', async (req,res) => {
                 'name',
                 'race',
                 'class',
-                'gender'
+                'gender',
+                "id",
+                "user_id",
+                "name",
+                "race",
+                "class",
+                "gender",
+                "age",
+                "player_level",
+                "proficiency_bonus",
+                "alignment",
+                "languages",
+                "proficiencies",
+                "image_link",
             ],
             include : [
                 {
@@ -31,6 +44,7 @@ router.get('/', async (req,res) => {
         );
         // console.log(heros);
         res.render('homepage', {
+            username: req.session.User,
             heros,
             loggedIn: req.session.loggedIn,
         });
