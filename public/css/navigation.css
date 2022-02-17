@@ -38,8 +38,11 @@
 }
 
 /* When you mouse over the navigation links, change their color */
-.nav-overlay a:hover, .nav-overlay a:focus {
+.nav-overlay a:hover,
+.nav-overlay a:focus {
   color: #f1f1f1;
+  filter: brightness(120%) saturate(120%);
+  transform: scale(1.1);
 }
 
 /* Position the close button (top right corner) */
