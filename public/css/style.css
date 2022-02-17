@@ -89,7 +89,7 @@
     padding: 0;
     background-color: var(--bg_Body);
     font-family: Roboto, Arial, sans-serif;
-    
+    background-image: url("tesselatedHeros.jpg");
     /* Prevents cursor from changing from arrow unless explicit */
     cursor: default;
  }
@@ -191,3 +191,4 @@ p {
     border-radius: 5px;
     text-align: center;
 }
+
