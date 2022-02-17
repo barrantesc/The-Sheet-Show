@@ -226,14 +226,6 @@ p {
 }
 
 
-.heros p {
-    background-color: white;
-    border: 3px solid black;
-    border-radius: 4px;
-    margin: 0px;
-    font-weight: bold;
-}
-
 /* SPAN within hero-card DIV */
 .hero {
     
@@ -259,7 +251,18 @@ p {
 .hero-img {
     width: 100%;
     /* height: 50%; */
+    max-height: 394.077px;
+    max-width: 232.756px;
     
+}
+
+/* Used for header */
+.profile-banner-username p {
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 4px;
+    margin: 0px;
+    font-weight: bold;
 }
 
 /*----------------------------------------------------------------------------*/

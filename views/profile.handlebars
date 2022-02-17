@@ -1,11 +1,13 @@
 {{#if loggedIn}}
-    <div class="heros">
+    <section class="profile-banner-username">
         <p>{{username}}'s Heroes</p>
+    </section>
+    
+    <section class="character-list">
         {{#each heros as |hero|}}
             <div class="hero-card">
                 {{> character-details}}
             </div>
         {{/each}}
-    </div>
-
+    </section>
 {{/if}}
