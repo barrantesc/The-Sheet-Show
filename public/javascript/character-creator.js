@@ -13,8 +13,6 @@ const retrieveRaceInfo = async function (raceName) {
         }
 
         return raceInfo;
-    } else {
-        console.log(err);
     }
 };
 
@@ -33,62 +31,6 @@ const retrieveClassInfo = async function (className) {
 
         return classInfo;
     }
-}
-
-// Gets ability bonuses from DnD api based on character race and creates an object with calculated scores and modifiers for each. It then checks whether all abilities exist in abilities array. If the ability does not exist, it creates an object for it with calculated scores and modifiers. Descriptions of calculations below: 
-    // Calculate score
-        // Yields number between 6 - 18, to simulate rolling 4d6, re-rolling any 1s, and dropping lowest number
-    // Calculate modifier
-        // takes ability score, subtracts 10, divides by 2, rounds up to nearest integer
-const abilityScoresGet = function (array) {
-    const abilitiesObj = {
-        STR : {},
-        DEX : {},
-        CON : {},
-        INT : {},
-        WIS : {}, 
-        CHA : {}
-    };    
-    for (let i = 0; i < array.length; i++) {
-        let abilityName = array[i].ability_score.name;
-        let score = array[i].bonus + Math.floor((Math.random() * 12) + 6);
-        let modifier = Math.ceil((score - 10) / 2);
-
-        abilitiesObj[abilityName] = { score, modifier }
-    }
-    // I'm sure there's a better way to do this but I'm all out of brain
-    if (!abilitiesObj.STR.score) {
-        let score = Math.floor((Math.random() * 12) + 6);
-        let modifier = Math.ceil((score - 10) / 2);
-        abilitiesObj.STR = { score, modifier }
-    }
-    if (!abilitiesObj.DEX.score) {
-        let score = Math.floor((Math.random() * 12) + 6);
-        let modifier = Math.ceil((score - 10) / 2);
-        abilitiesObj.DEX = { score, modifier }
-    }
-    if (!abilitiesObj.CON.score) {
-        let score = Math.floor((Math.random() * 12) + 6);
-        let modifier = Math.ceil((score - 10) / 2);
-        abilitiesObj.CON = { score, modifier }
-    }
-    if (!abilitiesObj.INT.score) {
-        let score = Math.floor((Math.random() * 12) + 6);
-        let modifier = Math.ceil((score - 10) / 2);
-        abilitiesObj.INT = { score, modifier }
-    }
-    if (!abilitiesObj.WIS.score) {
-        let score = Math.floor((Math.random() * 12) + 6);
-        let modifier = Math.ceil((score - 10) / 2);
-        abilitiesObj.WIS = { score, modifier }
-    }
-    if (!abilitiesObj.CHA.score) {
-        let score = Math.floor((Math.random() * 12) + 6);
-        let modifier = Math.ceil((score - 10) / 2);
-        abilitiesObj.CHA = { score, modifier }
-    }
-
-    return abilitiesObj;
 }
 
 // Calculate Proficiency Bonus
@@ -149,8 +91,6 @@ async function newCharFormHandler(event) {
     const raceInfo = await retrieveRaceInfo(document.querySelector('#char-race').value);
     const alignment = raceInfo.alignment;
     const langString = stringFromArray(raceInfo.languages);
-    // ability bonuses retrieved from api based on race, and calculating ability scores and modifiers factoring in these bonuses
-    const ability_scores = abilityScoresGet(raceInfo.ability_bonuses);
 
     // info retrieved from api/classes based on user input
     const classInfo = await retrieveClassInfo(document.querySelector('#char-class').value);
@@ -170,7 +110,6 @@ async function newCharFormHandler(event) {
             languages: langString,
             proficiencies: profString,
             image_link,
-            ability_scores
         }),
         headers: {
             'Content-Type': 'application/json'

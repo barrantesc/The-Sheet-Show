@@ -12,7 +12,7 @@
       <ul>
         <li>
           <label for="classlevel">Class Level</label>
-          <input type='text' value="{{class}} {{player_level}}" name="classlevel" placeholder="1" />
+          <input type='text' value="{{class}} {{player_level}}" name="classlevel" placeholder="1"/>
         </li>
         {{!-- <li>
           <label for="background">Background</label>
@@ -20,11 +20,11 @@
         </li> --}}
         <li>
           <label for="race">Race</label>
-          <input type='text' value="{{race}}" name="race" placeholder="Human" />
+          <input type='text' value="{{race}}" name="race" placeholder="Human" id="race"/>
         </li>
         <li>
           <label for="playername">Player Name</label>
-          <input type='text' value="{{username}}" name="playername" placeholder="Your Name Here" />
+          <input type='text' value="{{user.username}}" name="playername"/>
         </li>
         {{!-- <li>
           <label for="alignment">Alignment</label>
@@ -474,4 +474,5 @@
 </form>
 
 {{!-- Ability to edit char sheet manually --}}
-<script src="./js/character-sheet-template.js"></script>
+{{!-- <script src="./js/character-sheet-template.js"></script> --}}
+<script src="/javascript/ability-scores.js"></script>

@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Ability } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // get all abilities
 router.get('/', (req, res) => {
@@ -19,7 +20,7 @@ router.get('/', (req, res) => {
 });
 
 // create ability
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Ability.create({
         hero_id: req.body.hero_id,
         name: req.body.name,
