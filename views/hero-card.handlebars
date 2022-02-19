@@ -1,74 +1,7 @@
-<div id="div-onload-modal" class="modal">
-<!-- The modal content here -->
-<div class="modal-content">
-    
-<section class="modal-header">
-     <span class="name">{{name}}</span>
-    <a href="/character-sheet/{{id}}">
-        <img class="sheet" src="/assets/logos/logo_32x32.png" title="Open Character Sheet" />
-    </a>
-    <span class="close">&times;</span>
-</section>
+
+{{#each heros as |hero|}}
 
 
-<section class="modal-body">
-    <div class="hero-level-class">
-        <span class="level">Level {{player_level}}</span>
-        <span class="class">{{class}}</span>
-    </div>
-    
-    <span id="{{id}}" class="hero">
-    
-    {{!-- top bar --}}
-    
-    
-    </section>
-    {{!-- IMAGE --}}
-        <img class="hero-img" src="{{image_link}}">
-    {{!-- UNDER IMAGE --}}
-    <section class="hero-stats">
-        <span class="race">{{race}}</span>
-        <span class="spacer"></span>
-        <span class="gender">{{gender}}</span>
-        <span class="spacer"></span>
-        <span class="age">{{age}} years old.</span>
-        <span class="spacer"></span>
-    </section>
-    <section class="hero-flavor">
-        <span class="alignment">{{name}}'s alignment is {{alignment}}.</span>
-    </section>
+    {{> hero-card-details }}
 
-
-    {{!-- Background --}}
-
-    <section class="hero-proficiencies">
-        <span class="proficiencies">{{proficiencies}}</span>
-    </section>
-    </span>
-
-    
-</section>
-    
-    <section class="modal-footer"></section>
-</div>
-</div>
-
-<script>
-    var modal = document.getElementById("div-onload-modal"); // Get the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks the button, open the modal
-    
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-    modal.style.display = "none";
-};
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-
-</script>
+{{/each}}

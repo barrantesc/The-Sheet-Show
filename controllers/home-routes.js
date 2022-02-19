@@ -131,8 +131,8 @@ router.get('/hero-card/:id', async (req, res) => {
         );
 
         res.render('hero-card', {
-            username: req.session.username,
             heros,
+            username: req.session.username,
             loggedIn: req.session.loggedIn,
         })
     }
@@ -158,7 +158,7 @@ router.get('/character-sheet/:id', async (req, res) => {
 
     //-- otherwise render
     try {
-        const heroData = await Hero.findOne({
+        const heroData = await Hero.findAll({
             where: {
                 id: req.params.id,
             },
