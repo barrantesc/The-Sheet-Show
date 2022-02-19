@@ -88,7 +88,7 @@ router.get('/hero-images', (req, res) => {
 });
 
 //-- Grab an existing hero's character sheet based on ID
-router.get('/character-sheet/:id', async (req, res) => {
+router.get('/hero-card/:id', async (req, res) => {
     
     if(!req.session.loggedIn){
 
@@ -100,6 +100,65 @@ router.get('/character-sheet/:id', async (req, res) => {
     //-- otherwise render
     try {
         const heroData = await Hero.findAll({
+            where: {
+                id: req.params.id,
+            },
+            attributes: [
+                'id',
+                'user_id',
+                'name',
+                'race',
+                'class',
+                'gender',
+                "id",
+                "user_id",
+                "name",
+                "race",
+                "class",
+                "gender",
+                "age",
+                "player_level",
+                "proficiency_bonus",
+                "alignment",
+                "languages",
+                "proficiencies",
+                "image_link",
+            ],
+        });
+    
+        const heros = heroData.map((myHero) =>
+        myHero.get({ plain: true })
+        );
+
+        res.render('hero-card', {
+            username: req.session.username,
+            heros,
+            loggedIn: req.session.loggedIn,
+        })
+    }
+    catch (err) {
+        //TODO:: 02/16/2022 #EP | Need to push back to homeapge but isn't
+        res
+            .status(500)
+            .json(String(err))
+            return;
+        
+    }
+});
+
+//-- Grab an existing hero's character sheet based on ID
+router.get('/character-sheet/:id', async (req, res) => {
+    
+    if(!req.session.loggedIn){
+
+        //todo: 02/16/2022 #EP || Verify this is even working
+            res.redirect('/');
+            return;
+    }
+
+    //-- otherwise render
+    try {
+        const heroData = await Hero.findOne({
             where: {
                 id: req.params.id,
             },
