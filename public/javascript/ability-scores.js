@@ -86,7 +86,7 @@ async function createAbilityScores () {
     // loop through each of the objects in abilities object and create new Ability out of each
     for (const property in abilities) {
 
-        const response = await fetch('api/abilities', {
+        const response = await fetch('../api/abilities', {
             method: 'POST',
             body: JSON.stringify({
                 hero_id,
@@ -101,8 +101,8 @@ async function createAbilityScores () {
         if (response.ok) {
             console.log("yay")
         // document.location.reload();
-        } else {
-        alert(response.statusText);
+        // } else {
+        // alert(response.statusText);
         }
     }
 };
