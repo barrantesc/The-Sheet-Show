@@ -3,47 +3,40 @@
 <div class="modal-content">
     
 <section class="modal-header">
-     <span class="name">{{name}}</span>
+    <h2 class="name">{{name}}</h2>    
     <a href="/character-sheet/{{id}}">
         <img class="sheet" src="/assets/logos/logo_32x32.png" title="Open Character Sheet" />
     </a>
     <span class="close">&times;</span>
 </section>
-
-
+{{!-- BODY CONTENT --}}
 <section class="modal-body">
     <div class="hero-level-class">
         <span class="level">Level {{player_level}}</span>
         <span class="class">{{class}}</span>
     </div>
-    
-    <span id="{{id}}" class="hero">
-    
-    {{!-- top bar --}}
-    
-    
-    </section>
     {{!-- IMAGE --}}
-        <img class="hero-img" src="{{image_link}}">
+    <div>
+        <img class="hero-img" src="{{image_link}}" alt="{{name}}">
+    </div>    
+    
     {{!-- UNDER IMAGE --}}
-    <section class="hero-stats">
+    <div class="hero-stats">
         <span class="race">{{race}}</span>
         <span class="spacer"></span>
         <span class="gender">{{gender}}</span>
         <span class="spacer"></span>
         <span class="age">{{age}} years old.</span>
         <span class="spacer"></span>
-    </section>
-    <section class="hero-flavor">
+    </div>
+    <div class="hero-flavor">
         <span class="alignment">{{name}}'s alignment is {{alignment}}.</span>
-    </section>
-
+    </div>
 
     {{!-- Background --}}
-
-    <section class="hero-proficiencies">
+    <div class="hero-proficiencies">
         <span class="proficiencies">{{proficiencies}}</span>
-    </section>
+    </div>
     </span>
 
     
