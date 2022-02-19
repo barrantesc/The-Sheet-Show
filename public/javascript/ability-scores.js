@@ -100,11 +100,11 @@ async function createAbilityScores () {
         })
         if (response.ok) {
             console.log("yay")
-        // document.location.reload();
-        // } else {
-        // alert(response.statusText);
+        document.location.reload();
+        } else {
+        alert(response.statusText);
         }
     }
 };
 
-createAbilityScores();
+document.querySelector("#calcScores").addEventListener("click", createAbilityScores);

@@ -1,5 +1,10 @@
 <link rel="stylesheet" href="/css/character-sheet-template.css">
 
+{{!-- only create button for score calculator if they have not been calculated yet --}}
+{{#unless abilities.length}}
+<button id="calcScores">Calculate your abiities</button>
+{{/unless}}
+
 <form class="charsheet">
   {{!-- Sheet Header --}}
   <header>
@@ -56,10 +61,10 @@
             <li>
               <div class="score">
                 <label for="Strengthscore">{{ability.name}}</label>
-                <input type='text' value="{{ability.score}}" name="Strengthscore" placeholder="10" class="stat" />
+                <input type='text' value="{{ability.score}}" name="{{ability.name}}thscore" placeholder="10" class="stat" />
               </div>
               <div class="modifier">
-                <input type='text' value="{{ability.modifier}}" name="Strengthmod" placeholder="+0" class="statmod" />
+                <input type='text' value="{{ability.modifier}}" name="{{ability.name}}mod" placeholder="+0" class="statmod" />
               </div>
             </li>
             {{/each}}
@@ -430,4 +435,8 @@
 {{!-- Ability to edit char sheet manually --}}
 {{!--
 <script src="./js/character-sheet-template.js"></script> --}}
+
+{{!-- only load js for score calculator if they have not been calculated yet --}}
+{{#unless abilities.length}}
 <script src="/javascript/ability-scores.js"></script>
+{{/unless}}
