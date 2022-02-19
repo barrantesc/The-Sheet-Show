@@ -1,40 +1,39 @@
-<a href="/character-sheet/{{id}}">  
-  <span id="{{id}}" class="hero">
+
+<span id="{{id}}" class="hero">
+
   
-    
-    {{!-- top bar --}}
-    <section class="hero-banner">
-      <div class="hero-name-sheet">
-          <span class="name">{{name}}</span>
-          {{!-- <a href="/character-sheet/{{id}}"> --}}
-            <img class="sheet" src="/assets/logos/logo_32x32.png" title="Open Character Sheet" />
-          {{!-- </a> --}}
-      </div>
-      <div class="hero-level-class">
-        <span class="level">Level {{player_level}}</span>
-        <span class="class">{{class}}</span>
-      </div>
-    </section>
-    {{!-- IMAGE --}}
-      <img class="hero-img" src="{{image_link}}">
-    {{!-- UNDER IMAGE --}}
-    <section class="hero-stats">
-      <span class="race">{{race}}</span>
-      <span class="spacer"></span>
-      <span class="gender">{{gender}}</span>
-      <span class="spacer"></span>
-      <span class="age">{{age}} years old.</span>
-      <span class="spacer"></span>
-    </section>
-    <section class="hero-flavor">
-      <span class="alignment">{{name}}'s alignment is {{alignment}}.</span>
-    </section>
+  {{!-- top bar --}}
+  <section class="hero-banner">
+    <div class="hero-name-sheet">
+        <span class="name">{{name}}</span>
+        <a href="/character-sheet/{{id}}">
+          <img class="sheet" src="/assets/logos/logo_32x32.png" title="Open Character Sheet" />
+        </a>
+    </div>
+    <div class="hero-level-class">
+      <span class="level">Level {{player_level}}</span>
+      <span class="class">{{class}}</span>
+    </div>
+  </section>
+  {{!-- IMAGE --}}
+    <img class="hero-img" src="{{image_link}}">
+  {{!-- UNDER IMAGE --}}
+  <section class="hero-stats">
+    <span class="race">{{race}}</span>
+    <span class="spacer"></span>
+    <span class="gender">{{gender}}</span>
+    <span class="spacer"></span>
+    <span class="age">{{age}} years old.</span>
+    <span class="spacer"></span>
+  </section>
+  <section class="hero-flavor">
+    <span class="alignment">{{name}}'s alignment is {{alignment}}.</span>
+  </section>
 
 
-    {{!-- Background --}}
+  {{!-- Background --}}
 
-    <section class="hero-proficiencies">
-      <span class="proficiencies">{{proficiencies}}</span>
-    </section>
-  </span>
-</a>
+  <section class="hero-proficiencies">
+    <span class="proficiencies">{{proficiencies}}</span>
+  </section>
+</span>
