@@ -130,11 +130,13 @@ router.get('/hero-card/:id', async (req, res) => {
         myHero.get({ plain: true })
         );
 
+        console.log(req.session)
         res.render('hero-card', {
             heros,
             username: req.session.username,
-            userId: req.session.user_id,
+            session_userId: req.session.user_id,
             loggedIn: req.session.loggedIn,
+            
         })
     }
     catch (err) {
