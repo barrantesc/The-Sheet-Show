@@ -19,6 +19,8 @@ const gte = (var1, var2) => { return var1 >=  var2 };
 //       return Array.prototype.slice.call(arguments, 0, -1).some(Boolean);
 //   }
 // });
+
+// takes string of proficiencies separated by spaces, turns it into an array, goes through each item in the array and removes 'skill-' previx, then if the remainder is longer than two words, it replaces the dash separating the words with a space, then joins items in array into a string separated by a comma and a space. 
 const format_prof = function (str) {
   let profArr = (str.split(" "));
   let newProfArr = [];
