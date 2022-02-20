@@ -196,6 +196,33 @@ p {
     background-color: white;
 }
 
+
+
+
+/*----------------------------------------------------------------------------*/
+/* ERROR STYLING */
+
+.errorDivElement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color_Primary);
+    margin: 30px 0;
+    padding: 20px;
+    font-size: 20px;
+    border: 4px solid black;
+    border-radius: 5px;
+    text-align: left;
+    background-color: white;
+}
+
+.errorTextDiv {
+    text-align: left;
+    color: var(--color_Primary);
+    margin: 50px 0;
+    padding: 20px;
+}
+
 /*----------------------------------------------------------------------------*/
 /* CHARACTER DETAILS - HOMEPAGE & PROFILE */
 
