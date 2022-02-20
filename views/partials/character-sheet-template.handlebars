@@ -1,12 +1,16 @@
-
 <link rel="stylesheet" href="/css/character-sheet-template.css">
+
+{{!-- only create button for score calculator if they have not been calculated yet --}}
+{{#unless abilities.length}}
+<button id="calcScores">Calculate your abiities</button>
+{{/unless}}
 
 <form class="charsheet">
   {{!-- Sheet Header --}}
   <header>
     <section class="charname">
       <label for="charname">Character Name</label>
-      <input type='text' value="{{name}}" name="charname" placeholder="Jane Doe"/>
+      <input type='text' value="{{name}}" name="charname" placeholder="Jane Doe" />
     </section>
     <section class="misc">
       <ul>
@@ -20,11 +24,11 @@
         </li> --}}
         <li>
           <label for="race">Race</label>
-          <input type='text' value="{{race}}" name="race" placeholder="Human" />
+          <input type='text' value="{{race}}" name="race" placeholder="Human" id="race" />
         </li>
         <li>
           <label for="playername">Player Name</label>
-          <input type='text' value="{{username}}" name="playername" placeholder="Your Name Here" />
+          <input type='text' value="{{user.username}}" name="playername" />
         </li>
         {{!-- <li>
           <label for="alignment">Alignment</label>
@@ -49,76 +53,32 @@
 
   <main>
     <section>
-      <section class="attributes"> 
+      <section class="attributes">
         {{!-- cHARACTER sCORES --}}
         <div class="scores">
           <ul>
+            {{#each abilities as |ability|}}
             <li>
               <div class="score">
-                <label for="Strengthscore">STR</label>
-                <input type='text' value="{{str}}"name="Strengthscore" placeholder="10" class="stat"/>
+                <label for="Strengthscore">{{ability.name}}</label>
+                <input type='text' value="{{ability.score}}" name="{{ability.name}}thscore" placeholder="10" class="stat" />
               </div>
               <div class="modifier">
-                <input type='text' value="{{str-mod}}" name="Strengthmod" placeholder="+0" class="statmod"/>
+                <input type='text' value="{{ability.modifier}}" name="{{ability.name}}mod" placeholder="+0" class="statmod" />
               </div>
             </li>
-            <li>
-              <div class="score">
-                <label for="Dexterityscore">DEX</label>
-                <input type='text' value="{{dex}}" name="Dexterityscore" placeholder="10" class="stat"/>
-              </div>
-              <div class="modifier">
-                <input type='text' value="{{dex-mod}}" name="Dexteritymod" placeholder="+0" class="statmod"/>
-              </div>
-            </li>
-            <li>
-              <div class="score">
-                <label for="Constitutionscore">CON</label>
-                <input type='text' value="{{con}}" name="Constitutionscore" placeholder="10" class="stat"/>
-              </div>
-              <div class="modifier">
-                <input type='text' value="{{con-mod}}" name="Constitutionmod" placeholder="+0" class="statmod"/>
-              </div>
-            </li>
-            <li>
-              <div class="score">
-                <label for="Intelligencescore">INT</styl>
-                <input type='text' value="{{int}}" name="Intelligencescore" placeholder="10" class="stat"/>
-              </div>
-              <div class="modifier">
-                <input type='text' value="{{int-mod}}" name="Intelligencemod" placeholder="+0" class="statmod"/>
-              </div>
-            </li>
-            <li>
-              <div class="score">
-                <label for="Wisdomscore">WIS</styl>
-                <input type='text' value="{{wis}}" name="Wisdomscore" placeholder="10" class="stat"/>
-              </div>
-              <div class="modifier">
-                <input type='text' value="{{wis-mod}}" name="Wisdommod" placeholder="+0" class="statmod"/>
-              </div>
-            </li>
-            <li>
-              <div class="score">
-                <label for="Charismascore">CHA</label>
-                <input type='text' value="{{cha}}" name="Charismascore" placeholder="10" class="stat"/>
-              </div>
-              <div class="modifier">
-                <input type='text' value="{{cha-mod}} "name="Charismamod" placeholder="+0" class="statmod"/>
-              </div>
-            </li>
+            {{/each}}
           </ul>
         </div>
 
-        
         <div class="attr-applications">
-           <div class="inspiration box">
+          <div class="inspiration box">
             <div class="label-container">
               <label for="inspiration">Inspiration</label>
             </div>
-            <input type='checkbox' value="{{insp}}" name="inspiration" placeholder="+2"/>
+            <input type='checkbox' value="{{insp}}" name="inspiration" placeholder="+2" />
           </div>
-          
+
           {{!-- PROF BONUSES --}}
           <div class="proficiencybonus box">
             <div class="label-container">
@@ -127,18 +87,18 @@
             <input type='text' value="{{proficiency_bonus}}" name="proficiencybonus" />
           </div>
 
-          
+
           <div class="saves list-section box">
             <ul>
               <li>
                 <label for="Strength-save">Strength</label>
                 <input type='text' value="{{str-save}}" name="Strength-save" placeholder="+0" />
-                <input type="checkbox" value="{{str-save-prof}} name="Strength-save-prof" "/>
+                <input type="checkbox" value="{{str-save-prof}} name=" Strength-save-prof" "/>
               </li>
               <li>
-                <label for="Dexterity-save">Dexterity</label>
-                <input type="text" value="{{dex-save}}"" name="Dexterity-save" placeholder="+0" " />
-                <input type='checkbox' value="{{dex-save-prof}}" name="Dexterity-save-prof" />
+                <label for=" Dexterity-save">Dexterity</label>
+                <input type="text" value="{{dex-save}}"" name=" Dexterity-save" placeholder="+0" " />
+                <input type='checkbox' value=" {{dex-save-prof}}" name="Dexterity-save-prof" />
               </li>
               <li>
                 <label for="Constitution-save">Constitution</label>
@@ -153,7 +113,7 @@
               <li>
                 <label for="Wisdom-save">Wisdom</label>
                 <input type='text' value="{{wis-save}}" name="Wisdom-save" placeholder="+0" />
-                <input type='checkbox' value="{{wis-save-prof}}"name="Wisdom-save-prof" />
+                <input type='checkbox' value="{{wis-save-prof}}" name="Wisdom-save-prof" />
               </li>
               <li>
                 <label for="Charisma-save">Charisma</label>
@@ -166,7 +126,7 @@
             </div>
           </div>
 
-          
+
           <div class="skills list-section box">
             <ul>
               <li>
@@ -182,7 +142,7 @@
               <li>
                 <label for="Arcana">Arcana <span class="skill">(Int)</span></label>
                 <input type='text' value="{{arcana}}" name="Arcana" placeholder="+0" />
-                <input type='checkbox' value="{{arcana-prof}}"  name="Arcana-prof" />
+                <input type='checkbox' value="{{arcana-prof}}" name="Arcana-prof" />
               </li>
               <li>
                 {{!-- TODO:: 02/16/2022 #EP || LEFT OFF HERE --}}
@@ -193,7 +153,7 @@
               <li>
                 <label for="Deception">Deception <span class="skill">(Cha)</span></label>
                 <input type='text' value="{{deception}}" name="Deception" placeholder="+0" />
-                <input type="checkbox"  value="{{deception-prof}}" name="Deception-prof" />
+                <input type="checkbox" value="{{deception-prof}}" name="Deception-prof" />
               </li>
               <li>
                 <label for="History">History <span class="skill">(Int)</span></label>
@@ -202,8 +162,8 @@
               </li>
               <li>
                 <label for="Insight">Insight <span class="skill">(Wis)</span></label>
-                <input type='text' value="{{insight}}"  name="Insight" placeholder="+0" />
-                <input type="checkbox" value="{{insight-prof}}" name="Insight-prof"  />
+                <input type='text' value="{{insight}}" name="Insight" placeholder="+0" />
+                <input type="checkbox" value="{{insight-prof}}" name="Insight-prof" />
               </li>
               <li>
                 <label for="Intimidation">Intimidation <span class="skill">(Cha)</span></label>
@@ -213,31 +173,31 @@
               <li>
                 <label for="Investigation">Investigation <span class="skill">(Int)</span></label>
                 <input type='text' value="{{investigation}}" name="Investigation" placeholder="+0" />
-                <input type="checkbox"  value="{{investigation-prof}}" name="Investigation-prof"/>
+                <input type="checkbox" value="{{investigation-prof}}" name="Investigation-prof" />
               </li>
               <li>
                 <label for="Medicine">Medicine <span class="skill">(Wis)</span></label>
-                <input  type="text" value="{{medicine}}" name="Medicine" placeholder="+0" />
-                <input  type="checkbox" value="{{medicine-prof}}" name="Medicine-prof" />
+                <input type="text" value="{{medicine}}" name="Medicine" placeholder="+0" />
+                <input type="checkbox" value="{{medicine-prof}}" name="Medicine-prof" />
               </li>
               <li>
                 <label for="Nature">Nature <span class="skill">(Int)</span></label>
                 <input type='text' value="{{nature}}" name="Nature" placeholder="+0" />
-                <input  type="checkbox" value="{{nature-prof}}" name="Nature-prof" />
+                <input type="checkbox" value="{{nature-prof}}" name="Nature-prof" />
               </li>
               <li>
                 <label for="Perception">Perception <span class="skill">(Wis)</span></label>
                 <input type='text' value="{{perception}}" name="Perception" placeholder="+0" />
-                <input type="checkbox" value="{{perception-prof}}"  name="Perception-prof" />
+                <input type="checkbox" value="{{perception-prof}}" name="Perception-prof" />
               </li>
               <li>
                 <label for="Performance">Performance <span class="skill">(Cha)</span></label>
-                <input type="text" value="{{performance}}" name="Performance" placeholder="+0"/>
+                <input type="text" value="{{performance}}" name="Performance" placeholder="+0" />
                 <input type="checkbox" value="{{performance-prof}}" name="Performance-prof" />
               </li>
               <li>
                 <label for="Persuasion">Persuasion <span class="skill">(Cha)</span></label>
-                 <input type="text" value="{{persuasion}}" name="Persuasion" placeholder="+0" />
+                <input type="text" value="{{persuasion}}" name="Persuasion" placeholder="+0" />
                 <input type="checkbox" value="{{persuasion-prof}}" name="Persuasion-prof" />
               </li>
               <li>
@@ -252,7 +212,7 @@
               </li>
               <li>
                 <label for="Stealth">Stealth <span class="skill">(Dex)</span></label>
-                <input type="text" value="{{stealth}}" name="Stealth" placeholder="+0"/>
+                <input type="text" value="{{stealth}}" name="Stealth" placeholder="+0" />
                 <input type="checkbox" value="{{stealth-prof}}" name="Stealth-prof" />
               </li>
               <li>
@@ -280,7 +240,6 @@
       </div>
     </section>
     {{!-- COLUMN 1 --> END --}}
-
     {{!-- COLUMN 2 --> START --}}
     <section>
       <section class="combat">
@@ -474,4 +433,10 @@
 </form>
 
 {{!-- Ability to edit char sheet manually --}}
-<script src="./js/character-sheet-template.js"></script>
+{{!--
+<script src="./js/character-sheet-template.js"></script> --}}
+
+{{!-- only load js for score calculator if they have not been calculated yet --}}
+{{#unless abilities.length}}
+<script src="/javascript/ability-scores.js"></script>
+{{/unless}}

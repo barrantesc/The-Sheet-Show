@@ -9,6 +9,10 @@
   .hide {
     display: none !important;
   }
+
+  #calcScores {
+    margin-top: 15px;
+  }
   
   textarea {
     font-size: 12px;
