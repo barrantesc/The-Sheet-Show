@@ -14,18 +14,20 @@
             <h2 class="name">{{name}}</h2>    
             <span class="close fa fa-close"></>
         </section>
-        
-        {{!-- CRUD Buttons --}}
-        <section class="hero-crud">
-            <a href="/character-sheet/{{id}}">
-                <span class="edit-hero fa fa-pencil-square-o"></span>
-            </a>
-            <!-- TODO:: 02/19/2022 #EP || Add js to delete hero -->
-            <a>
-                <span class="delete-hero fa fa-trash-o"></span>
-            </a>
 
-        </section>
+        {{!-- CRUD Buttons --}}
+        {{#if (eq session_id user_id) }}
+            <section class="hero-crud">
+                <a href="/character-sheet/{{id}}">
+                    <span class="edit-hero fa fa-pencil-square-o"></span>
+                </a>
+                <!-- TODO:: 02/19/2022 #EP || Add js to delete hero -->
+                <a>
+                    <span class="delete-hero fa fa-trash-o"></span>
+                </a>
+
+            </section>
+        {{/if}}
 
         {{!-- BODY CONTENT --}}
         <section class="modal-body">
