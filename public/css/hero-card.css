@@ -1,13 +1,6 @@
 /*----------------------------------------------------------------------------*/
 /* MODALS  */
 
-a {
-    -webkit-transition: all .4s cubic-bezier(.34, 1.45, .7, 1);
-    -o-transition: all .4s cubic-bezier(.34, 1.45, .7, 1);
-    transition: all .4s cubic-bezier(.34, 1.45, .7, 1);
-    color: var(--light);
-  }
-
 h2{
     padding: 0;
     margin: 0;
@@ -62,6 +55,7 @@ h2{
     background-color: black;
     border-radius: .3rem .3rem 0 0;
     /* box-shadow: 0px 1px 1px rgba(0, 0, 0, 1); */
+    overflow: hidden;
 }
   
 .modal-img {
@@ -102,9 +96,15 @@ h2{
     cursor: pointer;
     font-size:28px;
     transition: ease-in-out .1s;
+    
+    
 }
 
-.modal-img:hover,
+.modal-img:hover {
+    transform: rotate(360deg);
+    filter: brightness(110%) saturate(110%);
+}
+
 .delete-hero:hover,
 .edit-hero:hover,
 .close:hover {
@@ -112,9 +112,8 @@ h2{
     text-decoration: none;
     cursor: pointer;
     filter: brightness(110%) saturate(110%);
-    transform: scale(1.1);
-    /* background-color: black; */
-    
+    transform: scale(1.1) rotate(360deg);
+    background-color: black;
 }
 
 .modal-img:active,
@@ -122,7 +121,6 @@ h2{
 .edit-hero:active,
 .close:active {
     transform: scale(.9);
-    
 }
 
 
