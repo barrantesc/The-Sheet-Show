@@ -49,7 +49,7 @@ const stringFromArray = function (array) {
     for (let i = 0; i < array.length; i++) {
         arr.push(array[i].name);
     }
-    return arr.join(" ");
+    return arr.join(", ");
 }
 
 // choose x amount of random element from array - for choosing allowed # of proficiencies, and turning to string

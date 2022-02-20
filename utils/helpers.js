@@ -20,9 +20,25 @@ const gte = (var1, var2) => { return var1 >=  var2 };
 //   }
 // });
 
+// takes string of proficiencies separated by spaces, turns it into an array, goes through each item in the array and removes 'skill-' previx, then if the remainder is longer than two words, it replaces the dash separating the words with a space, then joins items in array into a string separated by a comma and a space. 
+const format_prof = function (str) {
+  let profArr = (str.split(" "));
+  let newProfArr = [];
+  for (let i = 0; i < profArr.length; i++) {
+    let prof = profArr[i].split('skill-');
+    if (prof.length > 1) {
+    	prof.splice(0,1);
+    }
+    prof = prof.toString().replace('-', ' ');
+    newProfArr.push(prof);
+  }
+  return newProfArr.join(', ');
+}
+
 
 //-- EXPORTS
 module.exports = {
   format_date,
-  eq, ne, lt, gt, lte, gte
+  eq, ne, lt, gt, lte, gte, 
+  format_prof
 }
