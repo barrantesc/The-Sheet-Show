@@ -15,7 +15,7 @@ const format_date = date => {
 // };
 
 
-const  eq = (var1, var2) => { return v1 === v2 };
+const  eq = (var1, var2) => { return var1 === var2 };
 //   ne: (v1, v2) => v1 !== v2,
 //   lt: (v1, v2) => v1 < v2,
 //   gt: (v1, v2) => v1 > v2,
