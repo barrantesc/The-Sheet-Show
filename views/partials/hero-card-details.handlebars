@@ -1,6 +1,4 @@
 
-<!-- Image used for delete hero button -->
-<script src='https://kit.fontawesome.com/a076d05399.js'></script> 
 <!-- Imge used for Close and To Sheet buttons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/hero-card.css">
@@ -26,7 +24,7 @@
                     <span class="edit-hero fa fa-pencil-square-o"></span>
                 </a>
                 {{!-- when click, run JS script to delete hero if matches pararms --}}
-                <a onclick="hero_Delete({{session_userId}},{{user_id}},{{id}})" title="Delete this Character?">
+                <a onclick="hero_Delete({{user_id}},{{id}})" title="Delete this Character?">
                     <span class="delete-hero fa fa-trash-o"></span>
                 </a>
 
@@ -74,4 +72,4 @@
 </div>
 
 {{!-- Hero-Card specific JS --}}
-<script src='/javascript/hero-card.js'></script> 
+<script src='../javascript/hero-card.js'></script> 

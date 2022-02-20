@@ -1,20 +1,19 @@
 //-- All Hero-Card specific requests
 
+
 //-- Delete HERO if requested from a card
-const hero_Delete = async (session_UserId, user_id, hero_id) => {
+const hero_Delete = async (user_id, hero_id) => {
     console.log("delete requested")
     try{
 
-        if(session_UserId === user_id) {
-            const response = await fetch(`/api/heroes/${hero_id}`, {
-                method: 'DELETE',
-            });
+        const response = await fetch(`/api/heroes/${hero_id}`, {
+            method: 'DELETE',
+        });
 
-            if (response.ok) {
-                document.location.replace('/');
-            } else {
-                alert(`${hero_id} ${response.statusText}`);
-            }
+        if (response.ok) {
+            document.location.replace('/');
+        } else {
+            alert(`${hero_id} ${response.statusText}`);
         }
     }
     catch (err){
