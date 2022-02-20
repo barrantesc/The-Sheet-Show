@@ -2,18 +2,21 @@
 
 
 //-- Delete HERO if requested from a card
-const hero_Delete = async (user_id, hero_id) => {
+const deleteHero = async (hero_id) => {
     console.log("delete requested")
     try{
 
+        
         const response = await fetch(`/api/heroes/${hero_id}`, {
             method: 'DELETE',
         });
 
         if (response.ok) {
+            // console.log("Response OK")
             document.location.replace('/');
+            
         } else {
-            alert(`${hero_id} ${response.statusText}`);
+            alert(`ELSE Alert: ${hero_id} - ${response.statusText}`);
         }
     }
     catch (err){

@@ -17,14 +17,14 @@
         </section>
 
         {{!-- CRUD Buttons --}}
-        {{#if (eq session_userId hero.user_id)}}
+        {{#if (eq session_user_id hero.user_id)}}
             
             <section class="hero-crud">
                 <a id="hero-delete-url" href="/character-sheet/{{id}}" title="View this Character Sheet?">
                     <span class="edit-hero fa fa-pencil-square-o"></span>
                 </a>
                 {{!-- when click, run JS script to delete hero if matches pararms --}}
-                <a onclick="hero_Delete({{user_id}},{{id}})" title="Delete this Character?">
+                <a onclick="deleteHero({{id}})" title="Delete this Character?">
                     <span class="delete-hero fa fa-trash-o"></span>
                 </a>
 

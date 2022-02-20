@@ -135,25 +135,40 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 // delete hero
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
+    console.log("delete route hit")
+    
+    //-- if not logged in, can't delete
+    if(!req.session.loggedIn){ 
+        console.log("not logged in, go home")
+        // document.redirect('/');
+        return;
+    }
+    
+    //-- verify heros user_id associated matches session_user_id  
     Hero.destroy({
         where: {
             id: req.params.id
         }
     })
-        .then(heroData => {
-            if (!heroData) {
-                res.status(404).json({
-                    message: 'Hero not found!'
-                });
-                return;
-            }
-            res.json(heroData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    .then(heroData => {
+        if (!heroData) {
+            res.status(404).json({
+                message: 'Hero not found!'
+            });
+            console.log('nothing to delete')
+            return;
+        }
+        console.log("delete")
+        res.json(heroData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+        
+    
+    
 });
 
 module.exports = router;
