@@ -17,7 +17,7 @@
         </section>
 
         {{!-- CRUD Buttons --}}
-        {{#if (eq session_user_id hero.user_id)}}
+        {{#if (eq user_id user_id)}}
             
             <section class="hero-crud">
                 <a id="hero-delete-url" href="/character-sheet/{{id}}" title="View this Character Sheet?">

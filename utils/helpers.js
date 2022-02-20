@@ -6,7 +6,7 @@ const format_date = date => {
 };
 
 // comparison operators
-const eq = (var1, var2) =>  { return var1 === var2 };
+const eq = (var1, var2) =>  { console.log(var1,var2);return var1 === var2 };
 const ne = (var1, var2) =>  { return var1 !== var2 };
 const lt = (var1, var2) =>  { return var1 <   var2 };
 const gt = (var1, var2) =>  { return var1 >   var2 };

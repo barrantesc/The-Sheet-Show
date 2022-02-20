@@ -146,6 +146,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     }
     
     //-- verify heros user_id associated matches session_user_id  
+    //-- TODO:: 02/20/2022 #EP || Only allow if you own it. 
     Hero.destroy({
         where: {
             id: req.params.id
