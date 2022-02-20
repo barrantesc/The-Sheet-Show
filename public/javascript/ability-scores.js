@@ -3,8 +3,8 @@
 
 // Retrieve selected race ability bonus info
 const retrieveRaceBonus = async function (raceName) {
-    const apiUrl = `https://www.dnd5eapi.co/api/races/${raceName}`;
-
+    const apiUrl = `https://www.dnd5eapi.co/api/races/${raceName.toLowerCase()}`;
+    
     const response = await fetch(apiUrl);
     if (response.ok) {
         const raceData = await response.json();
