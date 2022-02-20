@@ -110,8 +110,6 @@ router.get('/hero-card/:id', async (req, res) => {
                 'race',
                 'class',
                 'gender',
-                "id",
-                "user_id",
                 "name",
                 "race",
                 "class",
@@ -130,7 +128,6 @@ router.get('/hero-card/:id', async (req, res) => {
         myHero.get({ plain: true })
         );
 
-        console.log(req.session)
         res.render('hero-card', {
             heros,
             username: req.session.username,
