@@ -79,19 +79,23 @@ const stringFromArray = function (array) {
     // selects a random element from array x number of times, pushes each to a different new array
     // joins the randomly selected elements into a string
     // -- still need to figure out how to remove selected element from arr after pushing to newArr to avoid duplicates, but code breaks with obvious the splice() solution
+    // -- replaced for loop with while loop to ensure loop keeps going if not enough valid items have been pushed to the newArr while also making sure items pushed are deleted from the original array to prevent duplicates
 const randomFromArray = function (array, n) {
     let arr = [];
     let newArr = [];
     for (let i = 0; i < array.length; i++) {
         arr.push(array[i].index);
     }
-    for (let i = 0; i < n; i++) {
+    let i = 0;
+    while (newArr.length < n) {
         let idx = Math.floor(Math.random() * (array.length));
-        newArr.push(arr[idx]);
-        // arr.splice(idx);
+        if (arr[idx]) {
+            newArr.push(arr[idx]);
+            arr.splice(idx, 1);
+        }
+        i++
     }
-    // console.log(arr);
-    // console.log(newArr);
+
     return newArr.join(" ");
 }
 
