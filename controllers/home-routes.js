@@ -3,6 +3,7 @@ const { render } = require('express/lib/response');
 const sequelize = require('../config/connection');
 const { User, Hero } = require('../models');
 const withAuth = require('../utils/auth');
+const contentManager = require('../utils/contentManager');
 
 
 //GET request to show all characters and include their usernames
@@ -127,6 +128,9 @@ router.get('/hero-card/:id', async (req, res) => {
         const heros = heroData.map((myHero) =>
         myHero.get({ plain: true })
         );
+
+        // capitalize race for hero card
+        heros[0].race = contentManager.uppercaseFirst(heros[0].race)
 
         res.render('hero-card', {
             heros,
