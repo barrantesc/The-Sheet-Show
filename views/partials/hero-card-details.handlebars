@@ -11,16 +11,16 @@
         <section class="modal-header">
             <img class="modal-img" src="/assets/logos/logo_32x32.png" title="Open Character Sheet" />
             <h2 class="name">{{name}}</h2>    
-            <span class="close fa fa-close" style="font-size:28px"></>
+            <span class="close fa fa-close"></>
         </section>
         {{!-- CRUD Buttons --}}
         <section class="hero-crud">
             <a href="/character-sheet/{{id}}">
-                <span class="edit-hero fa fa-pencil-square-o" style="font-size:28px"></span>
+                <span class="edit-hero fa fa-pencil-square-o"></span>
             </a>
             <!-- TODO:: 02/19/2022 #EP || Add js to delete hero -->
             <a>
-                <span class="delete-hero fa fa-trash-o" style="font-size:28px"></span>
+                <span class="delete-hero fa fa-trash-o"></span>
             </a>
 
         </section>
@@ -58,12 +58,9 @@
             
         </section>
         <section class="modal-footer">
-            
-        <a href="/character-sheet/{{id}}">
-            <span class="edit-hero fa fa-pencil-square-o" style="font-size:28px"></span>
-        </a>
-        <!-- TODO:: 02/19/2022 #EP || Add js to delete hero -->
-        <span class="delete-hero fa fa-trash-o" style="font-size:28px"></span>
+            <span>
+                {{#if username}} Created by {{username}} {{/if}}
+                {{#if date_created}} on {{date_created}}{{/if}}
         </section>
     </div>
 </div>

@@ -86,25 +86,28 @@ h2{
     text-align: center;
 }
 
+.modal-img,
 .delete-hero,
 .edit-hero,
 .close {
     padding: .5rem;
     color: #fefefe;
     float: right;
-    font-size: 28px;
-    
-    transition: ease-in-out .2s;
+    cursor: pointer;
+    font-size:28px;
+    transition: ease-in-out .1s;
 }
 
+.modal-img:hover,
 .delete-hero:hover,
 .edit-hero:hover,
 .close:focus {
-    color: #fefefe;
+    /* color: #fefefe; */
     text-decoration: none;
     cursor: pointer;
-    
-    background-color: black;
+    filter: brightness(120%) saturate(120%);
+    transform: scale(1.1);
+    /* background-color: black; */
 
 }
 
@@ -137,13 +140,14 @@ h2{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     color: white;
     text-align: center;
     vertical-align: middle;
     background-color: rgba(0, 0, 0, 1);
     border-radius: 0 0 .3rem .3rem;
     height: auto;
+    min-height: 1rem;
 }
 
 .edit-hero {
