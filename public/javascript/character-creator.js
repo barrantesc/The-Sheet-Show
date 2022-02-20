@@ -13,8 +13,6 @@ const retrieveRaceInfo = async function (raceName) {
         }
 
         return raceInfo;
-    } else {
-        console.log(err);
     }
 };
 
@@ -25,7 +23,7 @@ const retrieveClassInfo = async function (className) {
     const response = await fetch(apiUrl);
     if (response.ok) {
         const classData = await response.json();
-        // saving to object
+        // saving data to object
         const classInfo = {
             choice_number : classData.proficiency_choices[0].choose,
             prof_array : classData.proficiency_choices[0].from
@@ -34,26 +32,6 @@ const retrieveClassInfo = async function (className) {
         return classInfo;
     }
 }
-
-// Calculate ability scores
-    // Yields number between 6 - 18, to simulate rolling 4d6, re-rolling any 1s, and dropping lowest number
-const abilityScoresCalc = function () {
-    const score = Math.floor((Math.random() * 12) + 6);
-    console.log(score);
-    return score;
-};
-
-// Calculate modifiers
-    // takes ability score, subtracts 10, divides by 2, rounds up to nearest integer
-
-    // temporary variable to test modifier calculator
-let score = 13;
-
-const modifierCalc = function (score) {
-    const modifier = Math.ceil((score - 10) / 2);
-    console.log(modifier);
-    return modifier;
-};
 
 // Calculate Proficiency Bonus
     // determined by player level (starting from level 1, the bonus increases by 1every four levels)
@@ -79,19 +57,23 @@ const stringFromArray = function (array) {
     // selects a random element from array x number of times, pushes each to a different new array
     // joins the randomly selected elements into a string
     // -- still need to figure out how to remove selected element from arr after pushing to newArr to avoid duplicates, but code breaks with obvious the splice() solution
+    // -- replaced for loop with while loop to ensure loop keeps going if not enough valid items have been pushed to the newArr while also making sure items pushed are deleted from the original array to prevent duplicates
 const randomFromArray = function (array, n) {
     let arr = [];
     let newArr = [];
     for (let i = 0; i < array.length; i++) {
         arr.push(array[i].index);
     }
-    for (let i = 0; i < n; i++) {
+    let i = 0;
+    while (newArr.length < n) {
         let idx = Math.floor(Math.random() * (array.length));
-        newArr.push(arr[idx]);
-        // arr.splice(idx);
+        if (arr[idx]) {
+            newArr.push(arr[idx]);
+            arr.splice(idx, 1);
+        }
+        i++
     }
-    // console.log(arr);
-    // console.log(newArr);
+
     return newArr.join(" ");
 }
 
@@ -113,7 +95,6 @@ async function newCharFormHandler(event) {
     const raceInfo = await retrieveRaceInfo(document.querySelector('#char-race').value);
     const alignment = raceInfo.alignment;
     const langString = stringFromArray(raceInfo.languages);
-        // need to also retrieve ability bonuses, add them to ability scores, and calculate modifiers and find a way to create 6 Ability objects to be stored in db that are linked to this Hero object through hero_id
 
     // info retrieved from api/classes based on user input
     const classInfo = await retrieveClassInfo(document.querySelector('#char-class').value);
@@ -132,7 +113,7 @@ async function newCharFormHandler(event) {
             alignment,
             languages: langString,
             proficiencies: profString,
-            image_link
+            image_link,
         }),
         headers: {
             'Content-Type': 'application/json'

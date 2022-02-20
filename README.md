@@ -30,4 +30,7 @@ You can view the app at the sites below:
 - [Github repo](https://github.com/barrantesc/The-Sheet-Show)
 
 ## What does it look like?
-![mockup.png](/mockup.png)
+![LogIn.png](/LogIn.png)
+![CharacterCreator.png](/CharacterCreator.png)
+![Characters.png](/Characters.png)
+![Sheet.png](/Sheet.png)

@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { render } = require('express/lib/response');
 const sequelize = require('../config/connection');
-const { User, Hero } = require('../models');
+const { User, Hero, Ability } = require('../models');
 const withAuth = require('../utils/auth');
 const contentManager = require('../utils/contentManager');
 
@@ -187,6 +187,16 @@ router.get('/character-sheet/:id', async (req, res) => {
                 "proficiencies",
                 "image_link",
             ],
+            include: [
+                {
+                    model: User,
+                    attributes: ['username']
+                },
+                {
+                    model: Ability,
+                    attributes: ['name', 'score', 'modifier']
+                }
+            ]
         });
     
         const heros = heroData.map((myHero) =>
