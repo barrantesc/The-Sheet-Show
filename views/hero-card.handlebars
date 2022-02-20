@@ -1,6 +1,6 @@
 
 {{#each heros as |hero|}}
 
-    {{> hero-card-details session_userId }}
+    {{> hero-card-details (hero session_userId) }}
 
 {{/each}}
