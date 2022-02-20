@@ -4,7 +4,6 @@
 
  :root {
   
-    
     /*
         COLORS 
      */
@@ -41,16 +40,6 @@
     --shadow_025_black:  rgba(0,0,0,.25);
     --shadow_1px_25a: 2px solid var(--shadow_025_black);
 
-    
-    /*
-        BORDERS
-    */
-
-
-    /*
-        PADDING
-    */
-
 
     /*
         BACKGROUNDS
@@ -66,13 +55,6 @@
 
     --btn_txt_inactive: var(--color_Primary);
     --btn_txt_active: #6fffe9;
-    
-    /*
-        HEADERS
-    */
-
-    
-    
     
  }
 
@@ -138,11 +120,14 @@ button {
     padding: 0;
     min-height: 3rem;
     height: 4rem;
+    border: 1px solid black;
+    border-radius: .5rem;
 }
 
 button:hover {
     color: var(--btn_txt_active);
     background-color: var(--btn_bg_active);
+    
 }
 
 .text-left {

@@ -10,9 +10,25 @@
     display: none !important;
   }
 
-  #calcScores {
-    margin-top: 15px;
+  .calcScores_div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
+
+  #calcScores {
+    margin: 2rem;
+    width: 75%;
+    font-size: 1.5rem;
+    /* margin-top: 15px; */
+    /* width: 50%; */
+
+  }
+
+  .charsheet{
+    display: none;
+  }
+  
   
   textarea {
     font-size: 12px;
