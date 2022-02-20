@@ -19,10 +19,24 @@ const gte = (var1, var2) => { return var1 >=  var2 };
 //       return Array.prototype.slice.call(arguments, 0, -1).some(Boolean);
 //   }
 // });
+const format_prof = function (str) {
+  let profArr = (str.split(" "));
+  let newProfArr = [];
+  for (let i = 0; i < profArr.length; i++) {
+    let prof = profArr[i].split('skill-');
+    if (prof.length > 1) {
+    	prof.splice(0,1);
+    }
+    prof = prof.toString().replace('-', ' ');
+    newProfArr.push(prof);
+  }
+  return newProfArr.join(', ');
+}
 
 
 //-- EXPORTS
 module.exports = {
   format_date,
-  eq, ne, lt, gt, lte, gte
+  eq, ne, lt, gt, lte, gte, 
+  format_prof
 }
