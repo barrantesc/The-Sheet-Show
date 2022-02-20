@@ -1,10 +1,11 @@
+
 <!-- Used for delete hero button -->
 <script src='https://kit.fontawesome.com/a076d05399.js'></script> 
 <!-- Used for Close and To Sheet buttons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/hero-card.css">
 
-<div id="div-onload-modal" class="modal">
+<div id="div-onload-modal" class="modal slideDown">
     <!-- The modal content here -->
     <div class="modal-content">
         
@@ -13,6 +14,7 @@
             <h2 class="name">{{name}}</h2>    
             <span class="close fa fa-close"></>
         </section>
+        
         {{!-- CRUD Buttons --}}
         <section class="hero-crud">
             <a href="/character-sheet/{{id}}">
