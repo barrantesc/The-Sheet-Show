@@ -1,5 +1,6 @@
-
-<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<!-- Used for delete hero button -->
+<script src='https://kit.fontawesome.com/a076d05399.js'></script> 
+<!-- Used for Close and To Sheet buttons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div id="div-onload-modal" class="modal">
@@ -10,8 +11,17 @@
             <img class="modal-img" src="/assets/logos/logo_32x32.png" title="Open Character Sheet" />
             <h2 class="name">{{name}}</h2>    
             <span class="close fa fa-close" style="font-size:28px"></>
-            
         </section>
+        {{!-- CRUD Buttons --}}
+        <section class="hero-crud">
+            <a href="/character-sheet/{{id}}">
+                <span class="edit-hero fa fa-pencil-square-o" style="font-size:28px"></span>
+            </a>
+            <!-- TODO:: 02/19/2022 #EP || Add js to delete hero -->
+            <span class="delete-hero fa fa-trash-o" style="font-size:28px"></span>
+
+        </section>
+
         {{!-- BODY CONTENT --}}
         <section class="modal-body">
             <div class="hero-level-class">
