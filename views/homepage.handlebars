@@ -1,4 +1,14 @@
 
+{{#if loggedIn}}
+  <div class="peskyPClass" id="peskyPID">
+    <p>To create a new character, please click the <br> Navigation Bars at the top right of the screen.</p>
+  </div>
+{{ else }}
+  <div class="peskyPClass" id="peskyPID">
+    <p>Welcome to the Sheet Show! <br> To explore our options, please click the <br> Navigation Bars at the top right of the screen. <br> **See characters created by other users below**</p>
+  </div>
+{{/if}}
+
 <section class="character-list">
   {{#each heros as |hero|}}
       
@@ -8,6 +18,3 @@
   {{/each}}
 </section>
 
-<div class="peskyPClass" id="peskyPID">
-  <p>Welcome to the Sheet Show! <br> To explore our options please click the <br> Navigation Bars at the top right of the screen.</p>
-</div>
