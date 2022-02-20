@@ -81,6 +81,7 @@
  */
 
  html {
+    box-sizing: border-box; /* Account for parent element pading. ( Keeps elements from overflowing containers) */
     scroll-behavior: smooth;
   }
 
