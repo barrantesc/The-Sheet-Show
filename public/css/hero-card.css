@@ -1,6 +1,12 @@
 /*----------------------------------------------------------------------------*/
 /* MODALS  */
 
+a {
+    -webkit-transition: all .4s cubic-bezier(.34, 1.45, .7, 1);
+    -o-transition: all .4s cubic-bezier(.34, 1.45, .7, 1);
+    transition: all .4s cubic-bezier(.34, 1.45, .7, 1);
+    color: var(--light);
+  }
 
 h2{
     padding: 0;
@@ -101,14 +107,22 @@ h2{
 .modal-img:hover,
 .delete-hero:hover,
 .edit-hero:hover,
-.close:focus {
+.close:hover {
     /* color: #fefefe; */
     text-decoration: none;
     cursor: pointer;
-    filter: brightness(120%) saturate(120%);
+    filter: brightness(110%) saturate(110%);
     transform: scale(1.1);
     /* background-color: black; */
+    
+}
 
+.modal-img:active,
+.delete-hero:active,
+.edit-hero:active,
+.close:active {
+    transform: scale(.9);
+    
 }
 
 
