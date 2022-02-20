@@ -1,16 +1,19 @@
 
-<!-- Used for delete hero button -->
+<!-- Image used for delete hero button -->
 <script src='https://kit.fontawesome.com/a076d05399.js'></script> 
-<!-- Used for Close and To Sheet buttons -->
+<!-- Imge used for Close and To Sheet buttons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/hero-card.css">
 
+
+{{!-- The Hero Card --}}
 <div id="div-onload-modal" class="modal slideDown">
     <!-- The modal content here -->
     <div class="modal-content">
         
         <section class="modal-header">
-            <img class="modal-img" src="/assets/logos/logo_32x32.png" title="Open Character Sheet" />
+            {{!-- <img class="modal-img" src="/assets/logos/logo_32x32.png" title="Re-Roll your Character Stats?" /> --}}
+            <img class="modal-img" src="/assets/logos/logo_32x32.png"/>
             <h2 class="name">{{name}}</h2>    
             <span class="close fa fa-close"></>
         </section>
@@ -19,11 +22,11 @@
         {{#if (eq session_userId hero.user_id)}}
             
             <section class="hero-crud">
-                <a href="/character-sheet/{{id}}">
+                <a id="hero-delete-url" href="/character-sheet/{{id}}" title="View this Character Sheet?">
                     <span class="edit-hero fa fa-pencil-square-o"></span>
                 </a>
-                <!-- TODO:: 02/19/2022 #EP || Add js to delete hero -->
-                <a>
+                {{!-- when click, run JS script to delete hero if matches pararms --}}
+                <a onclick="hero_Delete({{session_userId}},{{user_id}},{{id}})" title="Delete this Character?">
                     <span class="delete-hero fa fa-trash-o"></span>
                 </a>
 
@@ -70,22 +73,5 @@
     </div>
 </div>
 
-<script>
-    var modal = document.getElementById("div-onload-modal"); // Get the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks the button, open the modal
-    
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-    modal.style.display = "none";
-};
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-
-</script>
+{{!-- Hero-Card specific JS --}}
+<script src='/javascript/hero-card.js'></script> 
