@@ -5,22 +5,13 @@ const format_date = date => {
   ).getFullYear()}`;
 };
 
-
-// //-- equal comparision checker
-// const eq = (var1, var2) => {
-  
-//   if(var1 === var2 ){  return true };
-  
-//   return false;
-// };
-
-
-const  eq = (var1, var2) => { return var1 === var2 };
-//   ne: (v1, v2) => v1 !== v2,
-//   lt: (v1, v2) => v1 < v2,
-//   gt: (v1, v2) => v1 > v2,
-//   lte: (v1, v2) => v1 <= v2,
-//   gte: (v1, v2) => v1 >= v2,
+// comparison operators
+const eq = (var1, var2) =>  { return var1 === var2 };
+const ne = (var1, var2) =>  { return var1 !== var2 };
+const lt = (var1, var2) =>  { return var1 <   var2 };
+const gt = (var1, var2) =>  { return var1 >   var2 };
+const lte = (var1, var2) => { return var1 <=  var2 };
+const gte = (var1, var2) => { return var1 >=  var2 };
 //   and() {
 //       return Array.prototype.every.call(arguments, Boolean);
 //   },
@@ -33,5 +24,5 @@ const  eq = (var1, var2) => { return var1 === var2 };
 //-- EXPORTS
 module.exports = {
   format_date,
-  eq
+  eq, ne, lt, gt, lte, gte
 }
