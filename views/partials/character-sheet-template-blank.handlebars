@@ -1,9 +1,11 @@
 <link rel="stylesheet" href="/css/character-sheet-template.css">
 
 {{!-- only create button for score calculator if they have not been calculated yet --}}
-{{#unless abilities.length}}
-<button id="calcScores">Calculate your abiities</button>
-{{/unless}}
+<style>
+  .charsheet{
+      display: block;
+    }
+</style>
 
 <form class="charsheet">
   {{!-- Sheet Header --}}
