@@ -133,6 +133,7 @@ router.get('/hero-card/:id', async (req, res) => {
         res.render('hero-card', {
             heros,
             username: req.session.username,
+            userId: req.session.user_id,
             loggedIn: req.session.loggedIn,
         })
     }
@@ -241,8 +242,6 @@ router.get('/profile', withAuth, async (req, res) => {
                 'race',
                 'class',
                 'gender',
-                "id",
-                "user_id",
                 "name",
                 "race",
                 "class",
