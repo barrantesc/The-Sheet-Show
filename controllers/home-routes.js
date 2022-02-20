@@ -142,7 +142,7 @@ router.get('/hero-card/:id', async (req, res) => {
         res.render('hero-card', {
             heros,
             username: req.session.username,
-            // session_userId: req.session.user_id,
+            session_user_id: req.session.user_id,
             loggedIn: req.session.loggedIn,
             
         })
