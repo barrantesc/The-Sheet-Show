@@ -81,6 +81,7 @@
  */
 
  html {
+    box-sizing: border-box; /* Account for parent element pading. ( Keeps elements from overflowing containers) */
     scroll-behavior: smooth;
   }
 
@@ -342,7 +343,6 @@ p {
     margin-bottom: 15px;
     border-radius: 5px;
 }
-
 
 /*----------------------------------------------------------------------------*/
 /* MEDIA TYPES  */

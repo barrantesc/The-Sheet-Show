@@ -1,0 +1,76 @@
+
+<!-- Imge used for Close and To Sheet buttons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/hero-card.css">
+
+
+{{!-- The Hero Card --}}
+<div id="div-onload-modal" class="modal slideDown">
+    <!-- The modal content here -->
+    <div class="modal-content">
+        
+        <section class="modal-header">
+            {{!-- <img class="modal-img" src="/assets/logos/logo_32x32.png" title="Re-Roll your Character Stats?" /> --}}
+            <img class="modal-img" src="/assets/logos/logo_32x32.png"/>
+            <h2 class="name">{{name}}</h2>    
+            <span class="close fa fa-close"></>
+        </section>
+
+        {{!-- CRUD Buttons --}}
+        {{!-- TODO:: 02/20/2022 #EP | Need to add this correctly.This is a hard-coded always success temp statement --}}
+        {{#if (eq user_id user_id)}}
+            
+            <section class="hero-crud">
+                <a id="hero-delete-url" href="/character-sheet/{{id}}" title="View this Character Sheet?">
+                    <span class="edit-hero fa fa-pencil-square-o"></span>
+                </a>
+                {{!-- when click, run JS script to delete hero if matches pararms --}}
+                <a onclick="deleteHero({{id}})" title="Delete this Character?">
+                    <span class="delete-hero fa fa-trash-o"></span>
+                </a>
+
+            </section>
+        {{/if}}
+
+        {{!-- BODY CONTENT --}}
+        <section class="modal-body">
+            <div class="hero-level-class">
+                <span class="level">Level {{player_level}}</span>
+                <span class="class">{{class}}</span>
+            </div>
+            {{!-- IMAGE --}}
+            <div>
+                <img class="hero-img" src="../{{image_link}}" alt="{{name}}">
+            </div>    
+            
+            {{!-- UNDER IMAGE --}}
+            <div class="hero-stats">
+                <span class="race">{{race}}</span>
+                <span class="spacer"></span>
+                <span class="gender">{{gender}}</span>
+                <span class="spacer"></span>
+                <span class="age">{{age}} years old.</span>
+                <span class="spacer"></span>
+            </div>
+            <div class="hero-flavor">
+                <span class="alignment">{{name}}'s alignment is {{alignment}}.</span>
+            </div>
+
+            {{!-- Background --}}
+            <div class="hero-proficiencies">
+                <span class="proficiencies">{{proficiencies}}</span>
+            </div>
+            </span>
+
+            
+        </section>
+        <section class="modal-footer">
+            <span>
+                {{#if username}} Created by {{username}} {{/if}}
+                {{#if date_created}} on {{date_created}}{{/if}}
+        </section>
+    </div>
+</div>
+
+{{!-- Hero-Card specific JS --}}
+<script src='../javascript/hero-card.js'></script> 
