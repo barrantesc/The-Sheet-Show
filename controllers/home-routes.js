@@ -122,6 +122,10 @@ router.get('/hero-card/:id', async (req, res) => {
                 "proficiencies",
                 "image_link",
             ],
+            include: {
+                model: User,
+                attributes: ['username', 'id']
+            }
         });
     
         const heros = heroData.map((myHero) =>
