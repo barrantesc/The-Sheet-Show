@@ -58,7 +58,9 @@
 
             {{!-- Background --}}
             <div class="hero-proficiencies">
-                <span class="proficiencies">{{format_prof proficiencies}}</span>
+                {{#if proficiencies}}
+                    <span class="proficiencies">{{format_prof proficiencies}}</span>
+                {{/if}}
             </div>
             </span>
 
