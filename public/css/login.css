@@ -75,6 +75,13 @@ body {
     font-weight: 300;
 }
 
+.signupButton {
+    padding: 12px 0 !important;
+    height: 3.4rem;
+    width: 100%;
+    
+}
+
 .btn-black{
     background-color: #000 !important;
     color: #fff;
