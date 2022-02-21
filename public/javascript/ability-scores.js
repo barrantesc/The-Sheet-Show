@@ -1,3 +1,16 @@
+// global variables
+    // array of ability objects to be called from event handlers
+const abilitiesArr = [  
+    {name: 'STR'},
+    {name: 'DEX'},
+    {name: 'CON'},
+    {name: 'INT'},
+    {name: 'WIS'},
+    {name: 'CHA'}
+];
+    // save ability bonuses from D&D api to be called from event handlers
+const raceInfo = [];
+
 // ability bonuses retrieved from api based on race, and calculating ability scores and modifiers factoring in these bonuses
 // const ability_scores = abilityScoresGet(raceInfo.ability_bonuses);
 
@@ -8,12 +21,8 @@ const retrieveRaceBonus = async function (raceName) {
     const response = await fetch(apiUrl);
     if (response.ok) {
         const raceData = await response.json();
-        // saving data to object
-        const raceInfo = {
-            ability_bonuses: raceData.ability_bonuses,
-        }
-
-        return raceInfo;
+    
+        return raceInfo.push(raceData.ability_bonuses);
     }
 };
 
@@ -23,31 +32,23 @@ const retrieveRaceBonus = async function (raceName) {
     // Calculate modifier
         // takes ability score, subtracts 10, divides by 2, rounds up to nearest integer
 const abilityScoresCalc = function (array) {
-    const abilitiesArr = [  
-        {name: 'STR'},
-        {name: 'DEX'},
-        {name: 'CON'},
-        {name: 'INT'},
-        {name: 'WIS'},
-        {name: 'CHA'}
-    ];
-
     for (let i = 0; i < abilitiesArr.length; i++) {
         abilitiesArr[i].score = Math.floor((Math.random() * 12) + 6);
         abilitiesArr[i].modifier = Math.ceil((abilitiesArr[i].score - 10) / 2);
     }
 
-    for (let i = 0; i < array.length; i++) {
-        let abilityName = array[i].ability_score.name
-        let abilityScore = array[i].bonus
-        for (let j = 0; j < abilitiesArr.length; j++) {
-            if (abilityName === abilitiesArr[j].name) {
-                abilitiesArr[j].score += abilityScore;
-                abilitiesArr[j].modifier = Math.ceil((abilitiesArr[i].score - 10) / 2);
-            }
-        }
-    }
-
+    // for (let i = 0; i < array.length; i++) {
+    //     let abilityName = array[i].ability_score.name
+    //     let abilityScore = array[i].bonus
+    //     for (let j = 0; j < abilitiesArr.length; j++) {
+    //         if (abilityName === abilitiesArr[j].name) {
+    //             abilitiesArr[j].score += abilityScore;
+    //             abilitiesArr[j].modifier = Math.ceil((abilitiesArr[i].score - 10) / 2);
+    //         }
+    //     }
+    // }
+    console.log(raceInfo)
+    console.log(abilitiesArr);
     return abilitiesArr;
 }
 
@@ -88,7 +89,8 @@ async function createAbilityScores () {
         const name = abilities[i].name;
         const score = abilities[i].score;
         const modifier = abilities[i].modifier;
-        postAbilityScores(hero_id, name, score, modifier);
+        console.log(name, score, modifier)
+        // postAbilityScores(hero_id, name, score, modifier);
     }
 };
 
