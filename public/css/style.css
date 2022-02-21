@@ -1,0 +1,362 @@
+/* 
+    ROOT VALUES ----------------------------------------------------------------
+ */
+
+ :root {
+  
+    /*
+        COLORS 
+     */
+    
+     /* ROOT colors used */
+    --color_Primary: black;
+    --color_Secondary: #4ed1c4;
+    --color_Tertiary: #F9F9F9;
+    
+
+    /* Accents to ROOT colors */
+    --accent_Primary: var(--color_Secondary);
+    --accent_Secondary: var(--color_Tertiary);
+    
+
+     
+    /*
+        NAVIGATION
+    */
+
+    --nav_Background: var(--color_Primary);
+    --nav_Font: var(--color_Tertiary);
+
+
+    /*
+        SHADOWS
+    */
+
+    --boxShadow: 0 -.5rem .5rem rgba(0,0,0,.25); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_Hover_top_black: 0 -1rem 1rem rgba(0,0,0,.5); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_bottom_accent_Primary: 0 .05rem .5rem var(--color_Primary); /* offset-x | offset-y | blur-radius | color */
+    --boxShadow_Hover_top_heavy_bottom_light: 0rem -.4rem 1rem rgba(0,0,0,.5); /* offset-x | offset-y | blur-radius | color */
+    
+    --shadow_025_black:  rgba(0,0,0,.25);
+    --shadow_1px_25a: 2px solid var(--shadow_025_black);
+
+
+    /*
+        BACKGROUNDS
+     */
+    --bg_Body: #F9F9F9; /* A very light shade of white gray */    
+    --bg_Section: #fefdff; /* A variation of white gray  */
+    
+    /*
+        BUTTONS    
+    */
+    --btn_bg_inactive: var(--color_Tertiary);
+    --btn_bg_active: var(--color_Primary);
+
+    --btn_txt_inactive: var(--color_Primary);
+    --btn_txt_active: #6fffe9;
+    
+ }
+
+/* 
+    BODY  and BASE CONTENT FORMATTING ------------------------------------------
+ */
+
+ html {
+    box-sizing: border-box; /* Account for parent element pading. ( Keeps elements from overflowing containers) */
+    scroll-behavior: smooth;
+  }
+
+ body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg_Body);
+    font-family: Roboto, Arial, sans-serif;
+    background-image: url("../assets/images/tesselatedHeros.jpg");
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    /* Prevents cursor from changing from arrow unless explicit */
+    cursor: default;
+ }
+
+ a {
+    color: var(--link);
+    text-decoration: none; /* no underline */
+ }
+
+
+h1,h2,h3,h4,h5 {
+    /* removing all default padding around headers */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 3rem;
+}
+h2 {
+    padding-top: 5rem;
+    font-weight: 450;
+    font-size: 2.5rem;
+}
+h3 {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+button {
+    /* universal button configuration */
+    /* background-color:(transparent); */
+    background-color: var(--btn_bg_inactive);
+    color: var(--btn_txt_inactive);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    min-height: 3rem;
+    height: 4rem;
+    border: 1px solid black;
+    border-radius: .5rem;
+}
+
+button:hover {
+    color: var(--btn_txt_active);
+    background-color: var(--btn_bg_active);
+    
+}
+
+.text-left {
+    /* Used to push elements around */
+    text-align: left;
+    float: left;
+} 
+.text-right {
+    /* Used to push elements around */
+    text-align: right;
+    float: right;
+}
+.icon {
+    /*used for fav icons*/
+    color: var(--accent_Primary);
+    border-bottom: var(--shadow_1px_25a);
+}
+
+/* 
+    HEADER / NAV / BODY ---------------------------------------------------------------
+ */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 2rem;
+    background-color: var(--nav_Background);
+    color: var(--nav_Font);
+}
+
+header h1 {
+    float: left;
+    flex: 4;
+}
+
+nav {
+    font-size: 3rem;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color_Primary);
+    margin: 30px 0;
+    padding: 20px;
+    font-size: 20px;
+    border: 4px solid black;
+    border-radius: 5px;
+    text-align: center;
+    background-color: white;
+}
+
+
+
+
+/*----------------------------------------------------------------------------*/
+/* ERROR STYLING */
+
+.errorDivElement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color_Primary);
+    margin: 30px 0;
+    padding: 20px;
+    font-size: 20px;
+    border: 4px solid black;
+    border-radius: 5px;
+    text-align: left;
+    background-color: white;
+}
+
+.errorTextDiv {
+    text-align: left;
+    color: var(--color_Primary);
+    margin: 50px 0;
+    padding: 20px;
+}
+
+/*----------------------------------------------------------------------------*/
+/* CHARACTER DETAILS - HOMEPAGE & PROFILE */
+
+/* SECTION on Homepage holding characters */
+.character-list{
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* The DIV that holds the character-details.handlebars content */
+.hero-card {
+    margin: 1rem;
+    padding: 0;
+    flex: 25%;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    border: black solid 4px;
+    border-radius: 5px;
+    background-color: white;
+}
+.hero-card a {
+    width: 100%;
+}
+
+.hero-banner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* padding: 1rem; */
+    width: 100%;
+}
+
+.hero-name-sheet {
+    
+    font-weight: 400;
+    font-size: 1.5rem;
+    background-color: black;
+    color: white;
+    flex: 100%;
+    padding: .25rem 2rem;
+}
+.hero-name-sheet .name {
+    float: center;
+    
+}
+.hero-name-sheet .sheet {
+    float: right;    
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    filter: brightness(120%);
+}
+
+.hero-card:hover {
+    /* filter: brightness(120%); */
+    filter: brightness(120%) saturate(105%);
+    transform: scale(1.02);
+}
+
+.hero-level-class{
+    flex: 100%;
+    justify-content: space-between;
+    padding: .5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.hero-stats{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: transparent;
+    font-weight: 400;
+    font-size: 1.25rem;
+    padding: 1rem;
+}
+
+.hero-stats span.spacer:before{
+
+        content:"\00a0 ";
+    
+
+}
+
+/* SPAN within hero-card DIV */
+.hero {
+    
+}
+
+/* -- LINK around hero that goes to char sheet */
+.hero a{
+    /* NONE ATM */
+}
+
+.character-creator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    padding: 15px 20px;
+    margin: 50px auto;
+    border: black solid 4px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.hero-img {
+    width: 100%;
+    /* height: 50%; */
+    max-height: 394.077px;
+    max-width: 232.756px;
+    
+}
+
+/* Used for header */
+.profile-banner-username p {
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 4px;
+    margin: 0px;
+    font-weight: bold;
+}
+
+/*----------------------------------------------------------------------------*/
+/* CHARACTER CREATOR  */
+
+.character-creator select {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.character-creator input {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+/*----------------------------------------------------------------------------*/
+/* MEDIA TYPES  */
+
+/* TODO:: 02/17/2022 #EP || Add Media Types! */

@@ -2,33 +2,61 @@
     {
         "id": 1,
         "user_id": 1,
-        "name" : "Christina",
-        "race": "Human",
+        "name" : "Christiana",
+        "race": "human",
         "class": "Ranger",
-        "gender": "Female"
+        "gender": "Female",
+        "age" : 20,
+        "player_level" : 1,
+        "proficiency_bonus" : 1,
+        "alignment" : "Neutral Good",
+        "languages" : "Common",
+        "proficiencies" : "",
+        "image_link": "/assets/images/race_human.PNG"
     },
     {
         "id": 2,
         "user_id": 2,
         "name" : "Connie",
-        "race": "Human",
-        "class": "Elf",
-        "gender": "Female"
+        "race": "elf",
+        "class": "Monk",
+        "gender": "Female",
+        "age" : 20,
+        "player_level" : 1,
+        "proficiency_bonus" : 1,
+        "alignment" : "Neutral Good",
+        "languages" : "Common",
+        "proficiencies" : "",
+        "image_link": "/assets/images/race_elf.PNG"
     },
     {
         "id": 3,
         "user_id": 3,
-        "name" : "Erik",
-        "race": "Drawrf",
-        "class": "Warrior",
-        "gender": "Male"
+        "name" : "Erika Nobeard",
+        "race": "dwarf",
+        "class": "Fighter",
+        "gender": "Female",
+        "age" : 20,
+        "player_level" : 1,
+        "proficiency_bonus" : 1,
+        "alignment" : "Neutral Good",
+        "languages" : "Common",
+        "proficiencies" : "",
+        "image_link": "/assets/images/race_dwarf.PNG"
     },
     {
         "id": 4,
         "user_id": 4,
         "name" : "Mary",
-        "race": "Human",
-        "class": "Paladin",
-        "gender": "Female"
+        "race": "tiefling",
+        "class": "Wizard",
+        "gender": "Female",
+        "age" : 20,
+        "player_level" : 1,
+        "proficiency_bonus" : 1,
+        "alignment" : "Neutral Good",
+        "languages" : "Common",
+        "proficiencies" : "",
+        "image_link": "/assets/images/race_tiefling.PNG"
     }
 ]

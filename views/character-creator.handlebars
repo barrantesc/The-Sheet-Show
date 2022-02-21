@@ -1,0 +1,78 @@
+<div class="character-creator">
+    <form id="character-form">
+        <h1>Character Creator</h1>
+
+        <!-- Race selection -->
+        <div>
+            <label for="char-race">Race: </label>
+            <select id="char-race" name="char-race" required>
+                <option hidden></option>
+                <option value="dragonborn">Dragonborn</option>
+                <option value="dwarf">Dwarf</option>
+                <option value="elf">Elf</option>
+                <option value="gnome">Gnome</option>
+                <option value="half-elf">Half-Elf</option>
+                <option value="half-orc">Half-Orc</option>
+                <option value="halfling">Halfling</option>
+                <option value="human">Human</option>
+                <option value="tiefling">Tiefling</option>
+            </select>
+        </div>
+
+        <!-- Class selection -->
+        <div>
+            <label for="char-class">Classes: </label>
+            <select id="char-class" name="char-class" required>
+                <option hidden></option>
+                <option value="barbarian">Barbarian</option>
+                <option value="bard">Bard</option>
+                <option value="cleric">Cleric</option>
+                <option value="druid">Druid</option>
+                <option value="fighter">Fighter</option>
+                <option value="monk">Monk</option>
+                <option value="paladin">Paladin</option>
+                <option value="ranger">Ranger</option>
+                <option value="rogue">Rogue</option>
+                <option value="sorcerer">Sorcerer</option>
+                <option value="warlock">Warlock</option>
+                <option value="wizard">Wizard</option>
+        </div>
+        </select>
+
+        <!-- Name input-->
+        <div>
+            <label for="char-name">Character Name: </label>
+            <input type="text" id="char-name" name="char-name" required>
+        </div>
+
+        <!-- Gender selection -->
+        <div>
+            <label for="char-gender">Gender: </label>
+            <select id="char-gender" name="char-gender" required>
+                <option hidden></option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <!-- Age selection -->
+        <div>
+            <label for="char-age">Age: </label>
+            <input type="number" id="char-age" name="char-age" required>
+        </div>
+
+        <!-- Character level -->
+        <div>
+            <label for="char-level">Character level: </label>
+            <input type="number" id="char-level" name="char-level" min="1" max="20" required>
+
+        </div>
+
+        <div>
+            <button type="submit">Create your character</button>
+        </div>
+    </form>
+</div>
+
+<script src="/javascript/character-creator.js"></script>

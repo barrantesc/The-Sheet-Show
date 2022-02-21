@@ -4,23 +4,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Just Tech News</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>The Sheet Show</title>
+  <link rel="shortcut icon" href="../assets/logos/Logo.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="/css/navigation.css">
+
+    <style>
+      .nav-overlay {
+          height: 0%;
+          width: 100%;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: rgb(0,0,0);
+          background-color: rgba(0,0,0, 0.9);
+          overflow-y: hidden;
+          transition: 0.5s;
+        }
+
+        .nav-overlay-content {
+          position: relative;
+          top: 25%;
+          width: 100%;
+          text-align: center;
+          margin-top: 30px;
+        }
+
+        .nav-overlay a {
+          padding: 8px;
+          text-decoration: none;
+          font-size: 36px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+
+
+        .nav-logo,
+        .nav-logo img {
+          height: 100%;
+          filter: brightness(120%); 
+          max-height: 70px;
+          float: left;
+          transition: 0.1s;
+          image-rendering: -moz-crisp-edges;         /* Firefox */
+          image-rendering:   -o-crisp-edges;         /* Opera */
+          image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+          image-rendering: crisp-edges;
+          -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+        }
+
+        .nav-logo img:hover {
+          transform: scale(1.01);
+        }
+
+
+        .nav-logo img:hover,
+        nav .nav-hamburger:hover,
+        nav .nav-hamburger:focus,
+        .nav-overlay a:hover,
+        .nav-overlay a:focus {
+          color: #f1f1f1;
+          cursor: pointer;
+          filter: brightness(120%) saturate(120%);
+        }
+
+        nav .nav-hamburger:hover,
+        nav .nav-hamburger:focus,
+        .nav-overlay a:hover,
+        .nav-overlay a:focus {
+          transform: scale(1.1);
+        }
+
+        .nav-overlay .closebtn {
+          position: absolute;
+          top: 20px;
+          right: 45px;
+          font-size: 60px;
+        }
+    </style>
 </head>
 
 <body>
   <div class="wrapper">
     <header>
-      <h1>
-        <a href="/">Just Tech News</a>
-      </h1>
+      
+      <a class='nav-logo' href="/">
+        <img src="/assets/logos/white_text/Long_horizontal_white.png" alt="The Sheet Show logo">
+      </a>
+      
       <nav>
+        <span class="nav-hamburger" onclick="openNav()">☰</span>
+
+        {{!-- The Naviagational nav-overlay --}}
+        <div id="myNav" class="nav-overlay">
+
+          {{!-- Button to close the nav-overlay navigation --}}
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+          <!-- nav-overlay content when hit nav button -->
+          <div class="nav-overlay-content">
+             <a href="/">Home</a>
+             {{#if loggedIn}}
+              
+              <a id="My Characters" href="/profile">My Characters</a>
+              <a id="My Characters" href="/character-creator">Create New Character</a>
+              <a id="Blank Sheet" href="/character-sheet">Blank Character Sheet</a>
+              <a id="logout" href="/">Logout</a>  
+
+            {{else}}
+              <a href="/login">Login</a>
+            {{/if}}
+            <hr>
+            <a href="https://github.com/barrantesc/The-Sheet-Show" target="_blank">
+              About
+            </a>
+          </div>
+
+        </div>
         {{!-- Since logout won’t be an actual page that users can visit, it should be a button, but we can still style it to look like a link. --}}
-        {{#if loggedIn}}
-          <button id="logout" class="btn-no-style">logout</button>
-        {{else}}
-          <a href="/login">login</a>
-        {{/if}}
+       
       </nav>
     </header>
     <main>
@@ -28,11 +133,13 @@
       {{{ body }}}
     </main>
     <footer>
-      Thanks for visiting!
+      {{!-- Thanks for visiting! --}}
     </footer>
   </div>
+  <script src="/javascript/navigation.js"></script>
   {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
+    <script src="/javascript/character.js"></script>
   {{/if}}
 </body>
 

@@ -1,0 +1,192 @@
+.slideDown{
+	animation-name: slideDown;
+	-webkit-animation-name: slideDown;	
+
+	animation-duration: 1s;	
+	-webkit-animation-duration: .3s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;	
+
+	visibility: visible !important;	
+}
+
+.slideRight{
+	animation-name: slideRight;
+	-webkit-animation-name: slideRight;	
+
+	animation-duration: .5s;	
+	-webkit-animation-duration: .5s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;	
+
+	visibility: visible !important;						
+}
+
+@keyframes slideDown {
+	0% {
+		transform: translateY(-100%);
+	}
+	10%{
+		transform: translateY(-80%);
+	}
+	20%{
+		transform: translateY(-60%);
+	}
+	30%{
+		transform: translateY(-40%);
+	}
+	40%{
+		transform: translateY(-20%);
+	}			
+	50% {
+		transform: translateY(0%);
+	}
+	60%{
+		transform: translateY(4%);
+	}
+	70%{
+		transform: translateY(-0%);
+	}
+	80%{
+		transform: translateY(-4%);
+	}
+	90%{
+		transform: translateY(2%);
+	}			
+	100% {
+		transform: translateY(0%);
+	}
+}
+
+@-webkit-keyframes slideDown {
+	0% {
+		-webkit-transform: translateY(-100%);
+	}
+	50%{
+		-webkit-transform: translateY(8%);
+	}
+	65%{
+		-webkit-transform: translateY(-4%);
+	}
+	80%{
+		-webkit-transform: translateY(4%);
+	}
+	95%{
+		-webkit-transform: translateY(-2%);
+	}			
+	100% {
+		-webkit-transform: translateY(0%);
+	}	
+}
+
+@keyframes slideRight {
+	0% {
+		transform: translateX(-100%);
+	}
+	50%{
+		transform: translateX(8%);
+	}
+	65%{
+		transform: translateX(-4%);
+	}
+	80%{
+		transform: translateX(4%);
+	}
+	95%{
+		transform: translateX(-2%);
+	}			
+	100% {
+		transform: translateX(0%);
+	}		
+}
+
+@-webkit-keyframes slideRight {
+	0% {
+		-webkit-transform: translateX(-100%);
+	}
+	50%{
+		-webkit-transform: translateX(8%);
+	}
+	65%{
+		-webkit-transform: translateX(-4%);
+	}
+	80%{
+		-webkit-transform: translateX(4%);
+	}
+	95%{
+		-webkit-transform: translateX(-2%);
+	}			
+	100% {
+		-webkit-transform: translateX(0%);
+	}	
+}
+
+/* -------------------------------------------------------------------------- */
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+/* -------------------------------------------------------------------------- */
+/* Add Animation */
+@-webkit-keyframes slideIn-bottom {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @keyframes slideIn-bottom {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+  }
+  
+  /* Add Animation 
+    - Slide from top
+  */
+  @-webkit-keyframes slideIn-top {
+    from {top: -300px; opacity: 0} 
+    to {top: 0%; opacity: 1}
+  }
+  
+  @keyframes slideIn-top {
+    from {top: -300px; opacity: 0}
+    to {top: 0%; opacity: 1}
+  }
+  
+  /* Add Animation 
+    - Slide from left
+  */
+  @-webkit-keyframes slideIn-left {
+    from {left: -300px; opacity: 1}
+    to {left: 0%; opacity: 1}
+  }
+  
+  @keyframes slideIn-left {
+    from {left: -300px; opacity: 0}
+    to {left: 0%; opacity: 1}
+  }
+  
+  
+  /* Add Animation 
+    - Fading In
+  */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+  
+  

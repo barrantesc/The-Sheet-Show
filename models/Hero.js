@@ -1,3 +1,4 @@
+//WHAT OUR CHARACTERS ARE CALLED
 //-- SQL Database ORM templates, essentially
 const { Model, DataTypes } = require('sequelize');
 
@@ -5,7 +6,7 @@ const { Model, DataTypes } = require('sequelize');
 /* 
   Pointing to seeds/connection_sequlzie because it's used by seeds to build
 */
-const sequelize = require('../seeds/connection_sequelize');
+const sequelize = require('../config/connection');
 
 //------------------------------------------------------------
 //-- Class
@@ -46,6 +47,29 @@ Hero.init(
     gender: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    age: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    player_level: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    proficiency_bonus: {
+      type: DataTypes.INTEGER
+    },
+    alignment: {
+      type: DataTypes.STRING(1000),
+    },
+    languages: {
+      type: DataTypes.STRING(100),
+    },
+    proficiencies: {
+      type: DataTypes.STRING(100),
+    },
+    image_link: {
+      type: DataTypes.STRING
     }
   },
   {
