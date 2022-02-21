@@ -17,60 +17,60 @@ const retrieveRaceBonus = async function (raceName) {
     }
 };
 
-// Uses ability bonuses from DnD api based on character race and creates an object with calculated scores and modifiers for each ability with a bonus. Checks whether all abilities exist in abilities object. If the ability does not exist, it creates an object for it with calculated scores and modifiers. Descriptions of calculations below: 
-// Calculate score
-// Yields number between 6 - 18, to simulate rolling 4d6, re-rolling any 1s, and dropping lowest number
-// Calculate modifier
-// takes ability score, subtracts 10, divides by 2, rounds up to nearest integer
+// Creates an array of ability objects, loops through this array and adds base scores and modifiers to each. Then loops through array of ability bonuses (based on character race) and adds the bonus to the corresponding ability. Calculations for scores and modifiers below: 
+    // Calculate score
+        // Yields number between 6 - 18, to simulate rolling 4d6, re-rolling any 1s, and dropping lowest number
+    // Calculate modifier
+        // takes ability score, subtracts 10, divides by 2, rounds up to nearest integer
 const abilityScoresCalc = function (array) {
-    const abilitiesObj = {
-        STR: {},
-        DEX: {},
-        CON: {},
-        INT: {},
-        WIS: {},
-        CHA: {}
-    };
+    const abilitiesArr = [  
+        {name: 'STR'},
+        {name: 'DEX'},
+        {name: 'CON'},
+        {name: 'INT'},
+        {name: 'WIS'},
+        {name: 'CHA'}
+    ];
+
+    for (let i = 0; i < abilitiesArr.length; i++) {
+        abilitiesArr[i].score = Math.floor((Math.random() * 12) + 6);
+        abilitiesArr[i].modifier = Math.ceil((abilitiesArr[i].score - 10) / 2);
+    }
+
     for (let i = 0; i < array.length; i++) {
-        let abilityName = array[i].ability_score.name;
-        let score = array[i].bonus + Math.floor((Math.random() * 12) + 6);
-        let modifier = Math.ceil((score - 10) / 2);
-
-        abilitiesObj[abilityName] = { score, modifier }
-    }
-    // I'm sure there's a better way to do this but I'm all out of brain
-    if (!abilitiesObj.STR.score) {
-        let score = Math.floor((Math.random() * 12) + 6);
-        let modifier = Math.ceil((score - 10) / 2);
-        abilitiesObj.STR = { score, modifier }
-    }
-    if (!abilitiesObj.DEX.score) {
-        let score = Math.floor((Math.random() * 12) + 6);
-        let modifier = Math.ceil((score - 10) / 2);
-        abilitiesObj.DEX = { score, modifier }
-    }
-    if (!abilitiesObj.CON.score) {
-        let score = Math.floor((Math.random() * 12) + 6);
-        let modifier = Math.ceil((score - 10) / 2);
-        abilitiesObj.CON = { score, modifier }
-    }
-    if (!abilitiesObj.INT.score) {
-        let score = Math.floor((Math.random() * 12) + 6);
-        let modifier = Math.ceil((score - 10) / 2);
-        abilitiesObj.INT = { score, modifier }
-    }
-    if (!abilitiesObj.WIS.score) {
-        let score = Math.floor((Math.random() * 12) + 6);
-        let modifier = Math.ceil((score - 10) / 2);
-        abilitiesObj.WIS = { score, modifier }
-    }
-    if (!abilitiesObj.CHA.score) {
-        let score = Math.floor((Math.random() * 12) + 6);
-        let modifier = Math.ceil((score - 10) / 2);
-        abilitiesObj.CHA = { score, modifier }
+        let abilityName = array[i].ability_score.name
+        let abilityScore = array[i].bonus
+        for (let j = 0; j < abilitiesArr.length; j++) {
+            if (abilityName === abilitiesArr[j].name) {
+                abilitiesArr[j].score += abilityScore;
+                abilitiesArr[j].modifier = Math.ceil((abilitiesArr[i].score - 10) / 2);
+            }
+        }
     }
 
-    return abilitiesObj;
+    return abilitiesArr;
+}
+
+// send post requests
+async function postAbilityScores (heroID, name, score, modifier) {
+    const response = await fetch('../api/abilities', {
+        method: 'POST',
+        body: JSON.stringify({
+            hero_id: heroID,
+            name: name,
+            score: score,
+            modifier: modifier
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    if (response.ok) {
+        console.log("yay")
+    document.location.reload();
+    } else {
+    alert(response.statusText);
+    }
 }
 
 async function createAbilityScores () {
@@ -78,32 +78,17 @@ async function createAbilityScores () {
     // grab character id from url
     const race = document.querySelector('#race').value;
     const race_bonuses = await retrieveRaceBonus(race);
-    const abilities = abilityScoresCalc(race_bonuses);
+    const abilities = abilityScoresCalc(race_bonuses.ability_bonuses);
     const hero_id = window.location.toString().split("/")[
         window.location.toString().split("/").length - 1
     ];
 
-    // loop through each of the objects in abilities object and create new Ability out of each
-    for (const property in abilities) {
-
-        const response = await fetch('../api/abilities', {
-            method: 'POST',
-            body: JSON.stringify({
-                hero_id,
-                name: `${property}`,
-                score: `${abilities[property].score}`,
-                modifier: `${abilities[property].modifier}`
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        if (response.ok) {
-            console.log("yay")
-        document.location.reload();
-        } else {
-        alert(response.statusText);
-        }
+    // loop through each of the objects in abilities array and send info to postAbilityScores to send post request
+    for (let i = 0; i < abilities.length; i++) {
+        const name = abilities[i].name;
+        const score = abilities[i].score;
+        const modifier = abilities[i].modifier;
+        postAbilityScores(hero_id, name, score, modifier);
     }
 };
 
