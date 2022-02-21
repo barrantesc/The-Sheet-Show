@@ -61,13 +61,14 @@ router.get('/hero/:id', (req, res) => {
     Hero.findOne({
         where: {
             id: req.params.id
-        }
+        }//MM PAUSED HEREEEEEEEEEEEEEEEEEEEE
     })
 })
 
 // Direct to login-screen
 router.get('/login', (req, res) => {
-    res.render('login')
+res.render('login')
+
 })
 
 // Direct to Charcter creator page
@@ -77,14 +78,6 @@ router.get('/character-creator', (req, res) => {
   })
 
 });
-
-
-
-// error page MM effort
-router.get("/*", (req, res) => {
-    res.render("error")
-})
-
 
 // Testing to display hero images
 //-- 02/16/2022 #EP || This being used?
@@ -292,7 +285,8 @@ router.get('/profile', withAuth, async (req, res) => {
       }
 });
 
-//-- if gets here when routing, throw 404
+
+//-- if gets here when rounting, throw 404
 router.use((req, res) => {
     res
         .status(404)
@@ -310,9 +304,6 @@ router.use((req, res) => {
             }
     }).end();
     
-});
-
-
-
+  });
 
 module.exports = router;
