@@ -70,6 +70,13 @@ router.get('/login', (req, res) => {
     res.render('login')
 })
 
+//Direct to signup screen
+router.get('/signup', (req, res) => {
+    res.render('signup')
+    
+})
+    
+
 // Direct to Charcter creator page
 router.get('/character-creator', (req, res) => {
   res.render('character-creator', {
