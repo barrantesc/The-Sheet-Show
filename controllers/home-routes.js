@@ -78,14 +78,6 @@ router.get('/character-creator', (req, res) => {
 
 });
 
-
-
-// error page MM effort
-router.get("/*", (req, res) => {
-    res.render("error")
-})
-
-
 // Testing to display hero images
 //-- 02/16/2022 #EP || This being used?
 router.get('/hero-images', (req, res) => {
@@ -291,6 +283,13 @@ router.get('/profile', withAuth, async (req, res) => {
         res.status(500).json(String(err));
       }
 });
+
+
+// error page MM effort
+router.get("/*", (req, res) => {
+    res.render("error")
+})
+
 
 //-- if gets here when routing, throw 404
 router.use((req, res) => {
