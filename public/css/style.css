@@ -4,7 +4,6 @@
 
  :root {
   
-    
     /*
         COLORS 
      */
@@ -41,16 +40,6 @@
     --shadow_025_black:  rgba(0,0,0,.25);
     --shadow_1px_25a: 2px solid var(--shadow_025_black);
 
-    
-    /*
-        BORDERS
-    */
-
-
-    /*
-        PADDING
-    */
-
 
     /*
         BACKGROUNDS
@@ -67,13 +56,6 @@
     --btn_txt_inactive: var(--color_Primary);
     --btn_txt_active: #6fffe9;
     
-    /*
-        HEADERS
-    */
-
-    
-    
-    
  }
 
 /* 
@@ -81,6 +63,7 @@
  */
 
  html {
+    box-sizing: border-box; /* Account for parent element pading. ( Keeps elements from overflowing containers) */
     scroll-behavior: smooth;
   }
 
@@ -137,11 +120,14 @@ button {
     padding: 0;
     min-height: 3rem;
     height: 4rem;
+    border: 1px solid black;
+    border-radius: .5rem;
 }
 
 button:hover {
     color: var(--btn_txt_active);
     background-color: var(--btn_bg_active);
+    
 }
 
 .text-left {
@@ -196,8 +182,35 @@ p {
     background-color: white;
 }
 
+
 .registerLink {
     margin-left: 3px;
+}
+
+
+
+/*----------------------------------------------------------------------------*/
+/* ERROR STYLING */
+
+.errorDivElement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color_Primary);
+    margin: 30px 0;
+    padding: 20px;
+    font-size: 20px;
+    border: 4px solid black;
+    border-radius: 5px;
+    text-align: left;
+    background-color: white;
+}
+
+.errorTextDiv {
+    text-align: left;
+    color: var(--color_Primary);
+    margin: 50px 0;
+    padding: 20px;
 }
 
 /*----------------------------------------------------------------------------*/
@@ -346,7 +359,6 @@ p {
     margin-bottom: 15px;
     border-radius: 5px;
 }
-
 
 /*----------------------------------------------------------------------------*/
 /* MEDIA TYPES  */

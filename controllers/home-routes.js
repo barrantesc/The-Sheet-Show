@@ -3,6 +3,7 @@ const { render } = require('express/lib/response');
 const sequelize = require('../config/connection');
 const { User, Hero, Ability } = require('../models');
 const withAuth = require('../utils/auth');
+const contentManager = require('../utils/contentManager');
 
 
 //GET request to show all characters and include their usernames
@@ -60,14 +61,13 @@ router.get('/hero/:id', (req, res) => {
     Hero.findOne({
         where: {
             id: req.params.id
-        }//MM PAUSED HEREEEEEEEEEEEEEEEEEEEE
+        }
     })
 })
 
 // Direct to login-screen
 router.get('/login', (req, res) => {
-res.render('login')
-
+    res.render('login')
 })
 
 //Direct to signup screen
@@ -92,6 +92,72 @@ router.get('/hero-images', (req, res) => {
         loggedIn: req.session.loggedIn,
     })
 
+});
+
+//-- Grab an existing hero's character sheet based on ID
+router.get('/hero-card/:id', async (req, res) => {
+    
+    if(!req.session.loggedIn){
+
+        //todo: 02/16/2022 #EP || Verify this is even working
+            res.redirect('/');
+            return;
+    }
+
+    //-- otherwise render
+    try {
+        const heroData = await Hero.findAll({
+            where: {
+                id: req.params.id,
+            },
+            attributes: [
+                'id',
+                'user_id',
+                'name',
+                'race',
+                'class',
+                'gender',
+                "name",
+                "race",
+                "class",
+                "gender",
+                "age",
+                "player_level",
+                "proficiency_bonus",
+                "alignment",
+                "languages",
+                "proficiencies",
+                "image_link",
+            ],
+            include: {
+                model: User,
+                attributes: ['username', 'id']
+            }
+        });
+    
+        const heros = heroData.map((myHero) =>
+        myHero.get({ plain: true })
+        );
+
+        // capitalize race for hero card
+        heros[0].race = contentManager.uppercaseFirst(heros[0].race)
+
+        res.render('hero-card', {
+            heros,
+            username: req.session.username,
+            session_user_id: req.session.user_id,
+            loggedIn: req.session.loggedIn,
+            
+        })
+    }
+    catch (err) {
+        //TODO:: 02/16/2022 #EP | Need to push back to homeapge but isn't
+        res
+            .status(500)
+            .json(String(err))
+            return;
+        
+    }
 });
 
 //-- Grab an existing hero's character sheet based on ID
@@ -199,8 +265,6 @@ router.get('/profile', withAuth, async (req, res) => {
                 'race',
                 'class',
                 'gender',
-                "id",
-                "user_id",
                 "name",
                 "race",
                 "class",
@@ -232,7 +296,13 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 
-//-- if gets here when rounting, throw 404
+// error page MM effort
+router.get("/*", (req, res) => {
+    res.render("error")
+})
+
+
+//-- if gets here when routing, throw 404
 router.use((req, res) => {
     res
         .status(404)
@@ -250,6 +320,9 @@ router.use((req, res) => {
             }
     }).end();
     
-  });
+});
+
+
+
 
 module.exports = router;
