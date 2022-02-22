@@ -98,13 +98,15 @@ async function createAbilityScores () {
                 'Content-Type': 'application/json'
             }
         })
+        
         if (response.ok) {
+            const success = await response.json();
             console.log("yay")
-        document.location.reload();
         } else {
         alert(response.statusText);
         }
     }
+    document.location.reload();
 };
 
 document.querySelector("#calcScores").addEventListener("click", createAbilityScores);
