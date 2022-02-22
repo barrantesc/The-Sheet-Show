@@ -10,7 +10,7 @@ Our team (Erik Plachta, Connie Barrantes, Christiana Morales, Mary Margaret Lawt
  - Bootstrap
  - Connect-Session-Sequelize
  - Character-Sheet-CSS
- - DnD API
+ - DnD5e API
  - Dotenv
  - Express
  - Express-Handlebars
