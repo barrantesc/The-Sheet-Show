@@ -21,7 +21,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //-- Defining APP template engine - Using Handelbars
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
+const helpers = require('./utils/helpers'); //-- importing helpers
+const hbs = exphbs.create({helpers}); //-- creating with helpers
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
@@ -50,6 +51,11 @@ app.use(session(sess));
 // turn on routes
 
 app.use(routes);
+
+
+
+
+
 
 
 //------------------------------------------------------------------------------
