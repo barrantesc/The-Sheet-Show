@@ -9,14 +9,19 @@ Our team (Erik Plachta, Connie Barrantes, Christiana Morales, Mary Margaret Lawt
  - Bcrypt
  - Bootstrap
  - Connect-Session-Sequelize
+ - Character-Sheet-CSS
+ - DnD API
  - Dotenv
  - Express
  - Express-Handlebars
  - Express-Session
- - MySQL2
- - Sequelize
  - Heroku
  - JawsDB
+ - MySQL2
+ - Node.js
+ - Restful API
+ - Sequelize
+ 
 1. To start, we built out Handlebars, our models (Hero, User), and controllers. We also verified that everything was working as expected before moving forward.
 2. Next, we worked on bugs we encountered, finishing touches, and improving the overall functionality.
 3. Lastly, we worked on the style, images and closing out the remaining github issues.
