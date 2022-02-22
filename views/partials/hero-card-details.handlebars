@@ -53,7 +53,7 @@
                 <span class="spacer"></span>
             </div>
             <div class="hero-flavor">
-                <span class="alignment">{{name}}'s alignment is {{alignment}}.</span>
+                <span class="alignment">{{alignment}}.</span>
             </div>
 
             {{!-- Background --}}
@@ -68,7 +68,7 @@
         </section>
         <section class="modal-footer">
             <span>
-                {{#if username}} Created by {{username}} {{/if}}
+                {{#if user.username}} Created by {{user.username}} {{/if}}
                 {{#if date_created}} on {{date_created}}{{/if}}
         </section>
     </div>

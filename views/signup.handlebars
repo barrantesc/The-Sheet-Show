@@ -1,8 +1,4 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-{{!-- <script>document.getElementById("peskyPID").style.display = "none"</script> --}}
-
-<!------ Include the above in your HEAD tag ---------->
-
 
 <div class="sidenav">
          <div class="login-main-text">
@@ -11,26 +7,28 @@
          </div>
       </div>
       <div class="main">
-         <div class="col-md-6 col-sm-12">
-            <div class="login-form">
-               <form>
+         <div class="col-md-5 col-sm-12">
+            <div>
+               <form class="signup-form">
+                 <div class="form-group">
+                     <label>Username</label>
+                     <input type="text" class="form-control" placeholder="Username" id="username-signup">
+                  </div>
                   <div class="form-group">
                      <label>Email</label>
-                     <input type="text" class="form-control" placeholder="Email" id="email-login">
+                     <input type="text" class="form-control" placeholder="Email" id="email-signup">
                   </div>
                   <div class="form-group">
                      <label>Password</label>
-                     <input type="password" class="form-control" placeholder="Password" id="password-login">
+                     <input type="password" class="form-control" placeholder="Password" id="password-signup">
                   </div>
-                  <button type="submit" class="btn btn-black">Login</button>
-                 <p>New user? Click here to <a class="registerLink"  href="/signup"> Register </a> </p>
+                  
+                  <button type="submit" class="btn btn-secondary">SignUp</button>
                </form>
             </div>
          </div>
       </div>
 
-  
-
-<script src="/javascript/login.js"></script>
+<script src="/javascript/signup.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

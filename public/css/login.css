@@ -26,6 +26,8 @@ body {
     
 }
 
+
+
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
 }
@@ -73,6 +75,13 @@ body {
 
 .login-main-text h2{
     font-weight: 300;
+}
+
+.signupButton {
+    padding: 12px 0 !important;
+    height: 3.4rem;
+    width: 100%;
+    
 }
 
 .btn-black{
