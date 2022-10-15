@@ -31,7 +31,7 @@ Our main challenge was working on the different files and connecting them to eac
 
 ## Where can we use this app?
 You can view the app at the sites below:
-- [Live URL](https://sheet-show.herokuapp.com/) 
+- [Live URL](https://sheet-show-app-production.up.railway.app/) 
 - [Github repo](https://github.com/barrantesc/The-Sheet-Show)
 
 ## What does it look like?
